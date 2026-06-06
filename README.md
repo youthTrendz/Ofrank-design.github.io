@@ -1,16 +1,6 @@
 <p align="center"> 
 </p>
 
-<p align="center">
-  <strong>frankoduro1912@gmail.com</strong> • <strong>@_anonymoustroy</strong> • <strong>frankoduro1912</strong>
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Procurement-Enterprise-blueviolet?style=for-the-badge" alt="Procurement" />
-  <img src="https://img.shields.io/badge/Logistics-Luxury-black?style=for-the-badge" alt="Logistics" />
-  <img src="https://img.shields.io/badge/AI-Orchestrated-gold?style=for-the-badge" alt="AI" />
-</p>
-
  
 </p>
   <!--Night Owl image-->
