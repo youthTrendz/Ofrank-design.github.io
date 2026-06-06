@@ -542,6 +542,98 @@ section {
   border: 1px solid rgba(255,255,255,0.08);
 }
 
+/* ── CERTIFICATIONS ── */
+.cert-list-main { display:flex; flex-direction:column; gap:14px; }
+.cert-card-main {
+  background:rgba(255,255,255,0.02);
+  border:1px solid rgba(255,255,255,0.07);
+  border-radius:14px; padding:22px 24px;
+  display:grid; grid-template-columns:auto 1fr auto;
+  gap:18px; align-items:center;
+  transition:all .3s; position:relative; overflow:hidden;
+}
+.cert-card-main::before {
+  content:''; position:absolute; left:0; top:0; bottom:0; width:3px;
+  background:var(--cert-color,var(--gold));
+  transform:scaleY(0); transform-origin:bottom;
+  transition:transform .35s ease;
+}
+.cert-card-main:hover::before { transform:scaleY(1); }
+.cert-card-main:hover {
+  background:rgba(255,255,255,0.04);
+  border-color:rgba(255,255,255,0.12);
+  transform:translateX(5px);
+}
+.cert-icon-main {
+  width:44px; height:44px; border-radius:10px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.3rem; flex-shrink:0;
+}
+.cert-name-main { font-size:15px; font-weight:600; color:var(--white); margin-bottom:4px; line-height:1.35; }
+.cert-prov-main {
+  font-family:'JetBrains Mono',monospace; font-size:11px;
+  color:#8899bb; letter-spacing:.04em; margin-bottom:8px;
+}
+.cert-rel-main { font-size:12px; color:rgba(255,255,255,0.45); line-height:1.6; }
+.cert-tags-main { display:flex; flex-wrap:wrap; gap:5px; margin-top:8px; }
+.cert-tag-main {
+  font-family:'JetBrains Mono',monospace; font-size:10px;
+  padding:2px 8px; border-radius:3px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.07);
+  color:rgba(255,255,255,0.4);
+}
+.cert-right-main { text-align:right; flex-shrink:0; }
+.cert-status {
+  font-family:'JetBrains Mono',monospace; font-size:10px;
+  padding:5px 11px; border-radius:20px;
+  display:inline-block; margin-bottom:6px;
+  background:rgba(212,168,67,0.1); color:#f0c96a;
+  border:1px solid rgba(212,168,67,0.25);
+}
+.cert-status.done {
+  background:rgba(16,185,129,0.1); color:#34d399;
+  border:1px solid rgba(16,185,129,0.2);
+}
+.cert-ext-link {
+  font-family:'JetBrains Mono',monospace; font-size:10px;
+  color:#5a6a88; text-decoration:none; display:block; margin-top:4px;
+  transition:color .2s;
+}
+.cert-ext-link:hover { color:var(--gold); }
+.cert-prog-wrap { margin-top:10px; }
+.cert-prog-top {
+  display:flex; justify-content:space-between;
+  font-family:'JetBrains Mono',monospace; font-size:9px;
+  color:#5a6a88; margin-bottom:4px;
+}
+.cert-prog-bar { height:2px; background:rgba(255,255,255,0.06); border-radius:2px; overflow:hidden; }
+.cert-prog-fill {
+  height:100%; border-radius:2px; width:0;
+  background:var(--cert-color,var(--gold));
+  transition:width 1.4s ease;
+}
+.cert-full-link {
+  display:inline-flex; align-items:center; gap:8px;
+  font-family:'JetBrains Mono',monospace; font-size:11px;
+  color:var(--gold); text-decoration:none; letter-spacing:.08em;
+  padding:10px 20px; border:1px solid rgba(212,168,67,0.3);
+  border-radius:6px; margin-top:1.5rem;
+  transition:all .2s;
+  background:rgba(212,168,67,0.05);
+}
+.cert-full-link:hover {
+  background:rgba(212,168,67,0.1);
+  border-color:rgba(212,168,67,0.5);
+  transform:translateY(-2px);
+}
+@media(max-width:560px){
+  .cert-card-main { grid-template-columns:auto 1fr; }
+  .cert-right-main { grid-column:2; }
+}
+
 /* ── CONTACT ── */
 .contact-grid {
   display: grid;
@@ -646,6 +738,7 @@ footer {
     </div>
     <div class="hero-cta">
       <a href="#projects" class="btn btn-gold">View Projects</a>
+      <a href="#certifications" class="btn btn-outline">Certifications</a>
       <a href="#contact" class="btn btn-outline">Get in Touch</a>
     </div>
   </div>
@@ -981,6 +1074,139 @@ footer {
 
 <div class="divider"></div>
 
+<!-- ══ CERTIFICATIONS ══ -->
+<section id="certifications">
+  <div class="section-inner">
+    <div class="section-label reveal">Learning</div>
+    <h2 class="section-title reveal">Certifications &amp; <span>Free Programs</span></h2>
+    <div class="cert-list-main">
+
+      <div class="cert-card-main reveal" style="--cert-color:#3b82f6">
+        <div class="cert-icon-main">🖥️</div>
+        <div>
+          <div class="cert-name-main">Inventory Management Certificate</div>
+          <div class="cert-prov-main">HP LIFE — life.hp.com</div>
+          <div class="cert-rel-main">Inventory control, EOQ, safety stock, and stock planning. Directly supports Project 4 and KSTU modules PSCM 163 &amp; Quantitative Studies.</div>
+          <div class="cert-tags-main">
+            <span class="cert-tag-main">EOQ</span>
+            <span class="cert-tag-main">Safety Stock</span>
+            <span class="cert-tag-main">Stock Planning</span>
+            <span class="cert-tag-main">PSCM 163</span>
+            <span class="cert-tag-main">Project 4</span>
+          </div>
+          <div class="cert-prog-wrap">
+            <div class="cert-prog-top"><span>Progress</span><span>Year 1 Priority</span></div>
+            <div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div>
+          </div>
+        </div>
+        <div class="cert-right-main">
+          <div class="cert-status">To Do</div>
+          <a href="https://life.hp.com" target="_blank" class="cert-ext-link">life.hp.com →</a>
+        </div>
+      </div>
+
+      <div class="cert-card-main reveal" style="--cert-color:#10b981">
+        <div class="cert-icon-main">🌍</div>
+        <div>
+          <div class="cert-name-main">Procurement &amp; Logistics Certificate</div>
+          <div class="cert-prov-main">DisasterReady + Mercy Corps — disasterready.org</div>
+          <div class="cert-rel-main">Procurement, warehousing, fleet management, and asset management in real-world supply chains. Reinforces PSCM 165/166 Sourcing and Stores Admin &amp; Warehousing modules.</div>
+          <div class="cert-tags-main">
+            <span class="cert-tag-main">Procurement</span>
+            <span class="cert-tag-main">Warehousing</span>
+            <span class="cert-tag-main">Fleet Management</span>
+            <span class="cert-tag-main">Asset Management</span>
+            <span class="cert-tag-main">PSCM 165/166</span>
+          </div>
+          <div class="cert-prog-wrap">
+            <div class="cert-prog-top"><span>Progress</span><span>Year 1–2</span></div>
+            <div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div>
+          </div>
+        </div>
+        <div class="cert-right-main">
+          <div class="cert-status">To Do</div>
+          <a href="https://www.disasterready.org" target="_blank" class="cert-ext-link">disasterready.org →</a>
+        </div>
+      </div>
+
+      <div class="cert-card-main reveal" style="--cert-color:#8b5cf6">
+        <div class="cert-icon-main">🎓</div>
+        <div>
+          <div class="cert-name-main">Supply Chain Management Diploma</div>
+          <div class="cert-prov-main">Alison — alison.com</div>
+          <div class="cert-rel-main">Full diploma covering supply chain fundamentals, logistics, and operations management. Ideal Year 1 foundation reinforcing the entire KSTU degree from Semester 1.</div>
+          <div class="cert-tags-main">
+            <span class="cert-tag-main">SCM Fundamentals</span>
+            <span class="cert-tag-main">Logistics</span>
+            <span class="cert-tag-main">Operations</span>
+            <span class="cert-tag-main">Diploma Level</span>
+            <span class="cert-tag-main">Start Now</span>
+          </div>
+          <div class="cert-prog-wrap">
+            <div class="cert-prog-top"><span>Progress</span><span>Year 1 — Start Now</span></div>
+            <div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div>
+          </div>
+        </div>
+        <div class="cert-right-main">
+          <div class="cert-status">To Do</div>
+          <a href="https://alison.com" target="_blank" class="cert-ext-link">alison.com →</a>
+        </div>
+      </div>
+
+      <div class="cert-card-main reveal" style="--cert-color:#f97316">
+        <div class="cert-icon-main">🏛️</div>
+        <div>
+          <div class="cert-name-main">E-Procurement Learning Program</div>
+          <div class="cert-prov-main">World Bank Group — worldbank.org/procurement</div>
+          <div class="cert-rel-main">Public procurement systems, Ghana e-GP portal, and digital procurement frameworks. Essential for Project 7 (Compliance &amp; Ethics) and KSTU modules Public Procurement I &amp; II.</div>
+          <div class="cert-tags-main">
+            <span class="cert-tag-main">Public Procurement</span>
+            <span class="cert-tag-main">e-GP Portal</span>
+            <span class="cert-tag-main">Digital Systems</span>
+            <span class="cert-tag-main">Acts 663 &amp; 914</span>
+            <span class="cert-tag-main">Project 7</span>
+          </div>
+          <div class="cert-prog-wrap">
+            <div class="cert-prog-top"><span>Progress</span><span>Year 2–3</span></div>
+            <div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div>
+          </div>
+        </div>
+        <div class="cert-right-main">
+          <div class="cert-status">To Do</div>
+          <a href="https://www.worldbank.org/en/projects-operations/procurement" target="_blank" class="cert-ext-link">worldbank.org →</a>
+        </div>
+      </div>
+
+      <div class="cert-card-main reveal" style="--cert-color:#06b6d4">
+        <div class="cert-icon-main">📊</div>
+        <div>
+          <div class="cert-name-main">Power BI Learning Path</div>
+          <div class="cert-prov-main">Microsoft Learn — learn.microsoft.com</div>
+          <div class="cert-rel-main">Complete structured path from zero to building live procurement dashboards. Directly produces Project 5 (Ghana Spend Dashboard) and supports PSCM 272 Stores Management in Year 2.</div>
+          <div class="cert-tags-main">
+            <span class="cert-tag-main">Power BI</span>
+            <span class="cert-tag-main">Dashboards</span>
+            <span class="cert-tag-main">Data Analysis</span>
+            <span class="cert-tag-main">PSCM 272</span>
+            <span class="cert-tag-main">Project 5</span>
+          </div>
+          <div class="cert-prog-wrap">
+            <div class="cert-prog-top"><span>Progress</span><span>Year 2 Sem 2</span></div>
+            <div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div>
+          </div>
+        </div>
+        <div class="cert-right-main">
+          <div class="cert-status">To Do</div>
+          <a href="https://learn.microsoft.com/en-us/training/powerbi/" target="_blank" class="cert-ext-link">learn.microsoft.com →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
 <!-- ══ CONTACT ══ -->
 <section id="contact">
   <div class="section-inner">
@@ -1000,12 +1226,12 @@ footer {
       <a href="https://github.com/Ofrank-design" class="contact-card" target="_blank">
         <div class="contact-icon">🐙</div>
         <div class="contact-label">GitHub</div>
-        <div class="contact-value">Ofrank-design</div>
+        <div class="contact-value">ofrank-design</div>
       </a>
-      <a href="https://https://https://Ofrank-design.io" class="contact-card" target="_blank">
+      <a href="https://ofrank-design.github.io" class="contact-card" target="_blank">
         <div class="contact-icon">🌐</div>
         <div class="contact-label">Portfolio</div>
-        <div class="contact-value">Ofrank-design.github.io</div>
+        <div class="contact-value">ofrank-design.github.io</div>
       </a>
     </div>
   </div>
@@ -1054,6 +1280,16 @@ const barObserver = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.3 });
 document.querySelectorAll('.skill-card').forEach(card => barObserver.observe(card));
+
+// Cert progress bars
+const certBarObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting) {
+      e.target.querySelectorAll('.cert-prog-fill').forEach(b => { b.style.width = (b.dataset.cw||0)+'%'; });
+    }
+  });
+}, { threshold:.3 });
+document.querySelectorAll('.cert-card-main').forEach(c => certBarObs.observe(c));
 
 // Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(a => {
