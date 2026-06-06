@@ -41,7 +41,7 @@ Full procure-to-pay cycle: Vendor → PR → PO → GR → Invoice
 <td width="50%">
 
 ### 📊 Procurement Analytics
-![Excel](https://img.shields.io/badge/Excel-Advanced-217346?style=flat-square&logo=microsoftexcel)
+![Excel](https://img.shields.io/badge/Excel-Studying-217346?style=flat-square&logo=microsoftexcel)
 ![PowerBI](https://img.shields.io/badge/Power%20BI-Building-F2C811?style=flat-square&logo=powerbi)
 ![SCOR](https://img.shields.io/badge/SCOR%20KPIs-Studying-6B7280?style=flat-square)
 
