@@ -1,5 +1,8 @@
 <p align="center">
-  
+  <!--Night Owl image-->
+<div>
+  <img align="right" width="40%" src="https://owlbertsio-resized.s3.amazonaws.com/Popper.psd.full.png">
+
 <!-- BADGES -->
 ![Profile Views](https://komarev.com/ghpvc/?username=frank-oduro&color=d4a843&style=flat-square&label=Profile+Views)
 ![Student](https://img.shields.io/badge/KSTU-BSc%20Procurement%20%26%20SCM-0d2149?style=flat-square&logo=graduation-cap&logoColor=d4a843)
