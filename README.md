@@ -1,4 +1,14 @@
 <div align="center">
+<p align="center">
+  <img src="https://vercel.app🛡️%20Autonomous%20Procurement%20%7C%20🧠%20Predictive%20Logistics%20Engine&descSize=18&descAlignY=65&descAlign=50" width="100%" alt="SupplyChainX Header Banner" />
+</p>
+
+<p align="center">
+  <img src="https://shields.io" alt="Procurement Type" />
+  <img src="https://shields.io" alt="Engine Class" />
+  <img src="https://shields.io" alt="Security Standard" />
+</p>
+
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0d2149,d4a843&height=200&section=header&text=Frank%20Oduro&fontSize=60&fontFamily=Georgia&fontColor=ffffff&animation=fadeIn&desc=Procurement%20%26%20Supply%20Chain%20Professional&descSize=18&descColor=d4a843&descAlignY=72"/>
 
