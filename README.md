@@ -1,5 +1,426 @@
 <p align="center"> 
 </p>
+<p align="center">
+  <img src="./assets/banner.png" width="100%">
+</p>
+
+<h1 align="center">🚢 Frank A. | Procurement & Supply Chain Management</h1>
+
+<h3 align="center">
+Optimizing Supply Chains • Managing Procurement • Driving Logistics Excellence
+</h3>
+
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=24&pause=1200&color=00D9FF&center=true&vCenter=true&width=850&lines=Procurement+%26+Supply+Chain+Management+Student;Global+Logistics+Enthusiast;Strategic+Sourcing+%7C+Inventory+Management;Future+Supply+Chain+Leader;Building+Efficient+Global+Networks" />
+</p>
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=YOURUSERNAME&label=PROFILE+VIEWS&color=0e75b6&style=for-the-badge"/>
+</p>
+
+---
+
+# 🌍 About Me
+
+```yaml
+Name: Frank
+Country: Ghana 🇬🇭
+
+Education:
+  Program: Procurement & Supply Chain Management
+
+Interests:
+  - Global Logistics
+  - Procurement
+  - Supply Chain Analytics
+  - Inventory Management
+  - Strategic Sourcing
+  - International Trade
+
+Mission:
+  To build smarter, faster and more efficient
+  global supply chains through innovation.
+```
+
+---
+
+# 🚢 Supply Chain Journey
+
+```text
+Suppliers
+    │
+    ▼
+Procurement
+    │
+    ▼
+Warehousing
+    │
+    ▼
+Transportation
+    │
+    ▼
+Distribution
+    │
+    ▼
+Customers
+
+↺ Continuous Improvement Cycle
+```
+
+---
+
+# 📦 Core Competencies
+
+<table align="center">
+<tr>
+<td align="center">📦</td>
+<td>Inventory Management</td>
+</tr>
+
+<tr>
+<td align="center">🚢</td>
+<td>Logistics Coordination</td>
+</tr>
+
+<tr>
+<td align="center">📈</td>
+<td>Supply Chain Analytics</td>
+</tr>
+
+<tr>
+<td align="center">🤝</td>
+<td>Supplier Relationship Management</td>
+</tr>
+
+<tr>
+<td align="center">💰</td>
+<td>Strategic Procurement</td>
+</tr>
+
+<tr>
+<td align="center">🌍</td>
+<td>Global Trade Operations</td>
+</tr>
+
+</table>
+
+---
+
+# 🛠 Tools & Technologies
+
+<p align="center">
+
+<img src="https://skillicons.dev/icons?i=excel,powershell,github,vscode"/>
+
+</p>
+
+<p align="center">
+
+![Microsoft Excel](https://img.shields.io/badge/Microsoft%20Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)
+
+![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
+
+![Procurement](https://img.shields.io/badge/Procurement-0052CC?style=for-the-badge)
+
+![Logistics](https://img.shields.io/badge/Logistics-00BFFF?style=for-the-badge)
+
+![Supply Chain](https://img.shields.io/badge/Supply%20Chain-008080?style=for-the-badge)
+
+</p>
+
+---
+
+# 📊 GitHub Analytics
+
+<p align="center">
+
+<img height="170em" src="https://github-readme-stats.vercel.app/api?username=YOURUSERNAME&show_icons=true&theme=tokyonight&hide_border=true"/>
+
+<img height="170em" src="https://github-readme-streak-stats.herokuapp.com/?user=YOURUSERNAME&theme=tokyonight&hide_border=true"/>
+
+</p>
+
+---
+
+# 📈 Contribution Graph
+
+<p align="center">
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=YOURUSERNAME&theme=tokyo-night&hide_border=true"/>
+
+</p>
+
+---
+
+# 🌐 Global Logistics Network
+
+```mermaid
+graph LR
+
+A[Supplier] --> B[Procurement]
+
+B --> C[Warehouse]
+
+C --> D[Transportation]
+
+D --> E[Distribution]
+
+E --> F[Customer]
+
+F --> G[Feedback]
+
+G --> B
+```
+
+---
+
+# 🎯 Professional Goals
+
+✔ Master Global Procurement
+
+✔ Develop Advanced Supply Chain Analytics Skills
+
+✔ Build International Logistics Expertise
+
+✔ Earn Professional Supply Chain Certifications
+
+✔ Lead High-Performance Procurement Teams
+
+---
+
+# 📫 Connect With Me
+
+<p align="center">
+
+<a href="https://linkedin.com/in/YOUR-LINKEDIN">
+<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
+</a>
+
+<a href="mailto:YOUREMAIL">
+<img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/>
+</a>
+
+</p>
+
+---
+
+<p align="center">
+
+### 🚢 "Efficient Supply Chains Build Strong Economies."
+
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  
 </p>
