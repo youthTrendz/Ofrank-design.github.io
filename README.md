@@ -66,16 +66,7 @@ Optimizing Supply Chains • Managing Procurement • Driving Logistics Excellen
 </p>
 
 <p align="center">
-
-![Microsoft Excel](https://img.shields.io/badge/Microsoft%20Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)
-
-![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
-
-![Procurement](https://img.shields.io/badge/Procurement-0052CC?style=for-the-badge)
-
-![Logistics](https://img.shields.io/badge/Logistics-00BFFF?style=for-the-badge)
-
-![Supply Chain](https://img.shields.io/badge/Supply%20Chain-008080?style=for-the-badge)
+e)
 
 </p>
 
