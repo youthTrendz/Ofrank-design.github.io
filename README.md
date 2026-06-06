@@ -1,8 +1,4 @@
 
-</svg>
-<img width="1280" height="480" alt="procurement_and_logistics_powerpoint_ppt_template_bundles_slide01" src="https://github.com/user-attachments/assets/9a77648d-198b-4330-ae99-72c3dc750079" />
-
-
 
 <div>
   <!--Night Owl image-->
