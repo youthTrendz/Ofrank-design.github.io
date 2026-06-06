@@ -220,10 +220,7 @@ CIPS 7-step framework · Make-vs-buy · Competitive tendering
 
 📄 **[View full certifications page →](https://ofrank-design.github.io/portfoliohtml)
                                   
----
-[![Email](https://img.shields.io/badge/Email-frankoduro1912%40gmail.com-D4A843?style=for-the-badge&logo=gmail&logoColor=white)](mailto:frankoduro1912@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/frankoduro1912)
-[![Portfolio](https://img.shields.io/badge/Portfolio-ofrank--design.github.io-0d2149?style=for-the-badge&logo=github&logoColor=white)](https://https://github.com/Ofrank-design)
+--
 <h2 align="center">🤝 Cᴏɴɴᴇᴄᴛ Wɪᴛʜ Mᴇ 🤝 </h2>
 <div align="center">
   
