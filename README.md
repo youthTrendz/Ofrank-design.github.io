@@ -146,7 +146,65 @@ CIPS 7-step framework · Make-vs-buy · Competitive tendering
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=frank-oduro&layout=compact&theme=dark&title_color=d4a843&text_color=ffffff&bg_color=0d2149&border_color=d4a843)
 
 </div>
+---
 
+## 🏅 Certifications & Free Programs
+
+> 5 globally recognised programs studied alongside my KSTU degree. Every certificate directly reinforces a module or portfolio project. All 100% free.
+
+<table>
+<thead>
+<tr>
+<th>Program</th>
+<th>Provider</th>
+<th>KSTU Module Link</th>
+<th>Portfolio Link</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Inventory Management Certificate</strong></td>
+<td><a href="https://life.hp.com">HP LIFE</a></td>
+<td>PSCM 163 · Quantitative Studies</td>
+<td>Project 4 — Inventory Model</td>
+<td>⬜ To Do</td>
+</tr>
+<tr>
+<td><strong>Procurement & Logistics Certificate</strong></td>
+<td><a href="https://www.disasterready.org">DisasterReady + Mercy Corps</a></td>
+<td>PSCM 165/166 · Stores Admin</td>
+<td>Project 2 — Contract Mgmt</td>
+<td>⬜ To Do</td>
+</tr>
+<tr>
+<td><strong>Supply Chain Management Diploma</strong></td>
+<td><a href="https://alison.com">Alison</a></td>
+<td>All Year 1 modules</td>
+<td>Foundation — all projects</td>
+<td>⬜ To Do</td>
+</tr>
+<tr>
+<td><strong>E-Procurement Learning Program</strong></td>
+<td><a href="https://www.worldbank.org/en/projects-operations/procurement">World Bank Group</a></td>
+<td>PSCM 363/364 · PSCM 467</td>
+<td>Project 7 — Compliance</td>
+<td>⬜ To Do</td>
+</tr>
+<tr>
+<td><strong>Power BI Learning Path</strong></td>
+<td><a href="https://learn.microsoft.com/en-us/training/powerbi/">Microsoft Learn</a></td>
+<td>PSCM 272 · Stores Mgmt</td>
+<td>Project 5 — Spend Dashboard</td>
+<td>⬜ To Do</td>
+</tr>
+</tbody>
+</table>
+
+> **How to track:** Change ⬜ to ✅ and add `Completed — Month Year` as each program is finished. Upload the PDF certificate to the matching project folder.
+
+📄 **[View full certifications page →](https://ofrank-design.github.io/certifications.html)
+                                  
 ---
 
 ## 📬 Contact & Connect
