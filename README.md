@@ -1,55 +1,3 @@
-<p align="center"> 
-
-
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=YOURUSERNAME&label=PROFILE+VIEWS&color=0e75b6&style=for-the-badge"/>
-</p>
-
----
-<!--Profile Count Badge-->
-<p align="left">
-  <img src="https://komarev.com/ghpvc/?username=Kiran1689&label=Profile%20views&color=770677&style=for-the-badge&logo=star" alt="Kiran1689" style="padding-right:20px;" />
-</p>
-
-</table>
-
-
-# 🛠 Tools & Technologies
-
-<p align="center">
-
-<img src="https://skillicons.dev/icons?i=excel,powershell,github,vscode"/>
-
-</p>
-
-<p align="center">
-e)
-
-</p>
-
----
-
-# 📊 GitHub Analytics
-
-<p align="center">
-
-<img height="170em" src="https://github-readme-stats.vercel.app/api?username=YOURUSERNAME&show_icons=true&theme=tokyonight&hide_border=true"/>
-
-<img height="170em" src="https://github-readme-streak-stats.herokuapp.com/?user=YOURUSERNAME&theme=tokyonight&hide_border=true"/>
-
-</p>
-
----
-
-# 📈 Contribution Graph
-
-<p align="center">
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=YOURUSERNAME&theme=tokyo-night&hide_border=true"/>
-
-</p>
-
----
 
 
 
@@ -205,6 +153,13 @@ CIPS 7-step framework · Make-vs-buy · Competitive tendering
 ![Frank's GitHub Stats](https://github-readme-stats.vercel.app/api?username=frank-oduro&show_icons=true&theme=dark&title_color=d4a843&icon_color=d4a843&text_color=ffffff&bg_color=0d2149&border_color=d4a843&hide_border=false)
 
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=frank-oduro&layout=compact&theme=dark&title_color=d4a843&text_color=ffffff&bg_color=0d2149&border_color=d4a843)
+
+
+# 📈 Contribution Graph
+
+<p align="center">
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=YOURUSERNAME&theme=tokyo-night&hide_border=true"/>
 
 </div>
 ---
