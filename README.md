@@ -88,45 +88,6 @@ e)
 
 ---
 
-# 🌐 Global Logistics Network
-
-```mermaid
-graph LR
-
-A[Supplier] --> B[Procurement]
-
-B --> C[Warehouse]
-
-C --> D[Transportation]
-
-D --> E[Distribution]
-
-E --> F[Customer]
-
-F --> G[Feedback]
-
-G --> B
-```
-
----
-
-# 📫 Connect With Me
-
-<p align="center">
-
-<a href="https://linkedin.com/in/YOUR-LINKEDIN">
-<img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
-</a>
-
-<a href="mailto:YOUREMAIL">
-<img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/>
-</a>
-
-</p>
-
----
-
-<p align="center">
 
 
 </p>
