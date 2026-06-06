@@ -224,25 +224,25 @@ CIPS 7-step framework · Make-vs-buy · Competitive tendering
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/frankoduro1912)
 [![Portfolio](https://img.shields.io/badge/Portfolio-ofrank--design.github.io-0d2149?style=for-the-badge&logo=github&logoColor=white)](https://https://github.com/Ofrank-design)
 
-<a href="mailto:frankoduro1912@gmail.com" target="_blank">
-<img src="./gmail.png" width=50 height=50 alt="frankoduro1912@gmail.com" style="margin-bottom: 5px;" />
+
+<a href="mailto:kirannaragund197@gmail.com" target="_blank">
+<img src="./gmail.png" width=50 height=50 alt="kirannaragund197@gmail.com" style="margin-bottom: 5px;" />
 </a>
 
-<a href="https://x.com/_anonymoustroy" target="_blank">
-<img src="./twitter.png" width=50 height=50 alt="_anonymoustroy" style="margin-bottom: 5px;" />
+<a href="https://x.com/kiran__a__n" target="_blank">
+<img src="./twitter.png" width=50 height=50 alt="kiran__a__n" style="margin-bottom: 5px;" />
 </a>
 
-<a href="https://www.instagram.com/_anonymoustroy" target="_blank">
-<img src="./instagram.png" width=50 height=50 alt="_anonymoustroy" style="margin-bottom: 5px;" />
+<a href="https://www.instagram.com/kiran_a_n" target="_blank">
+<img src="./instagram.png" width=50 height=50 alt="kiran_a_n" style="margin-bottom: 5px;" />
 </a>
 
-<a href="https://ofrank-design.github.io" target="_blank">
-<img src="./github.png" width=50 height=50 alt="ofrank-design.io" style="margin-bottom: 5px;" />
+<a href="https://www.githubcom/Kiran1689" target="_blank">
+<img src="./github.png" width=50 height=50 alt="Kiran1689" style="margin-bottom: 5px;" />
 </a>
 
-<a href="https://www.linkedin.com/in/frankoduro1912/" target="_blank">
+<a href="https://www.linkedin.com/in/kiran-a-n/" target="_blank">
 <img src="./linkedin.png" width=50 height=50 alt="linkedin" style="margin-bottom: 5px
-
 </div>
 
 ---
