@@ -167,6 +167,9 @@ CIPS 7-step framework · Make-vs-buy · Competitive tendering
 
 *📍 Kumasi, Ghana · KSTU BSc Procurement & Supply Chain Management · Enrolled Oct 2026*
 
-**"The best time to build your portfolio was yesterday. The second best time is today."**
+**"The best time to build your portfolio was yesterday. The second best time is today."**    
+
+
+LAST UPDATED: OCTOBER 2026
 
 </div>
