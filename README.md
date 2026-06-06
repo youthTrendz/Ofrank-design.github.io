@@ -1,2 +1,172 @@
-# frank-oduro.github.io
-Procurement &amp; Supply Chain Portfolio | KSTU Student
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0d2149,d4a843&height=200&section=header&text=Frank%20Oduro&fontSize=60&fontFamily=Georgia&fontColor=ffffff&animation=fadeIn&desc=Procurement%20%26%20Supply%20Chain%20Professional&descSize=18&descColor=d4a843&descAlignY=72"/>
+
+<!-- BADGES -->
+![Profile Views](https://komarev.com/ghpvc/?username=frank-oduro&color=d4a843&style=flat-square&label=Profile+Views)
+![Student](https://img.shields.io/badge/KSTU-BSc%20Procurement%20%26%20SCM-0d2149?style=flat-square&logo=graduation-cap&logoColor=d4a843)
+![Year](https://img.shields.io/badge/Enrolled-October%202026-d4a843?style=flat-square)
+![Location](https://img.shields.io/badge/📍-Kumasi%2C%20Ghana-006B3F?style=flat-square)
+![Portfolio](https://img.shields.io/badge/Portfolio-Live-brightgreen?style=flat-square&logo=github)
+
+</div>
+
+---
+
+## 👋 About Me
+
+> *"I'm not waiting until graduation to build experience."*
+
+I'm **Frank Oduro**, a Procurement & Supply Chain Management student at **Kumasi Technical University (KSTU)**, enrolled October 2026. While most students wait until final year to think about their career, I'm building a hands-on project portfolio from **Day 1** — real ERP transactions, live dashboards built from Ghana public data, actual SLA documents, and supplier scorecards.
+
+By the time I graduate in 2030, recruiters won't have to take my word for my skills. They'll be able to see them here.
+
+---
+
+## 🛠️ Technical Skills
+
+<table>
+<tr>
+<td width="50%">
+
+### ⚙️ ERP Systems
+![SAP](https://img.shields.io/badge/SAP%20MM-Learning-0FAAFF?style=flat-square&logo=sap)
+![Odoo](https://img.shields.io/badge/Odoo-In%20Progress-714B67?style=flat-square)
+![Oracle](https://img.shields.io/badge/Oracle%20Cloud-Year%202-F80000?style=flat-square&logo=oracle)
+![Dynamics](https://img.shields.io/badge/MS%20Dynamics%20365-Year%204-0078D4?style=flat-square&logo=microsoft)
+
+Full procure-to-pay cycle: Vendor → PR → PO → GR → Invoice
+
+</td>
+<td width="50%">
+
+### 📊 Procurement Analytics
+![Excel](https://img.shields.io/badge/Excel-Advanced-217346?style=flat-square&logo=microsoftexcel)
+![PowerBI](https://img.shields.io/badge/Power%20BI-Building-F2C811?style=flat-square&logo=powerbi)
+![SCOR](https://img.shields.io/badge/SCOR%20KPIs-Studying-6B7280?style=flat-square)
+
+Spend analysis · Supplier dashboards · SCOR metrics
+
+</td>
+</tr>
+<tr>
+<td>
+
+### 📋 Contract Management
+![Contracts](https://img.shields.io/badge/SLA%20Drafting-Year%202-7C3AED?style=flat-square)
+![Negotiation](https://img.shields.io/badge/Negotiation-Year%203-7C3AED?style=flat-square)
+
+UNDP templates · Framework agreements · KPI benchmarking
+
+</td>
+<td>
+
+### ⚖️ Compliance & Ethics
+![Ghana](https://img.shields.io/badge/PPA%20Acts%20663%20%26%20914-Studying-006B3F?style=flat-square)
+![UN](https://img.shields.io/badge/UN%20Global%20Compact-Studying-009EDB?style=flat-square)
+
+Ghana e-GP portal · ESG sourcing · Public procurement law
+
+</td>
+</tr>
+<tr>
+<td>
+
+### 📦 Inventory & Logistics
+![EOQ](https://img.shields.io/badge/EOQ%20Model-✅%20Complete-06B6D4?style=flat-square)
+![ABC](https://img.shields.io/badge/ABC%20Analysis-✅%20Complete-06B6D4?style=flat-square)
+![Incoterms](https://img.shields.io/badge/Incoterms%202020-Year%203-06B6D4?style=flat-square)
+
+Safety stock · Demand forecasting · Reorder points
+
+</td>
+<td>
+
+### 🎯 Strategic Sourcing
+![Category](https://img.shields.io/badge/Category%20Management-Year%204-B45309?style=flat-square)
+![TCO](https://img.shields.io/badge/TCO%20Modelling-Year%204-B45309?style=flat-square)
+
+CIPS 7-step framework · Make-vs-buy · Competitive tendering
+
+</td>
+</tr>
+</table>
+
+---
+
+## 📁 Portfolio Projects
+
+| # | Project | Skills | Status | Folder |
+|---|---------|--------|--------|--------|
+| 01 | **ERP: SAP MM Procure-to-Pay Workflow** | SAP S/4HANA · Full P2P cycle · Transaction docs | 🔵 Year 2 · 2027 | `1-erp-sap-mm/` |
+| 02 | **Contract Management: Mock SLA & Negotiation** | UNDP templates · 5-page SLA · 15% price reduction sim | 🔵 Year 2 · 2027 | `2-contract-management/` |
+| 03 | **Supplier Scorecard & KPI Dashboard** | Excel · Power BI · 10 mock vendors · OTD/quality/price | 🟣 Year 3 · 2028 | `3-supplier-scorecard/` |
+| **04** | **✅ Inventory Optimization Model** | **Excel · EOQ · ABC · Safety Stock · 20 Ghana SKUs** | **✅ Completed Oct 2026** | **`4-inventory-logistics/`** |
+| 05 | **Procurement Analytics: Ghana Spend Dashboard** | Power BI · Live Ghana e-GP data · GHS 2.3M insight | 🟣 Year 3 · 2028 | `5-procurement-analytics/` |
+| 06 | **Strategic Sourcing: IT Category Plan** | CIPS 7-step · TCO model · 10-page strategy doc | 🟡 Year 4 · 2029 | `6-strategic-sourcing/` |
+| 07 | **Compliance & Ethics: Tender Risk Assessment** | Acts 663 & 914 · UN Global Compact · Risk matrix | 🟣 Year 3 · 2028 | `7-compliance-ethics/` |
+
+---
+
+## 🗺️ 4-Year Roadmap
+
+```
+2026 ──────────────────────────────────────────────────────── 2030
+  │                                                              │
+  ▼ YEAR 1           ▼ YEAR 2           ▼ YEAR 3    ▼ YEAR 4   │
+  Foundation         ERP & Contracts    Analytics   Specialise  │
+  ─────────          ──────────────     ─────────   ──────────  │
+  ✅ Project 4       Project 1 & 2      Projects    Project 6   │
+  Excel mastery      SAP MM · Oracle    3, 5, 7     MS Dynamics │
+  Odoo install       Power BI           Internship  Thesis      │
+  Acts 663 & 914     SLA drafting       Scorecard   Job-ready   │
+```
+
+---
+
+## 📚 KSTU Academic Progress
+
+**BSc Procurement & Supply Chain Management** · Kumasi Technical University
+
+| Year | Period | Key Modules | Focus Area |
+|------|--------|-------------|------------|
+| Year 1 | Oct 2026 – Jul 2027 | PSCM 163/164/165/166 · Computer Application · Quant Studies | Foundation + Excel + Ghana Law |
+| Year 2 | Oct 2027 – Jul 2028 | Legal Aspects I & II · Category Mgmt I & II · SCM · **Attachment I** | ERP + Contracts + Power BI |
+| Year 3 | Oct 2028 – Jul 2029 | Negotiation I & II · Public Procurement I & II · Strategic SCM | Analytics + Internship |
+| Year 4 | Oct 2029 – Jul 2030 | Managing Contracts · Logistics · E-Procurement · **PSCM 470 Thesis** | Specialise + Graduate |
+
+---
+
+## 📈 GitHub Stats
+
+<div align="center">
+
+![Frank's GitHub Stats](https://github-readme-stats.vercel.app/api?username=frank-oduro&show_icons=true&theme=dark&title_color=d4a843&icon_color=d4a843&text_color=ffffff&bg_color=0d2149&border_color=d4a843&hide_border=false)
+
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=frank-oduro&layout=compact&theme=dark&title_color=d4a843&text_color=ffffff&bg_color=0d2149&border_color=d4a843)
+
+</div>
+
+---
+
+## 📬 Contact & Connect
+
+<div align="center">
+
+[![Email](https://img.shields.io/badge/Email-frankoduro1912%40gmail.com-D4A843?style=for-the-badge&logo=gmail&logoColor=white)](mailto:frankoduro1912@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/frankoduro1912)
+[![Portfolio](https://img.shields.io/badge/Portfolio-frank--oduro.github.io-0d2149?style=for-the-badge&logo=github&logoColor=white)](https://frank-oduro.github.io)
+
+</div>
+
+---
+
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0d2149,d4a843&height=100&section=footer"/>
+
+*📍 Kumasi, Ghana · KSTU BSc Procurement & Supply Chain Management · Enrolled Oct 2026*
+
+**"The best time to build your portfolio was yesterday. The second best time is today."**
+
+</div>
