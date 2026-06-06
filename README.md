@@ -230,7 +230,16 @@ CIPS 7-step framework · Make-vs-buy · Competitive tendering
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0d2149,d4a843&height=100&section=footer"/>
+<!--Buy me a coffee-->
+<div align="center">
+<a href="https://www.buymeacoffee.com/Kiran1689" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 40px !important;width: 200px !important;" ></a>
+</div>
+
+
+<!--Footer--> 
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=65&section=footer"/>
+</p>
 
 *📍 Kumasi, Ghana · KSTU BSc Procurement & Supply Chain Management · Enrolled Oct 2026*
 
