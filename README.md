@@ -211,9 +211,28 @@ CIPS 7-step framework · Make-vs-buy · Competitive tendering
 
 <div align="center">
 
-[![Email](https://img.shields.io/badge/Email-frankoduro1912%40gmail.com-D4A843?style=for-the-badge&logo=gmail&logoColor=white)](mailto:frankoduro1912@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/frankoduro1912)
-[![Portfolio](https://img.shields.io/badge/Portfolio-ofrank--design.github.io-0d2149?style=for-the-badge&logo=github&logoColor=white)](https://https://github.com/Ofrank-design)
+<h2 align="center">🤝 Cᴏɴɴᴇᴄᴛ Wɪᴛʜ Mᴇ 🤝 </h2>
+<div align="center">
+  
+<a href="mailto:frankoduro1912@gmail.com" target="_blank">
+<img src="./gmail.png" width=50 height=50 alt="frankoduro1912" style="margin-bottom: 5px;" />
+</a>
+
+<a href="https://x.com/_anonymoustroy" target="_blank">
+<img src="./twitter.png" width=50 height=50 alt="kiran__a__n" style="margin-bottom: 5px;" />
+</a>
+
+<a href="https://www.instagram.com/_anonymoustroy" target="_blank">
+<img src="./instagram.png" width=50 height=50 alt="_anonymoustroy" style="margin-bottom: 5px;" />
+</a>
+
+<a href="https://www.githubcom/ofrank-design" target="_blank">
+<img src="./github.png" width=50 height=50 alt="ofrankdesign" style="margin-bottom: 5px;" />
+</a>
+
+<a href="https://www.linkedin.com/in/frankduro1912/" target="_blank">
+<img src="./linkedin.png" width=50 height=50 alt="linkedin" style="margin-bottom: 5px;" />
+</a>
 
 
 </div>
