@@ -218,7 +218,7 @@ CIPS 7-step framework · Make-vs-buy · Competitive tendering
 
 > **How to track:** Change ⬜ to ✅ and add `Completed — Month Year` as each program is finished. Upload the PDF certificate to the matching project folder.
 
-📄 **[View full certifications page →](https://ofrank-design.github.io/certifications.html)
+📄 **[View full certifications page →](https://ofrank-design.github.io/portfoliohtml)
                                   
 ---
 [![Email](https://img.shields.io/badge/Email-frankoduro1912%40gmail.com-D4A843?style=for-the-badge&logo=gmail&logoColor=white)](mailto:frankoduro1912@gmail.com)
