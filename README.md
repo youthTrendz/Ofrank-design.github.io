@@ -1,4 +1,7 @@
-<p align="center">
+<p align="center"> 
+  <p align="center">
+  <img src="./assets/global-logistics-banner.webp" alt="Global Logistics Banner" width="100%" style="border-radius: 8px;">
+</p>
   <!--Night Owl image-->
 <div>
   <img align="right" width="40%" src="https://owlbertsio-resized.s3.amazonaws.com/Popper.psd.full.png">
