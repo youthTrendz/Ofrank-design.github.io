@@ -1,6 +1,31 @@
 <p align="center"> 
   <p align="center">
-  <img src="./assets/global-logistics-banner.webp" alt="Global Logistics Banner" width="100%" style="border-radius: 8px;">
+<p align="center">
+  <img
+    src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/d3dc00bf-c4f7-4acc-889a-93a005e715ce.png"
+    alt="Luxury futuristic procurement banner"
+    width="100%"
+    style="max-width: 100%; height: auto;"
+  />
+</p>
+
+<h1 align="center">SupplyChainX</h1>
+
+<p align="center">
+  <strong>Next-Generation Intelligent Procurement &amp; Luxury Logistics Orchestration Engine</strong>
+</p>
+
+<p align="center">
+  <strong>frankoduro1912@gmail.com</strong> • <strong>@_anonymoustroy</strong> • <strong>frankoduro1912</strong>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Procurement-Enterprise-blueviolet?style=for-the-badge" alt="Procurement" />
+  <img src="https://img.shields.io/badge/Logistics-Luxury-black?style=for-the-badge" alt="Logistics" />
+  <img src="https://img.shields.io/badge/AI-Orchestrated-gold?style=for-the-badge" alt="AI" />
+</p>
+
+ 
 </p>
   <!--Night Owl image-->
 <div>
