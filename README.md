@@ -170,7 +170,7 @@ CIPS 7-step framework · Make-vs-buy · Competitive tendering
 </div>
 ---
 
-<table>
+<table><h2 align="center">
 <thead>
 <tr>
 <th>Program</th>
