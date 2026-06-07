@@ -225,7 +225,15 @@ CIPS 7-step framework · Make-vs-buy · Competitive tendering
 
 > **How to track:** Change ⬜ to ✅ and add `Completed — Month Year` as each program is finished. Upload the PDF certificate to the matching project folder.
 
-📄 **[View full certifications page →](https://ofrank-design.github.io/portfoliohtml)
+📄 **[View full certifications page →](https://ofrank-design.github.io/portfoliohtml)  <!-- open full guide button -->
+    <div class="reveal" style="margin-top:1.5rem">
+      <a href="study-guide.html" class="sg-open-btn" target="_blank">
+        📖 Open Full Interactive Study Guide →
+      </a>
+    </div>
+
+  </div>
+</section>
                                   
 --
 <h2 align="center">🤝 Cᴏɴɴᴇᴄᴛ Wɪᴛʜ Mᴇ 🤝 </h2>
