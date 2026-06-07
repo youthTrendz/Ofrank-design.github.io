@@ -264,7 +264,10 @@ CIPS 7-step framework · Make-vs-buy · Competitive tendering
 </p>
 
 *📍 Kumasi, Ghana · KSTU BSc Procurement & Supply Chain Management · Enrolled Oct 2026*
-
+<p align="center">
+  <i>“The way to get started is to quit talking and begin doing.”</i><br>
+  <strong>— Walt Disney</strong>
+</p>
 **"The best time to build your portfolio was yesterday. The second best time is today."**    
 
 
