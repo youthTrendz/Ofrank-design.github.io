@@ -218,7 +218,7 @@ CIPS 7-step framework · Make-vs-buy · Competitive tendering
 </tr>
 <tr>
 <td><strong>Excel for Business Certificate</strong></td>
-<td><a href="https://www.life-global.org">HP LIFE</a></td>
+<td><a href="https://alison.com">Alison</a></td>
 <td>PSCM 163 · Quantitative Studies</td>
 <td>Project 1 — Data Tracker</td>
 <td>⬜ To Do</td>
@@ -249,6 +249,41 @@ CIPS 7-step framework · Make-vs-buy · Competitive tendering
 <td><a href="https://open.edu/openlearn/">OpenLearn</a></td>
 <td>PSCM 166 · Stores Admin</td>
 <td>Project 8 — Operations Review</td>
+<td>⬜ To Do</td>
+</tr>
+<tr>
+<td><strong>Warehouse Management Diploma</strong></td>
+<td><a href="https://alison.com/course/diploma-in-warehouse-management-and-logistics">Alison</a></td>
+<td>PSCM 166 · Stores Administration</td>
+<td>Project 4 — Warehouse Flow</td>
+<td>⬜ To Do</td>
+</tr>
+<tr>
+<td><strong>Procurement and Logistics Certificate</strong></td>
+<td><a href="https://www.disasterready.org/procurement-logistics-certificate">DisasterReady + Mercy Corps</a></td>
+<td>PSCM 165/166 · Stores Admin</td>
+<td>Project 2 — Contract Mgmt</td>
+<td>⬜ To Do</td>
+</tr>
+<tr>
+<td><strong>Procurement and Contract Management</strong></td>
+<td><a href="https://uniathena.com/lms/student-dashboard/course-landing/196/executive-diploma-in-procurement-contract-management">UniAthena</a></td>
+<td>PSCM 363/364 · PSCM 467</td>
+<td>Project 7 — Compliance</td>
+<td>⬜ To Do</td>
+</tr>
+<tr>
+<td><strong>Introduction to Logistics</strong></td>
+<td><a href="https://alison.com">Alison</a></td>
+<td>PSCM 163 · Logistics Basics</td>
+<td>Project 8 — Operations Review</td>
+<td>⬜ To Do</td>
+</tr>
+<tr>
+<td><strong>Business Process Management</strong></td>
+<td><a href="https://alison.com">Alison</a></td>
+<td>PSCM 272 · Procurement Planning</td>
+<td>Project 6 — Process Improvement</td>
 <td>⬜ To Do</td>
 </tr>
 </tbody>
