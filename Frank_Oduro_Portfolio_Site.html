@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frank Oduro | Procurement & Supply Chain Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0a0f1e;
+  --navy: #0d2149;
+  --navy2: #163270;
+  --gold: #d4a843;
+  --gold2: #f0c96a;
+  --cream: #fdf8ee;
+  --cream2: #f5edd8;
+  --white: #ffffff;
+  --muted: #6b7a99;
+  --border: rgba(212,168,67,0.2);
+
+  --erp: #3b82f6;
+  --analytics: #10b981;
+  --contracts: #8b5cf6;
+  --supplier: #f97316;
+  --inventory: #06b6d4;
+  --sourcing: #eab308;
+  --compliance: #6b7280;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--ink);
+  color: var(--white);
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* ── CUSTOM CURSOR ── */
+.cursor {
+  width: 10px; height: 10px;
+  background: var(--gold);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform .15s ease;
+  transform: translate(-50%, -50%);
+}
+.cursor-ring {
+  width: 36px; height: 36px;
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transition: left .08s ease, top .08s ease, transform .15s ease;
+  transform: translate(-50%, -50%);
+  opacity: .5;
+}
+
+/* ── NOISE TEXTURE ── */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+  opacity: .4;
+}
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding: 6rem 2rem 4rem;
+  overflow: hidden;
+}
+
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(212,168,67,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212,168,67,0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.hero-glow {
+  position: absolute;
+  top: -200px; right: -200px;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(212,168,67,0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-glow2 {
+  position: absolute;
+  bottom: -300px; left: -100px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(13,33,73,0.8) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .2em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  animation: fadeUp .6s .2s forwards;
+}
+.hero-eyebrow::before {
+  content: '';
+  width: 30px; height: 1px;
+  background: var(--gold);
+}
+
+.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  line-height: 1;
+  color: var(--white);
+  margin-bottom: .5rem;
+  opacity: 0;
+  animation: fadeUp .6s .35s forwards;
+}
+.hero-name span {
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-title {
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  font-weight: 300;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  animation: fadeUp .6s .5s forwards;
+}
+.hero-title strong { color: rgba(255,255,255,0.85); font-weight: 500; }
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 3rem;
+  opacity: 0;
+  animation: fadeUp .6s .65s forwards;
+}
+.hero-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  padding: 6px 14px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  color: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.03);
+  transition: all .2s;
+}
+.hero-tag:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: rgba(212,168,67,0.06);
+}
+.hero-tag.gold {
+  background: rgba(212,168,67,0.1);
+  border-color: rgba(212,168,67,0.4);
+  color: var(--gold2);
+}
+
+.hero-cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp .6s .8s forwards;
+}
+.btn {
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'Outfit', sans-serif;
+  cursor: pointer;
+  transition: all .2s;
+  text-decoration: none;
+  letter-spacing: .04em;
+}
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  color: var(--ink);
+  border: none;
+}
+.btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(212,168,67,0.3); }
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+.hero-scroll {
+  position: absolute;
+  bottom: 2.5rem; left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  opacity: 0;
+  animation: fadeUp .6s 1.1s forwards;
+}
+.scroll-line {
+  width: 1px; height: 50px;
+  background: linear-gradient(to bottom, transparent, var(--gold));
+  animation: scrollPulse 2s infinite;
+}
+.scroll-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: .15em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+/* ── SECTIONS ── */
+section {
+  padding: 6rem 2rem;
+  position: relative;
+}
+.section-inner { max-width: 900px; margin: 0 auto; }
+
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .2em;
+  color: var(--gold);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+.section-label::after {
+  content: '';
+  flex: 1;
+  max-width: 60px;
+  height: 1px;
+  background: var(--gold);
+  opacity: .4;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 3rem;
+  line-height: 1.2;
+}
+.section-title span { color: var(--gold); }
+
+/* ── DIVIDER ── */
+.divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border), transparent);
+  margin: 0 2rem;
+}
+
+/* ── ABOUT ── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+.about-text {
+  font-size: 15px;
+  line-height: 1.9;
+  color: rgba(255,255,255,0.65);
+}
+.about-text p { margin-bottom: 1.2rem; }
+.about-text strong { color: var(--white); font-weight: 600; }
+
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.stat-box {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 16px;
+  text-align: center;
+  transition: all .3s;
+}
+.stat-box:hover {
+  background: rgba(212,168,67,0.06);
+  border-color: rgba(212,168,67,0.4);
+  transform: translateY(-3px);
+}
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+.stat-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 6px;
+  letter-spacing: .05em;
+}
+
+/* ── SKILLS ── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+.skill-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px;
+  padding: 22px 20px;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+}
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--skill-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .4s ease;
+}
+.skill-card:hover::before { transform: scaleX(1); }
+.skill-card:hover {
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.12);
+  transform: translateY(-4px);
+}
+.skill-icon {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+.skill-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+.skill-desc {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+.skill-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.tool-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 3px;
+  background: rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.5);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.skill-bar-wrap { margin-top: 12px; }
+.skill-bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--muted);
+  margin-bottom: 5px;
+  font-family: 'JetBrains Mono', monospace;
+}
+.skill-bar {
+  height: 3px;
+  background: rgba(255,255,255,0.07);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.skill-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: var(--skill-color);
+  width: 0;
+  transition: width 1.5s ease;
+}
+
+/* ── PROJECTS ── */
+.projects-grid {
+  display: grid;
+  gap: 16px;
+}
+.project-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 14px;
+  padding: 26px 28px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 20px;
+  align-items: start;
+  transition: all .3s;
+  cursor: default;
+}
+.project-card:hover {
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(212,168,67,0.25);
+  transform: translateX(4px);
+}
+.project-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: rgba(212,168,67,0.15);
+  line-height: 1;
+  min-width: 50px;
+  text-align: right;
+}
+.project-content {}
+.project-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+.project-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.meta-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+.project-status {
+  text-align: right;
+  flex-shrink: 0;
+}
+.status-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.status-done { background: rgba(16,185,129,0.12); color: #34d399; border: 1px solid rgba(16,185,129,0.2); }
+.status-y2 { background: rgba(59,130,246,0.1); color: #93c5fd; border: 1px solid rgba(59,130,246,0.2); }
+.status-y3 { background: rgba(139,92,246,0.1); color: #c4b5fd; border: 1px solid rgba(139,92,246,0.2); }
+.status-y4 { background: rgba(212,168,67,0.1); color: var(--gold2); border: 1px solid rgba(212,168,67,0.2); }
+
+/* ── ROADMAP ── */
+.roadmap {
+  position: relative;
+  padding-left: 30px;
+}
+.roadmap::before {
+  content: '';
+  position: absolute;
+  left: 8px; top: 8px; bottom: 8px;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+}
+.roadmap-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding-left: 30px;
+}
+.roadmap-item::before {
+  content: '';
+  position: absolute;
+  left: -26px; top: 8px;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 2px solid var(--ink);
+  box-shadow: 0 0 0 3px rgba(212,168,67,0.2);
+}
+.roadmap-year {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--gold);
+  letter-spacing: .1em;
+  margin-bottom: 4px;
+}
+.roadmap-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+.roadmap-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.roadmap-chip {
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.6);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ── CONTACT ── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+.contact-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  display: block;
+}
+.contact-card:hover {
+  background: rgba(212,168,67,0.06);
+  border-color: rgba(212,168,67,0.4);
+  transform: translateY(-3px);
+}
+.contact-icon { font-size: 1.5rem; margin-bottom: 8px; }
+.contact-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: .1em;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+.contact-value { font-size: 13px; color: var(--white); font-weight: 500; }
+
+/* ── FOOTER ── */
+footer {
+  padding: 2rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.footer-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+}
+.footer-gold { color: var(--gold); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: .3; }
+  50% { opacity: 1; }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media(max-width: 640px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .project-card { grid-template-columns: auto 1fr; }
+  .project-status { grid-column: 2; }
+  footer { flex-direction: column; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Procurement &amp; Supply Chain Portfolio</div>
+    <h1 class="hero-name">Frank <span>Oduro</span></h1>
+    <p class="hero-title">BSc Procurement &amp; Supply Chain Management<br><strong>Kumasi Technical University (KSTU)</strong> · Enrolled October 2026</p>
+    <div class="hero-tags">
+      <span class="hero-tag gold">📍 Kumasi, Ghana</span>
+      <span class="hero-tag">SAP MM</span>
+      <span class="hero-tag">Power BI</span>
+      <span class="hero-tag">Oracle Cloud</span>
+      <span class="hero-tag">Contract Management</span>
+      <span class="hero-tag">Ghana PPA Acts 663 &amp; 914</span>
+      <span class="hero-tag">7 Portfolio Projects</span>
+    </div>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-gold">View Projects</a>
+      <a href="#contact" class="btn btn-outline">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span class="scroll-text">Scroll</span>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ ABOUT ══ -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-label reveal">About</div>
+    <h2 class="section-title reveal">Building <span>Job-Ready</span> Skills<br>from Day One</h2>
+    <div class="about-grid reveal">
+      <div class="about-text">
+        <p>I'm a <strong>motivated procurement and supply chain student</strong> at Kumasi Technical University (KSTU), enrolled October 2026 with an expected graduation of 2030. I'm not waiting until graduation to build experience.</p>
+        <p>My approach: every semester of lectures is paired with a real <strong>hands-on portfolio project</strong> — SAP transactions, live Power BI dashboards built from Ghana e-GP data, actual SLA documents, and supplier scorecards. By graduation, recruiters won't have to take my word for it.</p>
+        <p>I'm committed to aligning procurement strategy with <strong>corporate governance, Ghana public procurement law,</strong> and global best practice from the very start of my career.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-box">
+          <div class="stat-num">7</div>
+          <div class="stat-label">Portfolio Projects</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">4</div>
+          <div class="stat-label">ERP Systems</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">28</div>
+          <div class="stat-label">KSTU Modules</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">2</div>
+          <div class="stat-label">Attachments</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ SKILLS ══ -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-label reveal">Core Skills</div>
+    <h2 class="section-title reveal">Technical <span>Expertise</span><br>In Development</h2>
+    <div class="skills-grid">
+
+      <div class="skill-card reveal" style="--skill-color: var(--erp)">
+        <div class="skill-icon">⚙️</div>
+        <div class="skill-name">ERP Systems</div>
+        <div class="skill-desc">Full procure-to-pay cycle across enterprise platforms used by Ghana's leading organisations.</div>
+        <div class="skill-tools">
+          <span class="tool-tag">SAP MM</span>
+          <span class="tool-tag">Odoo</span>
+          <span class="tool-tag">Oracle Cloud</span>
+          <span class="tool-tag">MS Dynamics 365</span>
+        </div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>Progress</span><span>Year 1 of 4</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="25" style="background:var(--erp)"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-card reveal" style="--skill-color: var(--analytics)">
+        <div class="skill-icon">📊</div>
+        <div class="skill-name">Procurement Analytics</div>
+        <div class="skill-desc">Converting raw Ghana e-GP procurement data into cost-saving dashboards and spend insights.</div>
+        <div class="skill-tools">
+          <span class="tool-tag">Excel Advanced</span>
+          <span class="tool-tag">Power BI</span>
+          <span class="tool-tag">SCOR KPIs</span>
+          <span class="tool-tag">Spend Analysis</span>
+        </div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>Progress</span><span>Building</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="30" style="background:var(--analytics)"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-card reveal" style="--skill-color: var(--contracts)">
+        <div class="skill-icon">📋</div>
+        <div class="skill-name">Contract Management</div>
+        <div class="skill-desc">Drafting SLAs, NDAs, and framework agreements using UNDP templates and Ghana e-GP standards.</div>
+        <div class="skill-tools">
+          <span class="tool-tag">SLA Drafting</span>
+          <span class="tool-tag">UNDP Templates</span>
+          <span class="tool-tag">KPI Benchmarking</span>
+          <span class="tool-tag">Negotiation</span>
+        </div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>Progress</span><span>Year 2 Target</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="15" style="background:var(--contracts)"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-card reveal" style="--skill-color: var(--supplier)">
+        <div class="skill-icon">🤝</div>
+        <div class="skill-name">Supplier Management</div>
+        <div class="skill-desc">Onboarding, risk assessment, performance scorecards, and continuous improvement frameworks.</div>
+        <div class="skill-tools">
+          <span class="tool-tag">Scorecards</span>
+          <span class="tool-tag">KPI Reviews</span>
+          <span class="tool-tag">Risk Assessment</span>
+          <span class="tool-tag">SRM</span>
+        </div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>Progress</span><span>Year 3 Target</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="10" style="background:var(--supplier)"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-card reveal" style="--skill-color: var(--inventory)">
+        <div class="skill-icon">📦</div>
+        <div class="skill-name">Inventory &amp; Logistics</div>
+        <div class="skill-desc">EOQ modelling, ABC classification, safety stock, demand forecasting, and Incoterms 2020.</div>
+        <div class="skill-tools">
+          <span class="tool-tag">EOQ Model</span>
+          <span class="tool-tag">ABC Analysis</span>
+          <span class="tool-tag">Safety Stock</span>
+          <span class="tool-tag">Incoterms 2020</span>
+        </div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>Progress</span><span>Project 4 ✅</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="35" style="background:var(--inventory)"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-card reveal" style="--skill-color: var(--sourcing)">
+        <div class="skill-icon">🎯</div>
+        <div class="skill-name">Strategic Sourcing</div>
+        <div class="skill-desc">TCO modelling, category management, make-vs-buy analysis, and competitive tendering strategy.</div>
+        <div class="skill-tools">
+          <span class="tool-tag">TCO Modelling</span>
+          <span class="tool-tag">Category Mgmt</span>
+          <span class="tool-tag">Tendering</span>
+          <span class="tool-tag">CIPS Framework</span>
+        </div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>Progress</span><span>Year 4 Target</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="8" style="background:var(--sourcing)"></div></div>
+        </div>
+      </div>
+
+      <div class="skill-card reveal" style="--skill-color: var(--compliance)">
+        <div class="skill-icon">⚖️</div>
+        <div class="skill-name">Compliance &amp; Ethics</div>
+        <div class="skill-desc">Ghana PPA Acts 663 &amp; 914, e-GP portal, ESG-aligned sourcing, and UN Global Compact principles.</div>
+        <div class="skill-tools">
+          <span class="tool-tag">Acts 663 &amp; 914</span>
+          <span class="tool-tag">Ghana e-GP</span>
+          <span class="tool-tag">UN Global Compact</span>
+          <span class="tool-tag">ESG Sourcing</span>
+        </div>
+        <div class="skill-bar-wrap">
+          <div class="skill-bar-label"><span>Progress</span><span>Building</span></div>
+          <div class="skill-bar"><div class="skill-bar-fill" data-width="20" style="background:var(--compliance)"></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ PROJECTS ══ -->
+<section id="projects">
+  <div class="section-inner">
+    <div class="section-label reveal">Portfolio</div>
+    <h2 class="section-title reveal">7 Real <span>Projects</span><br>Not Just Theory</h2>
+    <div class="projects-grid">
+
+      <div class="project-card reveal">
+        <div class="project-num">01</div>
+        <div class="project-content">
+          <div class="project-title">ERP: SAP MM Procure-to-Pay Workflow</div>
+          <div class="project-desc">Full P2P cycle execution on SAP S/4HANA: vendor creation → purchase requisition → purchase order → goods receipt → invoice verification. Documented with transaction screenshots.</div>
+          <div class="project-meta">
+            <span class="meta-tag" style="background:rgba(59,130,246,0.1);color:#93c5fd;border:1px solid rgba(59,130,246,0.2)">SAP S/4HANA</span>
+            <span class="meta-tag" style="background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.08)">15-page PDF</span>
+            <span class="meta-tag" style="background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.08)">1-erp-sap-mm/</span>
+          </div>
+        </div>
+        <div class="project-status"><span class="status-badge status-y2">Year 2 · 2027</span></div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-num">02</div>
+        <div class="project-content">
+          <div class="project-title">Contract Management: Mock SLA &amp; Negotiation</div>
+          <div class="project-desc">5-page Service Level Agreement drafted using UNDP templates and Ghana e-GP standards. Negotiation simulation targeting 15% price reduction with documented outcome summary.</div>
+          <div class="project-meta">
+            <span class="meta-tag" style="background:rgba(139,92,246,0.1);color:#c4b5fd;border:1px solid rgba(139,92,246,0.2)">UNDP Templates</span>
+            <span class="meta-tag" style="background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.08)">Ghana e-GP</span>
+            <span class="meta-tag" style="background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.08)">2-contract-management/</span>
+          </div>
+        </div>
+        <div class="project-status"><span class="status-badge status-y2">Year 2 · 2027</span></div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-num">03</div>
+        <div class="project-content">
+          <div class="project-title">Supplier Management: Scorecard &amp; KPI Dashboard</div>
+          <div class="project-desc">Weighted supplier scorecard for 10 mock vendors across OTD %, quality rejection rate, price variance, and responsiveness. Visualised in Power BI with insights report.</div>
+          <div class="project-meta">
+            <span class="meta-tag" style="background:rgba(249,115,22,0.1);color:#fdba74;border:1px solid rgba(249,115,22,0.2)">Excel</span>
+            <span class="meta-tag" style="background:rgba(249,115,22,0.1);color:#fdba74;border:1px solid rgba(249,115,22,0.2)">Power BI</span>
+            <span class="meta-tag" style="background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.08)">3-supplier-scorecard/</span>
+          </div>
+        </div>
+        <div class="project-status"><span class="status-badge status-y3">Year 3 · 2028</span></div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-num">04</div>
+        <div class="project-content">
+          <div class="project-title">Inventory Optimization Model ✅</div>
+          <div class="project-desc">Full Excel model for 20 Ghana-context SKUs: EOQ calculations, ABC classification, safety stock & reorder points, and cost savings dashboard. First completed project — uploaded October 2026.</div>
+          <div class="project-meta">
+            <span class="meta-tag" style="background:rgba(16,185,129,0.1);color:#34d399;border:1px solid rgba(16,185,129,0.2)">Excel Advanced</span>
+            <span class="meta-tag" style="background:rgba(16,185,129,0.1);color:#34d399;border:1px solid rgba(16,185,129,0.2)">EOQ · ABC · Safety Stock</span>
+            <span class="meta-tag" style="background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.08)">4-inventory-logistics/</span>
+          </div>
+        </div>
+        <div class="project-status"><span class="status-badge status-done">✅ Completed</span></div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-num">05</div>
+        <div class="project-content">
+          <div class="project-title">Procurement Analytics: Ghana Spend Dashboard</div>
+          <div class="project-desc">Real Ghana public procurement data from e-GP portal analysed in Power BI. Identifies GHS 2.3M consolidation opportunity and 18% potential savings across supplier categories.</div>
+          <div class="project-meta">
+            <span class="meta-tag" style="background:rgba(6,182,212,0.1);color:#67e8f9;border:1px solid rgba(6,182,212,0.2)">Power BI</span>
+            <span class="meta-tag" style="background:rgba(6,182,212,0.1);color:#67e8f9;border:1px solid rgba(6,182,212,0.2)">Ghana e-GP Data</span>
+            <span class="meta-tag" style="background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.08)">5-procurement-analytics/</span>
+          </div>
+        </div>
+        <div class="project-status"><span class="status-badge status-y3">Year 3 · 2028</span></div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-num">06</div>
+        <div class="project-content">
+          <div class="project-title">Strategic Sourcing: IT Category Management Plan</div>
+          <div class="project-desc">10-page sourcing strategy for IT equipment category in a 500-employee company. Full TCO model, make-vs-buy analysis, supplier shortlist, and presentation deck using CIPS 7-step framework.</div>
+          <div class="project-meta">
+            <span class="meta-tag" style="background:rgba(234,179,8,0.1);color:#fde047;border:1px solid rgba(234,179,8,0.2)">CIPS Framework</span>
+            <span class="meta-tag" style="background:rgba(234,179,8,0.1);color:#fde047;border:1px solid rgba(234,179,8,0.2)">TCO Model</span>
+            <span class="meta-tag" style="background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.08)">6-strategic-sourcing/</span>
+          </div>
+        </div>
+        <div class="project-status"><span class="status-badge status-y4">Year 4 · 2029</span></div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-num">07</div>
+        <div class="project-content">
+          <div class="project-title">Compliance &amp; Ethics: Tender Risk Assessment</div>
+          <div class="project-desc">Live Ghana e-GP tender analysed against Public Procurement Acts 663 &amp; 914 and UN Global Compact principles. Compliance checklist, risk rating matrix, and corrective action recommendations.</div>
+          <div class="project-meta">
+            <span class="meta-tag" style="background:rgba(107,114,128,0.15);color:#d1d5db;border:1px solid rgba(107,114,128,0.2)">GhanaLII</span>
+            <span class="meta-tag" style="background:rgba(107,114,128,0.15);color:#d1d5db;border:1px solid rgba(107,114,128,0.2)">Acts 663 &amp; 914</span>
+            <span class="meta-tag" style="background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.08)">7-compliance-ethics/</span>
+          </div>
+        </div>
+        <div class="project-status"><span class="status-badge status-y3">Year 3 · 2028</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ ROADMAP ══ -->
+<section id="roadmap">
+  <div class="section-inner">
+    <div class="section-label reveal">Journey</div>
+    <h2 class="section-title reveal">4-Year <span>Roadmap</span><br>to Employer-Ready</h2>
+    <div class="roadmap reveal">
+      <div class="roadmap-item">
+        <div class="roadmap-year">YEAR 1 · 2026–2027</div>
+        <div class="roadmap-title">Foundation — Excel, Inventory, Ghana Law, Odoo</div>
+        <div class="roadmap-items">
+          <span class="roadmap-chip">✅ Project 4 Complete</span>
+          <span class="roadmap-chip">Excel mastery</span>
+          <span class="roadmap-chip">Odoo installed</span>
+          <span class="roadmap-chip">Acts 663 &amp; 914 read</span>
+          <span class="roadmap-chip">PSCM 163–166</span>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-year">YEAR 2 · 2027–2028</div>
+        <div class="roadmap-title">ERP &amp; Contracts — SAP MM, Oracle, Power BI, SLA</div>
+        <div class="roadmap-items">
+          <span class="roadmap-chip">Project 1 — SAP P2P</span>
+          <span class="roadmap-chip">Project 2 — SLA Doc</span>
+          <span class="roadmap-chip">Industrial Attachment I</span>
+          <span class="roadmap-chip">PSCM 261–272</span>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-year">YEAR 3 · 2028–2029</div>
+        <div class="roadmap-title">Analytics &amp; Internship — Power BI, Supplier, Compliance</div>
+        <div class="roadmap-items">
+          <span class="roadmap-chip">Projects 3, 5, 7</span>
+          <span class="roadmap-chip">Internship secured</span>
+          <span class="roadmap-chip">Live dashboard published</span>
+          <span class="roadmap-chip">PSCM 361–368</span>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-year">YEAR 4 · 2029–2030</div>
+        <div class="roadmap-title">Specialisation — Strategic Sourcing, MS Dynamics, Thesis</div>
+        <div class="roadmap-items">
+          <span class="roadmap-chip">Project 6 — Sourcing</span>
+          <span class="roadmap-chip">All 7 projects live</span>
+          <span class="roadmap-chip">Industrial Attachment II</span>
+          <span class="roadmap-chip">First job offer</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ CONTACT ══ -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-label reveal">Contact</div>
+    <h2 class="section-title reveal">Let's <span>Connect</span></h2>
+    <div class="contact-grid reveal">
+      <a href="mailto:frankoduro1912@gmail.com" class="contact-card">
+        <div class="contact-icon">✉️</div>
+        <div class="contact-label">Email</div>
+        <div class="contact-value">frankoduro1912@gmail.com</div>
+      </a>
+      <a href="https://linkedin.com/in/frankoduro1912" class="contact-card" target="_blank">
+        <div class="contact-icon">💼</div>
+        <div class="contact-label">LinkedIn</div>
+        <div class="contact-value">frankoduro1912</div>
+      </a>
+      <a href="https://github.com/Ofrank-design" class="contact-card" target="_blank">
+        <div class="contact-icon">🐙</div>
+        <div class="contact-label">GitHub</div>
+        <div class="contact-value">Ofrank-design</div>
+      </a>
+      <a href="https://frankoduro.github.io" class="contact-card" target="_blank">
+        <div class="contact-icon">🌐</div>
+        <div class="contact-label">Portfolio</div>
+        <div class="contact-value">frankoduro.github.io</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-text">Built with dedication by <span class="footer-gold">Frank Oduro</span> · KSTU · Enrolled Oct 2026</span>
+  <span class="footer-text">Last updated: <span class="footer-gold">October 2026</span></span>
+</footer>
+
+<script>
+// Custom cursor
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+let mx = 0, my = 0;
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  cursor.style.left = mx + 'px';
+  cursor.style.top = my + 'px';
+  ring.style.left = mx + 'px';
+  ring.style.top = my + 'px';
+});
+document.querySelectorAll('a, button, .skill-card, .project-card, .stat-box').forEach(el => {
+  el.addEventListener('mouseenter', () => cursor.style.transform = 'translate(-50%,-50%) scale(2.5)');
+  el.addEventListener('mouseleave', () => cursor.style.transform = 'translate(-50%,-50%) scale(1)');
+});
+
+// Scroll reveal
+const observer = new IntersectionObserver(entries => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Skill bars
+const barObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
+        bar.style.width = bar.dataset.width + '%';
+      });
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('.skill-card').forEach(card => barObserver.observe(card));
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>
