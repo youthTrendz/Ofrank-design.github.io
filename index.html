@@ -1508,6 +1508,43 @@ footer {
 
 <div class="divider"></div>
 
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <span class="footer-text"><span class="footer-gold">Frank Oduro</span> · KSTU BSc Procurement &amp; Supply Chain · 2026–2030</span>
+  <span class="footer-text"><a href="index.html" style="color:var(--gold);text-decoration:none">MY LIVE PORTFOLIO </a></span>
+</footer>
+
+<script>
+// Cursor
+const cur = document.getElementById('cur'), curR = document.getElementById('curR');
+document.addEventListener('mousemove', e => {
+  cur.style.left = e.clientX+'px'; cur.style.top = e.clientY+'px';
+  curR.style.left = e.clientX+'px'; curR.style.top = e.clientY+'px';
+});
+document.querySelectorAll('a,.cert-card,.tip-card').forEach(el => {
+  el.addEventListener('mouseenter', () => cur.style.transform='translate(-50%,-50%) scale(2.5)');
+  el.addEventListener('mouseleave', () => cur.style.transform='translate(-50%,-50%) scale(1)');
+});
+
+// Scroll reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => { if(e.isIntersecting) setTimeout(() => e.target.classList.add('vis'), i*90); });
+}, { threshold:.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Progress bars
+const barObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting) {
+      e.target.querySelectorAll('.prog-fill').forEach(b => { b.style.width = (b.dataset.w||0)+'%'; });
+    }
+  });
+}, { threshold:.3 });
+document.querySelectorAll('.cert-card').forEach(c => barObs.observe(c));
+</script>
+</body>
+</html>
+
 <!-- ══ STUDY GUIDE ══ -->
 <section id="studyguide">
   <div class="section-inner">
