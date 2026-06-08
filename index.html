@@ -633,7 +633,68 @@ section {
   .cert-card-main { grid-template-columns:auto 1fr; }
   .cert-right-main { grid-column:2; }
 }
-
+/* ── CERT TIMELINE ── */
+.ct-timeline {
+  position: relative;
+  padding-left: 28px;
+}
+.ct-timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px; top: 8px; bottom: 8px;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+}
+.ct-item {
+  position: relative;
+  margin-bottom: 2.2rem;
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+.ct-dot {
+  position: absolute;
+  left: -24px; top: 6px;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 2px solid var(--ink);
+  box-shadow: 0 0 0 3px rgba(212,168,67,0.2);
+  flex-shrink: 0;
+}
+.ct-body { flex: 1; }
+.ct-when {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .1em;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+.ct-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+.ct-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.ct-chip {
+  font-size: 11px;
+  padding: 4px 11px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.6);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: all .2s;
+}
+.ct-chip:hover {
+  background: rgba(255,255,255,0.08);
+  color: var(--white);
+  border-color: rgba(255,255,255,0.15);
+}
 /* ── STUDY GUIDE ── */
 .sg-commit {
   background: var(--navy);
@@ -1385,7 +1446,121 @@ footer {
 </section>
 
 <div class="divider"></div>
+<div class="divider"></div>
 
+<!-- ══ CERT TIMELINE ══ -->
+<section id="certtimeline">
+  <div class="section-inner">
+    <div class="section-label reveal">Schedule</div>
+    <h2 class="section-title reveal">When to Complete <span>Each Certificate</span></h2>
+
+    <div class="ct-timeline reveal">
+
+      <div class="ct-item">
+        <div class="ct-dot"></div>
+        <div class="ct-body">
+          <div class="ct-when">YEAR 1 · SEM 1 · Oct 2026 – Feb 2027</div>
+          <div class="ct-title">Foundation — Start These 4 First</div>
+          <div class="ct-chips">
+            <span class="ct-chip" style="--cc:#8b5cf6">1. Alison — SCM Diploma</span>
+            <span class="ct-chip" style="--cc:#3b82f6">2. HP LIFE — Inventory Management</span>
+            <span class="ct-chip" style="--cc:#16a34a">3. Alison — Excel for Business</span>
+            <span class="ct-chip" style="--cc:#d4a843">4. HP LIFE — Business Communication</span>
+            <span class="ct-chip" style="--cc:#6b7280">~2 hrs/week · Weekends</span>
+            <span class="ct-chip" style="--cc:#6b7280">PSCM 163/165 · Computer Application</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ct-item">
+        <div class="ct-dot"></div>
+        <div class="ct-body">
+          <div class="ct-when">YEAR 1 · SEM 2 · Mar 2027 – Jul 2027</div>
+          <div class="ct-title">Logistics Basics — Build on the Foundation</div>
+          <div class="ct-chips">
+            <span class="ct-chip" style="--cc:#0ea5e9">5. Alison — Introduction to Logistics</span>
+            <span class="ct-chip" style="--cc:#0891b2">6. OpenLearn — Business Management Diploma</span>
+            <span class="ct-chip" style="--cc:#6b7280">~2 hrs/week · Weekends</span>
+            <span class="ct-chip" style="--cc:#6b7280">PSCM 164/166 · Quantitative Studies</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ct-item">
+        <div class="ct-dot"></div>
+        <div class="ct-body">
+          <div class="ct-when">YEAR 2 · SEM 1 · Oct 2027 – Feb 2028</div>
+          <div class="ct-title">Procurement & Operations Deep Dive</div>
+          <div class="ct-chips">
+            <span class="ct-chip" style="--cc:#10b981">7. DisasterReady — Procurement & Logistics</span>
+            <span class="ct-chip" style="--cc:#e11d48">8. DisasterReady — Procurement & Logistics Cert</span>
+            <span class="ct-chip" style="--cc:#7c3aed">9. HP LIFE — Project Management</span>
+            <span class="ct-chip" style="--cc:#6b7280">~3 hrs/week · Pairs with Attachment I</span>
+            <span class="ct-chip" style="--cc:#6b7280">PSCM 261/265 · Legal Aspects</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ct-item">
+        <div class="ct-dot"></div>
+        <div class="ct-body">
+          <div class="ct-when">YEAR 2 · SEM 2 · Mar 2028 – Jul 2028</div>
+          <div class="ct-title">Analytics & Warehouse Skills</div>
+          <div class="ct-chips">
+            <span class="ct-chip" style="--cc:#06b6d4">10. Microsoft Learn — Power BI Learning Path</span>
+            <span class="ct-chip" style="--cc:#b45309">11. Alison — Warehouse Management Diploma</span>
+            <span class="ct-chip" style="--cc:#6b7280">~3 hrs/week</span>
+            <span class="ct-chip" style="--cc:#6b7280">PSCM 272 · Category Management II</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ct-item">
+        <div class="ct-dot"></div>
+        <div class="ct-body">
+          <div class="ct-when">YEAR 3 · SEM 1 · Oct 2028 – Feb 2029</div>
+          <div class="ct-title">Operations, Process & Compliance</div>
+          <div class="ct-chips">
+            <span class="ct-chip" style="--cc:#1d9e75">12. OpenLearn — Logistics & Operations Certificate</span>
+            <span class="ct-chip" style="--cc:#f59e0b">13. Alison — Business Process Management</span>
+            <span class="ct-chip" style="--cc:#6b7280">~3 hrs/week</span>
+            <span class="ct-chip" style="--cc:#6b7280">PSCM 363/365 · Strategic SCM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ct-item">
+        <div class="ct-dot"></div>
+        <div class="ct-body">
+          <div class="ct-when">YEAR 3 · SEM 2 · Mar 2029 – Jul 2029</div>
+          <div class="ct-title">Advanced Procurement & Public Systems</div>
+          <div class="ct-chips">
+            <span class="ct-chip" style="--cc:#f97316">14. World Bank — E-Procurement Program</span>
+            <span class="ct-chip" style="--cc:#6366f1">15. UniAthena — Procurement & Contract Management</span>
+            <span class="ct-chip" style="--cc:#6b7280">~3 hrs/week</span>
+            <span class="ct-chip" style="--cc:#6b7280">PSCM 364/467 · Public Procurement II</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ct-item">
+        <div class="ct-dot" style="background:var(--gold);box-shadow:0 0 0 4px rgba(212,168,67,0.25)"></div>
+        <div class="ct-body">
+          <div class="ct-when">YEAR 4 · 2029–2030</div>
+          <div class="ct-title">All 15 Complete — CV, README &amp; LinkedIn Updated</div>
+          <div class="ct-chips">
+            <span class="ct-chip" style="--cc:#16a34a">✅ All 15 certificates done</span>
+            <span class="ct-chip" style="--cc:#16a34a">LinkedIn badges added</span>
+            <span class="ct-chip" style="--cc:#16a34a">GitHub README updated</span>
+            <span class="ct-chip" style="--cc:#16a34a">Resume certifications section full</span>
+            <span class="ct-chip" style="--cc:#d4a843">🎓 Job-ready 2030</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- ══ STUDY GUIDE ══ -->
 <section id="studyguide">
