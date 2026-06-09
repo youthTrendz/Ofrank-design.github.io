@@ -156,9 +156,9 @@ CIPS 7-step framework · Make-vs-buy · Competitive tendering
 
 <div align="center">
 
-![Frank's GitHub Stats](https://github-readme-stats.vercel.app/api?username=frank-oduro&show_icons=true&theme=dark&title_color=d4a843&icon_color=d4a843&text_color=ffffff&bg_color=0d2149&border_color=d4a843&hide_border=false)
+![Frank's GitHub Stats](https://github-readme-stats.vercel.app/api?username=ofrank-design&show_icons=true&theme=dark&title_color=d4a843&icon_color=d4a843&text_color=ffffff&bg_color=0d2149&border_color=d4a843&hide_border=false)
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=frank-oduro&layout=compact&theme=dark&title_color=d4a843&text_color=ffffff&bg_color=0d2149&border_color=d4a843)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ofrank-design&layout=compact&theme=dark&title_color=d4a843&text_color=ffffff&bg_color=0d2149&border_color=d4a843)
 
 
 # 📈 Contribution Graph
