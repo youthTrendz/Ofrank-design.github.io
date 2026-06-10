@@ -1,912 +1,293 @@
+e · HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Frank Oduro | Procurement & Supply Chain Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta name="description" content="Frank Oduro — BSc Procurement & Supply Chain Management student at KSTU, Kumasi Ghana. Building a hands-on portfolio from Day 1.">
+<meta name="author" content="Frank Oduro">
+<meta property="og:title" content="Frank Oduro | Procurement & SCM Portfolio">
+<meta property="og:description" content="BSc Procurement & Supply Chain Management — KSTU Ghana. 7 Projects. 4 ERP Systems. 30 Certifications.">
+<meta property="og:url" content="https://ofrank-design.github.io">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  --ink: #0a0f1e;
-  --navy: #0d2149;
-  --navy2: #163270;
-  --gold: #d4a843;
-  --gold2: #f0c96a;
-  --cream: #fdf8ee;
-  --cream2: #f5edd8;
-  --white: #ffffff;
-  --muted: #6b7a99;
-  --border: rgba(212,168,67,0.2);
-
-  --erp: #3b82f6;
-  --analytics: #10b981;
-  --contracts: #8b5cf6;
-  --supplier: #f97316;
-  --inventory: #06b6d4;
-  --sourcing: #eab308;
-  --compliance: #6b7280;
+  --ink:#06091a;--navy:#0d2149;--navy2:#163270;--navy3:#1e4096;
+  --gold:#d4a843;--gold2:#f0c96a;--gold3:#fde68a;
+  --cream:#fdf8ee;--white:#ffffff;--muted:#5a6a88;--muted2:#8899bb;
+  --border:rgba(212,168,67,0.18);--border2:rgba(255,255,255,0.07);
+  --erp:#3b82f6;--analytics:#10b981;--contracts:#8b5cf6;
+  --supplier:#f97316;--inventory:#06b6d4;--sourcing:#eab308;--compliance:#6b7280;
+  --radius:12px;--radius-sm:6px;--radius-lg:16px;
+  --shadow:0 4px 24px rgba(0,0,0,0.4);
+  --transition:all .3s cubic-bezier(.4,0,.2,1);
 }
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: 'Outfit', sans-serif;
-  background: var(--ink);
-  color: var(--white);
-  overflow-x: hidden;
-  cursor: none;
-}
-
-/* ── CUSTOM CURSOR ── */
-.cursor {
-  width: 10px; height: 10px;
-  background: var(--gold);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-  transition: transform .15s ease;
-  transform: translate(-50%, -50%);
-}
-.cursor-ring {
-  width: 36px; height: 36px;
-  border: 1.5px solid var(--gold);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9998;
-  transition: left .08s ease, top .08s ease, transform .15s ease;
-  transform: translate(-50%, -50%);
-  opacity: .5;
-}
-
-/* ── NOISE TEXTURE ── */
-body::before {
-  content: '';
-  position: fixed; inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 1;
-  opacity: .4;
-}
-
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Outfit',sans-serif;background:var(--ink);color:var(--white);overflow-x:hidden;cursor:none;line-height:1.6}
+::selection{background:rgba(212,168,67,0.3);color:var(--white)}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--ink)}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px}
+ 
+/* ── CURSOR ── */
+#cur{position:fixed;width:10px;height:10px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .15s,width .15s,height .15s;mix-blend-mode:difference}
+#curR{position:fixed;width:38px;height:38px;border:1.5px solid rgba(212,168,67,0.6);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:left .06s,top .06s;opacity:.5}
+ 
+/* ── NOISE + GRID ── */
+body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(212,168,67,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(212,168,67,0.035) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0}
+ 
+/* ── NAV ── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:.9rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(6,9,26,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:var(--transition)}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--white);text-decoration:none}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-link{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;color:var(--muted2);text-decoration:none;transition:color .2s;text-transform:uppercase}
+.nav-link:hover{color:var(--gold)}
+.nav-cta{font-family:'JetBrains Mono',monospace;font-size:11px;padding:7px 16px;border-radius:var(--radius-sm);background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--ink);font-weight:600;text-decoration:none;transition:var(--transition)}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(212,168,67,0.3)}
+@media(max-width:768px){.nav-links{display:none}}
+ 
 /* ── HERO ── */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  padding: 6rem 2rem 4rem;
-  overflow: hidden;
-}
-
-.hero-grid {
-  position: absolute; inset: 0;
-  background-image:
-    linear-gradient(rgba(212,168,67,0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(212,168,67,0.06) 1px, transparent 1px);
-  background-size: 60px 60px;
-}
-.hero-glow {
-  position: absolute;
-  top: -200px; right: -200px;
-  width: 700px; height: 700px;
-  background: radial-gradient(circle, rgba(212,168,67,0.12) 0%, transparent 65%);
-  pointer-events: none;
-}
-.hero-glow2 {
-  position: absolute;
-  bottom: -300px; left: -100px;
-  width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(13,33,73,0.8) 0%, transparent 65%);
-  pointer-events: none;
-}
-
-.hero-inner {
-  max-width: 900px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
-}
-
-.hero-eyebrow {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  letter-spacing: .2em;
-  color: var(--gold);
-  text-transform: uppercase;
-  margin-bottom: 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  opacity: 0;
-  animation: fadeUp .6s .2s forwards;
-}
-.hero-eyebrow::before {
-  content: '';
-  width: 30px; height: 1px;
-  background: var(--gold);
-}
-
-.hero-name {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(3rem, 8vw, 6rem);
-  font-weight: 900;
-  line-height: 1;
-  color: var(--white);
-  margin-bottom: .5rem;
-  opacity: 0;
-  animation: fadeUp .6s .35s forwards;
-}
-.hero-name span {
-  background: linear-gradient(135deg, var(--gold), var(--gold2));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.hero-title {
-  font-size: clamp(1rem, 2.5vw, 1.4rem);
-  font-weight: 300;
-  color: rgba(255,255,255,0.55);
-  margin-bottom: 2.5rem;
-  opacity: 0;
-  animation: fadeUp .6s .5s forwards;
-}
-.hero-title strong { color: rgba(255,255,255,0.85); font-weight: 500; }
-
-.hero-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 3rem;
-  opacity: 0;
-  animation: fadeUp .6s .65s forwards;
-}
-.hero-tag {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  padding: 6px 14px;
-  border-radius: 4px;
-  border: 1px solid var(--border);
-  color: rgba(255,255,255,0.6);
-  background: rgba(255,255,255,0.03);
-  transition: all .2s;
-}
-.hero-tag:hover {
-  border-color: var(--gold);
-  color: var(--gold);
-  background: rgba(212,168,67,0.06);
-}
-.hero-tag.gold {
-  background: rgba(212,168,67,0.1);
-  border-color: rgba(212,168,67,0.4);
-  color: var(--gold2);
-}
-
-.hero-cta {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  opacity: 0;
-  animation: fadeUp .6s .8s forwards;
-}
-.btn {
-  padding: 12px 28px;
-  border-radius: 6px;
-  font-size: 13px;
-  font-weight: 600;
-  font-family: 'Outfit', sans-serif;
-  cursor: pointer;
-  transition: all .2s;
-  text-decoration: none;
-  letter-spacing: .04em;
-}
-.btn-gold {
-  background: linear-gradient(135deg, var(--gold), var(--gold2));
-  color: var(--ink);
-  border: none;
-}
-.btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(212,168,67,0.3); }
-.btn-outline {
-  background: transparent;
-  color: var(--white);
-  border: 1px solid rgba(255,255,255,0.2);
-}
-.btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
-
-.hero-scroll {
-  position: absolute;
-  bottom: 2.5rem; left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  opacity: 0;
-  animation: fadeUp .6s 1.1s forwards;
-}
-.scroll-line {
-  width: 1px; height: 50px;
-  background: linear-gradient(to bottom, transparent, var(--gold));
-  animation: scrollPulse 2s infinite;
-}
-.scroll-text {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px;
-  letter-spacing: .15em;
-  color: var(--muted);
-  text-transform: uppercase;
-}
-
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;padding:7rem 2rem 4rem;overflow:hidden}
+.hero-orb1{position:absolute;top:-300px;right:-200px;width:800px;height:800px;background:radial-gradient(circle,rgba(212,168,67,0.1) 0%,transparent 65%);pointer-events:none;animation:orbFloat 8s ease-in-out infinite}
+.hero-orb2{position:absolute;bottom:-400px;left:-150px;width:700px;height:700px;background:radial-gradient(circle,rgba(13,33,73,0.8) 0%,transparent 65%);pointer-events:none}
+.hero-orb3{position:absolute;top:30%;left:50%;width:400px;height:400px;background:radial-gradient(circle,rgba(59,130,246,0.05) 0%,transparent 65%);pointer-events:none}
+@keyframes orbFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-30px)}}
+.hero-inner{max-width:960px;margin:0 auto;position:relative;z-index:2;width:100%}
+.hero-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:1.5rem;opacity:0;animation:fadeUp .6s .2s forwards}
+.hero-eyebrow::before{content:'';width:30px;height:1px;background:var(--gold)}
+.hero-name{font-family:'Playfair Display',serif;font-size:clamp(3.2rem,9vw,7rem);font-weight:900;line-height:.95;color:var(--white);margin-bottom:.4rem;opacity:0;animation:fadeUp .6s .35s forwards}
+.hero-name em{font-style:italic;background:linear-gradient(135deg,var(--gold),var(--gold2),var(--gold3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-role{font-size:clamp(1rem,2.5vw,1.4rem);font-weight:300;color:rgba(255,255,255,0.5);margin-bottom:2.5rem;opacity:0;animation:fadeUp .6s .5s forwards}
+.hero-role strong{color:rgba(255,255,255,0.85);font-weight:600}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:3rem;opacity:0;animation:fadeUp .6s .65s forwards}
+.hero-tag{font-family:'JetBrains Mono',monospace;font-size:11px;padding:6px 14px;border-radius:var(--radius-sm);border:1px solid var(--border);color:rgba(255,255,255,0.55);background:rgba(255,255,255,0.03);transition:var(--transition)}
+.hero-tag:hover{border-color:var(--gold);color:var(--gold);background:rgba(212,168,67,0.06)}
+.hero-tag.gold{background:rgba(212,168,67,0.1);border-color:rgba(212,168,67,0.4);color:var(--gold2)}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;opacity:0;animation:fadeUp .6s .8s forwards}
+.btn{padding:13px 30px;border-radius:var(--radius-sm);font-size:13px;font-weight:600;font-family:'Outfit',sans-serif;cursor:pointer;transition:var(--transition);text-decoration:none;letter-spacing:.04em;display:inline-flex;align-items:center;gap:8px}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:var(--ink);border:none}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(212,168,67,0.35)}
+.btn-outline{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,0.2)}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px)}
+.hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;opacity:0;animation:fadeUp .6s 1.1s forwards}
+.scroll-line{width:1px;height:50px;background:linear-gradient(to bottom,transparent,var(--gold));animation:scrollPulse 2s infinite}
+.scroll-text{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.15em;color:var(--muted);text-transform:uppercase}
+ 
 /* ── SECTIONS ── */
-section {
-  padding: 6rem 2rem;
-  position: relative;
-}
-.section-inner { max-width: 900px; margin: 0 auto; }
-
-.section-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  letter-spacing: .2em;
-  color: var(--gold);
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 1rem;
-}
-.section-label::after {
-  content: '';
-  flex: 1;
-  max-width: 60px;
-  height: 1px;
-  background: var(--gold);
-  opacity: .4;
-}
-.section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
-  font-weight: 700;
-  color: var(--white);
-  margin-bottom: 3rem;
-  line-height: 1.2;
-}
-.section-title span { color: var(--gold); }
-
-/* ── DIVIDER ── */
-.divider {
-  height: 1px;
-  background: linear-gradient(to right, transparent, var(--border), transparent);
-  margin: 0 2rem;
-}
-
+section{padding:6rem 2rem;position:relative;z-index:1}
+.section-inner{max-width:960px;margin:0 auto}
+.section-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:.8rem}
+.section-label::after{content:'';flex:1;max-width:50px;height:1px;background:var(--gold);opacity:.4}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4.5vw,3.2rem);font-weight:700;color:var(--white);margin-bottom:3rem;line-height:1.15}
+.section-title span{color:var(--gold)}
+.divider{height:1px;background:linear-gradient(to right,transparent,var(--border),transparent);margin:0 2rem;position:relative;z-index:1}
+ 
 /* ── ABOUT ── */
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: start;
-}
-.about-text {
-  font-size: 15px;
-  line-height: 1.9;
-  color: rgba(255,255,255,0.65);
-}
-.about-text p { margin-bottom: 1.2rem; }
-.about-text strong { color: var(--white); font-weight: 600; }
-
-.about-stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-.stat-box {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 20px 16px;
-  text-align: center;
-  transition: all .3s;
-}
-.stat-box:hover {
-  background: rgba(212,168,67,0.06);
-  border-color: rgba(212,168,67,0.4);
-  transform: translateY(-3px);
-}
-.stat-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: var(--gold);
-  line-height: 1;
-}
-.stat-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  color: var(--muted);
-  margin-top: 6px;
-  letter-spacing: .05em;
-}
-
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
+.about-text{font-size:15px;line-height:1.9;color:rgba(255,255,255,0.6)}
+.about-text p{margin-bottom:1.25rem}
+.about-text strong{color:var(--white);font-weight:600}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stat-box{background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:var(--radius);padding:22px 18px;text-align:center;transition:var(--transition);cursor:default}
+.stat-box:hover{background:rgba(212,168,67,0.06);border-color:rgba(212,168,67,0.4);transform:translateY(-4px);box-shadow:var(--shadow)}
+.stat-num{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:var(--gold);line-height:1}
+.stat-label{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);margin-top:6px;letter-spacing:.05em}
+@media(max-width:640px){.about-grid{grid-template-columns:1fr}}
+ 
 /* ── SKILLS ── */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 16px;
-}
-.skill-card {
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 12px;
-  padding: 22px 20px;
-  transition: all .3s;
-  position: relative;
-  overflow: hidden;
-}
-.skill-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: var(--skill-color);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform .4s ease;
-}
-.skill-card:hover::before { transform: scaleX(1); }
-.skill-card:hover {
-  background: rgba(255,255,255,0.04);
-  border-color: rgba(255,255,255,0.12);
-  transform: translateY(-4px);
-}
-.skill-icon {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-.skill-name {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--white);
-  margin-bottom: 6px;
-}
-.skill-desc {
-  font-size: 12px;
-  color: var(--muted);
-  line-height: 1.6;
-  margin-bottom: 14px;
-}
-.skill-tools {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-}
-.tool-tag {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  padding: 3px 8px;
-  border-radius: 3px;
-  background: rgba(255,255,255,0.05);
-  color: rgba(255,255,255,0.5);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-.skill-bar-wrap { margin-top: 12px; }
-.skill-bar-label {
-  display: flex;
-  justify-content: space-between;
-  font-size: 10px;
-  color: var(--muted);
-  margin-bottom: 5px;
-  font-family: 'JetBrains Mono', monospace;
-}
-.skill-bar {
-  height: 3px;
-  background: rgba(255,255,255,0.07);
-  border-radius: 2px;
-  overflow: hidden;
-}
-.skill-bar-fill {
-  height: 100%;
-  border-radius: 2px;
-  background: var(--skill-color);
-  width: 0;
-  transition: width 1.5s ease;
-}
-
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px}
+.skill-card{background:rgba(255,255,255,0.02);border:1px solid var(--border2);border-radius:var(--radius);padding:24px 22px;transition:var(--transition);position:relative;overflow:hidden;cursor:default}
+.skill-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--skill-color);transform:scaleX(0);transform-origin:left;transition:transform .4s ease}
+.skill-card:hover::before{transform:scaleX(1)}
+.skill-card:hover{background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.12);transform:translateY(-5px);box-shadow:var(--shadow)}
+.skill-icon{font-size:1.6rem;margin-bottom:12px}
+.skill-name{font-size:15px;font-weight:600;color:var(--white);margin-bottom:7px}
+.skill-desc{font-size:12px;color:var(--muted);line-height:1.65;margin-bottom:14px}
+.skill-tools{display:flex;flex-wrap:wrap;gap:5px}
+.tool-tag{font-family:'JetBrains Mono',monospace;font-size:10px;padding:3px 8px;border-radius:3px;background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.45);border:1px solid rgba(255,255,255,0.08)}
+.skill-bar-wrap{margin-top:14px}
+.skill-bar-label{display:flex;justify-content:space-between;font-size:10px;color:var(--muted);margin-bottom:5px;font-family:'JetBrains Mono',monospace}
+.skill-bar{height:3px;background:rgba(255,255,255,0.07);border-radius:2px;overflow:hidden}
+.skill-bar-fill{height:100%;border-radius:2px;background:var(--skill-color);width:0;transition:width 1.6s cubic-bezier(.4,0,.2,1)}
+ 
 /* ── PROJECTS ── */
-.projects-grid {
-  display: grid;
-  gap: 16px;
-}
-.project-card {
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 14px;
-  padding: 26px 28px;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 20px;
-  align-items: start;
-  transition: all .3s;
-  cursor: default;
-}
-.project-card:hover {
-  background: rgba(255,255,255,0.04);
-  border-color: rgba(212,168,67,0.25);
-  transform: translateX(4px);
-}
-.project-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  font-weight: 900;
-  color: rgba(212,168,67,0.15);
-  line-height: 1;
-  min-width: 50px;
-  text-align: right;
-}
-.project-content {}
-.project-title {
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--white);
-  margin-bottom: 6px;
-}
-.project-desc {
-  font-size: 13px;
-  color: var(--muted);
-  line-height: 1.7;
-  margin-bottom: 12px;
-}
-.project-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-.meta-tag {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  padding: 3px 8px;
-  border-radius: 3px;
-}
-.project-status {
-  text-align: right;
-  flex-shrink: 0;
-}
-.status-badge {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  padding: 5px 10px;
-  border-radius: 20px;
-  white-space: nowrap;
-}
-.status-done { background: rgba(16,185,129,0.12); color: #34d399; border: 1px solid rgba(16,185,129,0.2); }
-.status-y2 { background: rgba(59,130,246,0.1); color: #93c5fd; border: 1px solid rgba(59,130,246,0.2); }
-.status-y3 { background: rgba(139,92,246,0.1); color: #c4b5fd; border: 1px solid rgba(139,92,246,0.2); }
-.status-y4 { background: rgba(212,168,67,0.1); color: var(--gold2); border: 1px solid rgba(212,168,67,0.2); }
-
+.projects-grid{display:grid;gap:14px}
+.project-card{background:rgba(255,255,255,0.02);border:1px solid var(--border2);border-radius:var(--radius);padding:26px 28px;display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:start;transition:var(--transition);cursor:default}
+.project-card:hover{background:rgba(255,255,255,0.04);border-color:rgba(212,168,67,0.25);transform:translateX(5px)}
+.project-num{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;color:rgba(212,168,67,0.12);line-height:1;min-width:55px;text-align:right}
+.project-title{font-size:15px;font-weight:600;color:var(--white);margin-bottom:7px}
+.project-desc{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:12px}
+.project-meta{display:flex;flex-wrap:wrap;gap:6px}
+.meta-tag{font-family:'JetBrains Mono',monospace;font-size:10px;padding:3px 8px;border-radius:3px}
+.status-badge{font-family:'JetBrains Mono',monospace;font-size:10px;padding:5px 11px;border-radius:20px;white-space:nowrap;text-align:right;flex-shrink:0}
+.s-done{background:rgba(16,185,129,0.12);color:#34d399;border:1px solid rgba(16,185,129,0.2)}
+.s-y2{background:rgba(59,130,246,0.1);color:#93c5fd;border:1px solid rgba(59,130,246,0.2)}
+.s-y3{background:rgba(139,92,246,0.1);color:#c4b5fd;border:1px solid rgba(139,92,246,0.2)}
+.s-y4{background:rgba(212,168,67,0.1);color:var(--gold2);border:1px solid rgba(212,168,67,0.2)}
+@media(max-width:560px){.project-card{grid-template-columns:auto 1fr}.status-badge{grid-column:2}}
+ 
 /* ── ROADMAP ── */
-.roadmap {
-  position: relative;
-  padding-left: 30px;
-}
-.roadmap::before {
-  content: '';
-  position: absolute;
-  left: 8px; top: 8px; bottom: 8px;
-  width: 1px;
-  background: linear-gradient(to bottom, var(--gold), transparent);
-}
-.roadmap-item {
-  position: relative;
-  margin-bottom: 2.5rem;
-  padding-left: 30px;
-}
-.roadmap-item::before {
-  content: '';
-  position: absolute;
-  left: -26px; top: 8px;
-  width: 10px; height: 10px;
-  border-radius: 50%;
-  background: var(--gold);
-  border: 2px solid var(--ink);
-  box-shadow: 0 0 0 3px rgba(212,168,67,0.2);
-}
-.roadmap-year {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  color: var(--gold);
-  letter-spacing: .1em;
-  margin-bottom: 4px;
-}
-.roadmap-title {
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--white);
-  margin-bottom: 8px;
-}
-.roadmap-items {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-.roadmap-chip {
-  font-size: 12px;
-  padding: 4px 12px;
-  border-radius: 20px;
-  background: rgba(255,255,255,0.05);
-  color: rgba(255,255,255,0.6);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
+.roadmap{position:relative;padding-left:32px}
+.roadmap::before{content:'';position:absolute;left:9px;top:10px;bottom:10px;width:1px;background:linear-gradient(to bottom,var(--gold),transparent)}
+.roadmap-item{position:relative;margin-bottom:2.5rem}
+.roadmap-item::before{content:'';position:absolute;left:-27px;top:8px;width:10px;height:10px;border-radius:50%;background:var(--gold);border:2px solid var(--ink);box-shadow:0 0 0 3px rgba(212,168,67,0.2)}
+.roadmap-year{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold);letter-spacing:.1em;margin-bottom:4px}
+.roadmap-title{font-size:16px;font-weight:600;color:var(--white);margin-bottom:9px}
+.roadmap-chips{display:flex;flex-wrap:wrap;gap:6px}
+.roadmap-chip{font-size:12px;padding:4px 12px;border-radius:20px;background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);border:1px solid rgba(255,255,255,0.08);transition:var(--transition)}
+.roadmap-chip:hover{background:rgba(255,255,255,0.08);color:var(--white)}
+ 
 /* ── CERTIFICATIONS ── */
-.cert-list-main { display:flex; flex-direction:column; gap:14px; }
-.cert-card-main {
-  background:rgba(255,255,255,0.02);
-  border:1px solid rgba(255,255,255,0.07);
-  border-radius:14px; padding:22px 24px;
-  display:grid; grid-template-columns:auto 1fr auto;
-  gap:18px; align-items:center;
-  transition:all .3s; position:relative; overflow:hidden;
-}
-.cert-card-main::before {
-  content:''; position:absolute; left:0; top:0; bottom:0; width:3px;
-  background:var(--cert-color,var(--gold));
-  transform:scaleY(0); transform-origin:bottom;
-  transition:transform .35s ease;
-}
-.cert-card-main:hover::before { transform:scaleY(1); }
-.cert-card-main:hover {
-  background:rgba(255,255,255,0.04);
-  border-color:rgba(255,255,255,0.12);
-  transform:translateX(5px);
-}
-.cert-icon-main {
-  width:44px; height:44px; border-radius:10px;
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.08);
-  display:flex; align-items:center; justify-content:center;
-  font-size:1.3rem; flex-shrink:0;
-}
-.cert-name-main { font-size:15px; font-weight:600; color:var(--white); margin-bottom:4px; line-height:1.35; }
-.cert-prov-main {
-  font-family:'JetBrains Mono',monospace; font-size:11px;
-  color:#8899bb; letter-spacing:.04em; margin-bottom:8px;
-}
-.cert-rel-main { font-size:12px; color:rgba(255,255,255,0.45); line-height:1.6; }
-.cert-tags-main { display:flex; flex-wrap:wrap; gap:5px; margin-top:8px; }
-.cert-tag-main {
-  font-family:'JetBrains Mono',monospace; font-size:10px;
-  padding:2px 8px; border-radius:3px;
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.07);
-  color:rgba(255,255,255,0.4);
-}
-.cert-right-main { text-align:right; flex-shrink:0; }
-.cert-status {
-  font-family:'JetBrains Mono',monospace; font-size:10px;
-  padding:5px 11px; border-radius:20px;
-  display:inline-block; margin-bottom:6px;
-  background:rgba(212,168,67,0.1); color:#f0c96a;
-  border:1px solid rgba(212,168,67,0.25);
-}
-.cert-status.done {
-  background:rgba(16,185,129,0.1); color:#34d399;
-  border:1px solid rgba(16,185,129,0.2);
-}
-.cert-ext-link {
-  font-family:'JetBrains Mono',monospace; font-size:10px;
-  color:#5a6a88; text-decoration:none; display:block; margin-top:4px;
-  transition:color .2s;
-}
-.cert-ext-link:hover { color:var(--gold); }
-.cert-prog-wrap { margin-top:10px; }
-.cert-prog-top {
-  display:flex; justify-content:space-between;
-  font-family:'JetBrains Mono',monospace; font-size:9px;
-  color:#5a6a88; margin-bottom:4px;
-}
-.cert-prog-bar { height:2px; background:rgba(255,255,255,0.06); border-radius:2px; overflow:hidden; }
-.cert-prog-fill {
-  height:100%; border-radius:2px; width:0;
-  background:var(--cert-color,var(--gold));
-  transition:width 1.4s ease;
-}
-.cert-full-link {
-  display:inline-flex; align-items:center; gap:8px;
-  font-family:'JetBrains Mono',monospace; font-size:11px;
-  color:var(--gold); text-decoration:none; letter-spacing:.08em;
-  padding:10px 20px; border:1px solid rgba(212,168,67,0.3);
-  border-radius:6px; margin-top:1.5rem;
-  transition:all .2s;
-  background:rgba(212,168,67,0.05);
-}
-.cert-full-link:hover {
-  background:rgba(212,168,67,0.1);
-  border-color:rgba(212,168,67,0.5);
-  transform:translateY(-2px);
-}
-@media(max-width:560px){
-  .cert-card-main { grid-template-columns:auto 1fr; }
-  .cert-right-main { grid-column:2; }
-}
+.cert-filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:2rem}
+.cert-filter{font-family:'JetBrains Mono',monospace;font-size:11px;padding:7px 16px;border-radius:20px;border:1px solid var(--border2);color:var(--muted2);background:transparent;cursor:pointer;transition:var(--transition)}
+.cert-filter:hover,.cert-filter.active{background:rgba(212,168,67,0.1);border-color:rgba(212,168,67,0.4);color:var(--gold)}
+.cert-list{display:flex;flex-direction:column;gap:12px}
+.cert-card{background:rgba(255,255,255,0.02);border:1px solid var(--border2);border-radius:var(--radius);padding:20px 22px;display:grid;grid-template-columns:44px 1fr auto;gap:16px;align-items:center;transition:var(--transition);position:relative;overflow:hidden;cursor:default}
+.cert-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--cc,var(--gold));transform:scaleY(0);transform-origin:bottom;transition:transform .35s ease}
+.cert-card:hover::before{transform:scaleY(1)}
+.cert-card:hover{background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.12);transform:translateX(4px)}
+.cert-icon{width:44px;height:44px;border-radius:10px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.cert-name{font-size:14px;font-weight:600;color:var(--white);margin-bottom:4px;line-height:1.3}
+.cert-prov{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted2);letter-spacing:.04em;margin-bottom:7px}
+.cert-rel{font-size:12px;color:rgba(255,255,255,0.4);line-height:1.55}
+.cert-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.cert-tag{font-family:'JetBrains Mono',monospace;font-size:10px;padding:2px 8px;border-radius:3px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);color:rgba(255,255,255,0.4)}
+.cert-right{text-align:right;flex-shrink:0}
+.cert-status{font-family:'JetBrains Mono',monospace;font-size:10px;padding:5px 11px;border-radius:20px;display:inline-block;margin-bottom:7px;background:rgba(212,168,67,0.1);color:var(--gold2);border:1px solid rgba(212,168,67,0.25)}
+.cert-status.done{background:rgba(16,185,129,0.1);color:#34d399;border-color:rgba(16,185,129,0.2)}
+.cert-link-btn{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);text-decoration:none;display:block;margin-top:3px;transition:color .2s}
+.cert-link-btn:hover{color:var(--gold)}
+.cert-upload{font-family:'JetBrains Mono',monospace;font-size:9px;color:rgba(255,255,255,0.2);display:block;margin-top:4px;font-style:italic}
+.cert-prog{margin-top:9px}
+.cert-prog-top{display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--muted);margin-bottom:4px}
+.cert-prog-bar{height:2px;background:rgba(255,255,255,0.06);border-radius:2px;overflow:hidden}
+.cert-prog-fill{height:100%;border-radius:2px;width:0;background:var(--cc,var(--gold));transition:width 1.5s ease}
+@media(max-width:540px){.cert-card{grid-template-columns:44px 1fr}.cert-right{grid-column:2}}
+ 
 /* ── CERT TIMELINE ── */
-.ct-timeline {
-  position: relative;
-  padding-left: 28px;
-}
-.ct-timeline::before {
-  content: '';
-  position: absolute;
-  left: 7px; top: 8px; bottom: 8px;
-  width: 1px;
-  background: linear-gradient(to bottom, var(--gold), transparent);
-}
-.ct-item {
-  position: relative;
-  margin-bottom: 2.2rem;
-  display: flex;
-  gap: 18px;
-  align-items: flex-start;
-}
-.ct-dot {
-  position: absolute;
-  left: -24px; top: 6px;
-  width: 10px; height: 10px;
-  border-radius: 50%;
-  background: var(--gold);
-  border: 2px solid var(--ink);
-  box-shadow: 0 0 0 3px rgba(212,168,67,0.2);
-  flex-shrink: 0;
-}
-.ct-body { flex: 1; }
-.ct-when {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  letter-spacing: .1em;
-  color: var(--gold);
-  margin-bottom: 4px;
-}
-.ct-title {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--white);
-  margin-bottom: 8px;
-}
-.ct-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-.ct-chip {
-  font-size: 11px;
-  padding: 4px 11px;
-  border-radius: 20px;
-  background: rgba(255,255,255,0.04);
-  color: rgba(255,255,255,0.6);
-  border: 1px solid rgba(255,255,255,0.08);
-  transition: all .2s;
-}
-.ct-chip:hover {
-  background: rgba(255,255,255,0.08);
-  color: var(--white);
-  border-color: rgba(255,255,255,0.15);
-}
+.ct-wrap{position:relative;padding-left:32px}
+.ct-wrap::before{content:'';position:absolute;left:9px;top:10px;bottom:10px;width:1px;background:linear-gradient(to bottom,var(--gold),transparent)}
+.ct-item{position:relative;margin-bottom:2rem}
+.ct-item::before{content:'';position:absolute;left:-27px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--gold);border:2px solid var(--ink);box-shadow:0 0 0 3px rgba(212,168,67,0.2)}
+.ct-item.done-item::before{background:var(--analytics);box-shadow:0 0 0 3px rgba(16,185,129,0.25)}
+.ct-when{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--gold);letter-spacing:.1em;margin-bottom:4px}
+.ct-title{font-size:15px;font-weight:600;color:var(--white);margin-bottom:8px}
+.ct-chips{display:flex;flex-wrap:wrap;gap:6px}
+.ct-chip{font-size:11px;padding:4px 12px;border-radius:20px;background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);border:1px solid rgba(255,255,255,0.08);transition:var(--transition)}
+.ct-chip:hover{background:rgba(255,255,255,0.08);color:var(--white)}
+.ct-chip.gold{background:rgba(212,168,67,0.1);color:var(--gold2);border-color:rgba(212,168,67,0.25)}
+.ct-chip.green{background:rgba(16,185,129,0.1);color:#34d399;border-color:rgba(16,185,129,0.2)}
+ 
+/* ── MEMBERSHIPS ── */
+.mem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.mem-card{background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px 24px;transition:var(--transition);position:relative;overflow:hidden}
+.mem-card::after{content:'';position:absolute;top:-30px;right:-30px;width:100px;height:100px;border-radius:50%;border:25px solid rgba(212,168,67,0.05)}
+.mem-card:hover{background:rgba(212,168,67,0.04);border-color:rgba(212,168,67,0.35);transform:translateY(-5px);box-shadow:var(--shadow)}
+.mem-badge{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;color:var(--gold);line-height:1;margin-bottom:8px}
+.mem-name{font-size:16px;font-weight:700;color:var(--white);margin-bottom:4px}
+.mem-full{font-size:12px;color:var(--muted2);margin-bottom:12px;font-style:italic}
+.mem-desc{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.7;margin-bottom:14px}
+.mem-when{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold);padding:6px 14px;border-radius:20px;background:rgba(212,168,67,0.1);border:1px solid rgba(212,168,67,0.25);display:inline-block;margin-bottom:10px}
+.mem-benefits{list-style:none}
+.mem-benefits li{font-size:12px;color:rgba(255,255,255,0.45);padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.05);display:flex;gap:8px;align-items:flex-start}
+.mem-benefits li::before{content:'▸';color:var(--gold);flex-shrink:0;font-size:10px;margin-top:2px}
+ 
+/* ── LANGUAGE CERTS ── */
+.lang-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.lang-card{background:rgba(255,255,255,0.02);border:1px solid var(--border2);border-radius:var(--radius);padding:22px 20px;transition:var(--transition)}
+.lang-card:hover{background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.12);transform:translateY(-4px)}
+.lang-flag{font-size:2rem;margin-bottom:10px}
+.lang-name{font-size:16px;font-weight:700;color:var(--white);margin-bottom:4px}
+.lang-provider{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted2);margin-bottom:10px}
+.lang-levels{display:flex;flex-direction:column;gap:7px;margin-bottom:12px}
+.lang-level{display:flex;align-items:center;gap:10px}
+.lang-level-name{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);min-width:65px}
+.lang-bar{flex:1;height:3px;background:rgba(255,255,255,0.07);border-radius:2px;overflow:hidden}
+.lang-bar-fill{height:100%;border-radius:2px;background:var(--lc,var(--gold))}
+.lang-cert{font-size:11px;color:rgba(255,255,255,0.4);margin-top:4px;font-style:italic}
+.lang-link{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--gold);text-decoration:none;display:inline-flex;align-items:center;gap:5px;margin-top:8px;transition:color .2s}
+.lang-link:hover{color:var(--gold2)}
+ 
 /* ── STUDY GUIDE ── */
-.sg-commit {
-  background: var(--navy);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.25rem 1.5rem;
-  margin-bottom: 1.75rem;
-}
-.sg-commit-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px; letter-spacing: .15em;
-  color: var(--gold); text-transform: uppercase;
-  margin-bottom: .75rem;
-}
-.sg-commit-cards {
-  display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: .75rem;
-}
-.sg-stat {
-  text-align: center;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 8px; padding: 10px 18px; min-width: 70px;
-}
-.sg-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.6rem; font-weight: 700;
-  color: var(--gold2); line-height: 1;
-}
-.sg-lbl {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px; color: rgba(255,255,255,0.4);
-  margin-top: 3px; letter-spacing: .04em;
-}
-.sg-commit-note {
-  font-size: 12px; color: rgba(255,255,255,0.45);
-  font-style: italic; line-height: 1.6;
-  border-top: 1px solid rgba(255,255,255,0.06);
-  padding-top: .75rem; margin-top: .25rem;
-}
-.sg-years {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px,1fr));
-  gap: 12px; margin-bottom: 1.5rem;
-}
-.sg-year-card {
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.07);
-  border-radius: 12px; padding: 16px;
-  transition: all .3s;
-}
-.sg-year-card:hover {
-  background: rgba(255,255,255,0.04);
-  border-color: rgba(212,168,67,0.25);
-  transform: translateY(-4px);
-}
-.sg-year-head {
-  display: flex; align-items: center; gap: 8px; margin-bottom: 8px;
-}
-.sg-year-tag {
-  font-family: 'JetBrains Mono', monospace; font-size: 10px;
-  padding: 3px 10px; border-radius: 20px; font-weight: 500;
-  background: rgba(16,185,129,0.12); color: #34d399;
-  border: 1px solid rgba(16,185,129,0.25);
-}
-.sg-year-dates {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px; color: rgba(255,255,255,0.3);
-}
-.sg-year-title {
-  font-size: 14px; font-weight: 600;
-  color: var(--white); margin-bottom: 10px;
-}
-.sg-year-chips { display: flex; flex-wrap: wrap; gap: 5px; }
-.sg-chip {
-  font-size: 11px; padding: 3px 9px; border-radius: 20px;
-  background: rgba(255,255,255,0.04);
-  color: rgba(255,255,255,0.55);
-  border: 1px solid rgba(255,255,255,0.07);
-  transition: all .2s;
-}
-.sg-chip:hover {
-  background: rgba(var(--sc), 0.1);
-  color: var(--white);
-}
-.sg-stats-row {
-  display: flex; flex-wrap: wrap; gap: 10px;
-  padding: 1rem 1.25rem;
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 10px;
-}
-.sg-mini-stat {
-  display: flex; align-items: center; gap: 8px; flex: 1; min-width: 80px;
-}
-.sg-mini-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem; font-weight: 700; color: var(--gold);
-}
-.sg-mini-lbl {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px; color: rgba(255,255,255,0.4); letter-spacing: .04em;
-}
-.sg-open-btn {
-  display: inline-flex; align-items: center; gap: 10px;
-  font-family: 'JetBrains Mono', monospace; font-size: 12px;
-  letter-spacing: .08em; color: var(--gold); text-decoration: none;
-  padding: 12px 24px;
-  border: 1px solid rgba(212,168,67,0.35);
-  border-radius: 8px;
-  background: rgba(212,168,67,0.07);
-  transition: all .25s;
-}
-.sg-open-btn:hover {
-  background: rgba(212,168,67,0.14);
-  border-color: rgba(212,168,67,0.6);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(212,168,67,0.15);
-}
-
+.sg-commit{background:var(--navy);border:1px solid var(--border);border-radius:var(--radius);padding:1.4rem 1.6rem;margin-bottom:2rem}
+.sg-commit-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.15em;color:var(--gold);text-transform:uppercase;margin-bottom:.75rem}
+.sg-commit-cards{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:.8rem}
+.sg-stat{text-align:center;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:10px 18px;min-width:70px}
+.sg-num{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:700;color:var(--gold2);line-height:1}
+.sg-lbl{font-family:'JetBrains Mono',monospace;font-size:9px;color:rgba(255,255,255,0.4);margin-top:3px;letter-spacing:.04em}
+.sg-commit-note{font-size:12px;color:rgba(255,255,255,0.4);font-style:italic;line-height:1.6;border-top:1px solid rgba(255,255,255,0.06);padding-top:.75rem;margin-top:.25rem}
+.sg-years{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:12px;margin-bottom:1.5rem}
+.sg-year-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);border-radius:var(--radius);padding:16px;transition:var(--transition)}
+.sg-year-card:hover{background:rgba(255,255,255,0.04);border-color:rgba(212,168,67,0.25);transform:translateY(-4px)}
+.sg-year-head{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.sg-year-tag{font-family:'JetBrains Mono',monospace;font-size:10px;padding:3px 10px;border-radius:20px;font-weight:500;background:rgba(16,185,129,0.12);color:#34d399;border:1px solid rgba(16,185,129,0.25)}
+.sg-year-dates{font-family:'JetBrains Mono',monospace;font-size:9px;color:rgba(255,255,255,0.3)}
+.sg-year-title{font-size:14px;font-weight:600;color:var(--white);margin-bottom:10px}
+.sg-chips{display:flex;flex-wrap:wrap;gap:5px}
+.sg-chip{font-size:11px;padding:3px 9px;border-radius:20px;background:rgba(255,255,255,0.04);color:rgba(255,255,255,0.55);border:1px solid rgba(255,255,255,0.07)}
+.sg-stats-row{display:flex;flex-wrap:wrap;gap:10px;padding:1rem 1.25rem;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:var(--radius)}
+.sg-mini-stat{display:flex;align-items:center;gap:8px;flex:1;min-width:80px}
+.sg-mini-num{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--gold)}
+.sg-mini-lbl{font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:.04em}
+.sg-open-btn{display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;color:var(--gold);text-decoration:none;padding:12px 24px;border:1px solid rgba(212,168,67,0.35);border-radius:8px;background:rgba(212,168,67,0.07);transition:var(--transition);margin-top:1.5rem}
+.sg-open-btn:hover{background:rgba(212,168,67,0.14);border-color:rgba(212,168,67,0.6);transform:translateY(-2px);box-shadow:0 8px 25px rgba(212,168,67,0.15)}
+ 
 /* ── CONTACT ── */
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 12px;
-}
-.contact-card {
-  background: rgba(255,255,255,0.02);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  transition: all .3s;
-  display: block;
-}
-.contact-card:hover {
-  background: rgba(212,168,67,0.06);
-  border-color: rgba(212,168,67,0.4);
-  transform: translateY(-3px);
-}
-.contact-icon { font-size: 1.5rem; margin-bottom: 8px; }
-.contact-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  color: var(--muted);
-  letter-spacing: .1em;
-  margin-bottom: 4px;
-  text-transform: uppercase;
-}
-.contact-value { font-size: 13px; color: var(--white); font-weight: 500; }
-
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.contact-card{background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:var(--radius);padding:22px 16px;text-align:center;text-decoration:none;transition:var(--transition);display:block}
+.contact-card:hover{background:rgba(212,168,67,0.06);border-color:rgba(212,168,67,0.4);transform:translateY(-4px);box-shadow:var(--shadow)}
+.contact-logo{width:28px;height:28px;margin:0 auto 10px;display:block}
+.contact-label{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:.1em;margin-bottom:4px;text-transform:uppercase}
+.contact-value{font-size:12px;color:var(--white);font-weight:500}
+ 
 /* ── FOOTER ── */
-footer {
-  padding: 2rem;
-  border-top: 1px solid var(--border);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-.footer-text {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  color: var(--muted);
-}
-.footer-gold { color: var(--gold); }
-
+footer{padding:2rem;border-top:1px solid var(--border);position:relative;z-index:1}
+.footer-inner{max-width:960px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.footer-text{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted)}
+.footer-gold{color:var(--gold)}
+ 
 /* ── ANIMATIONS ── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes scrollPulse {
-  0%, 100% { opacity: .3; }
-  50% { opacity: 1; }
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity .7s ease, transform .7s ease;
-}
-.reveal.visible {
-  opacity: 1;
-  transform: none;
-}
-
-@media(max-width: 640px) {
-  .about-grid { grid-template-columns: 1fr; }
-  .project-card { grid-template-columns: auto 1fr; }
-  .project-status { grid-column: 2; }
-  footer { flex-direction: column; text-align: center; }
-}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes scrollPulse{0%,100%{opacity:.3}50%{opacity:1}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+ 
+/* ── SCROLLED NAV ── */
+.nav.scrolled{background:rgba(6,9,26,0.98);box-shadow:0 2px 20px rgba(0,0,0,0.5)}
 </style>
 </head>
 <body>
-
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
-
+ 
+<div id="cur"></div>
+<div id="curR"></div>
+ 
+<!-- ══ NAV ══ -->
+<nav class="nav" id="mainNav">
+  <a href="#" class="nav-logo">Frank <span>Oduro</span></a>
+  <div class="nav-links">
+    <a href="#about" class="nav-link">About</a>
+    <a href="#skills" class="nav-link">Skills</a>
+    <a href="#projects" class="nav-link">Projects</a>
+    <a href="#certifications" class="nav-link">Certifications</a>
+    <a href="#memberships" class="nav-link">Memberships</a>
+    <a href="#studyguide" class="nav-link">Study Guide</a>
+    <a href="#contact" class="nav-cta">Connect</a>
+  </div>
+</nav>
+ 
 <!-- ══ HERO ══ -->
 <section class="hero">
-  <div class="hero-grid"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-glow2"></div>
+  <div class="hero-orb1"></div>
+  <div class="hero-orb2"></div>
+  <div class="hero-orb3"></div>
   <div class="hero-inner">
     <div class="hero-eyebrow">Procurement &amp; Supply Chain Portfolio</div>
-    <h1 class="hero-name">Frank <span>Oduro</span></h1>
-    <p class="hero-title">BSc Procurement &amp; Supply Chain Management<br><strong>Kumasi Technical University (KSTU)</strong> · Enrolled October 2026</p>
+    <h1 class="hero-name">Frank <em>Oduro</em></h1>
+    <p class="hero-role">BSc Procurement &amp; Supply Chain Management<br><strong>Kumasi Technical University (KSTU)</strong> · Enrolled October 2026</p>
     <div class="hero-tags">
       <span class="hero-tag gold">📍 Kumasi, Ghana</span>
       <span class="hero-tag">SAP MM</span>
@@ -914,294 +295,180 @@ footer {
       <span class="hero-tag">Oracle Cloud</span>
       <span class="hero-tag">Contract Management</span>
       <span class="hero-tag">Ghana PPA Acts 663 &amp; 914</span>
+      <span class="hero-tag">30 Certifications</span>
       <span class="hero-tag">7 Portfolio Projects</span>
     </div>
     <div class="hero-cta">
       <a href="#projects" class="btn btn-gold">View Projects</a>
-      <a href="#studyguide" class="btn btn-outline">Study Guide</a>
       <a href="#certifications" class="btn btn-outline">Certifications</a>
+      <a href="#studyguide" class="btn btn-outline">Study Guide</a>
       <a href="#contact" class="btn btn-outline">Get in Touch</a>
     </div>
   </div>
-  <div class="hero-scroll">
-    <div class="scroll-line"></div>
-    <span class="scroll-text">Scroll</span>
-  </div>
+  <div class="hero-scroll"><div class="scroll-line"></div><span class="scroll-text">Scroll</span></div>
 </section>
-
+ 
 <div class="divider"></div>
-
+ 
 <!-- ══ ABOUT ══ -->
 <section id="about">
   <div class="section-inner">
     <div class="section-label reveal">About</div>
-    <h2 class="section-title reveal">Building <span>Job-Ready</span> Skills<br>from Day One</h2>
+    <h2 class="section-title reveal">Building <span>Job-Ready</span><br>Skills from Day One</h2>
     <div class="about-grid reveal">
       <div class="about-text">
-        <p>I'm a <strong>motivated procurement and supply chain student</strong> at Kumasi Technical University (KSTU), enrolled October 2026 with an expected graduation of 2030. I'm not waiting until graduation to build experience.</p>
-        <p>My approach: every semester of lectures is paired with a real <strong>hands-on portfolio project</strong> — SAP transactions, live Power BI dashboards built from Ghana e-GP data, actual SLA documents, and supplier scorecards. By graduation, recruiters won't have to take my word for it.</p>
-        <p>I'm committed to aligning procurement strategy with <strong>corporate governance, Ghana public procurement law,</strong> and global best practice from the very start of my career.</p>
+        <p>I'm <strong>Frank Oduro</strong>, a Procurement &amp; Supply Chain Management student at <strong>Kumasi Technical University (KSTU)</strong>, enrolled October 2026 with an expected graduation of 2030.</p>
+        <p>I'm not waiting until graduation to build experience. Every semester of lectures is paired with a real <strong>hands-on portfolio project</strong> — SAP transactions, live Power BI dashboards from Ghana e-GP data, actual SLA documents, and supplier scorecards.</p>
+        <p>Committed to aligning procurement strategy with <strong>Ghana public procurement law, corporate governance,</strong> and global best practice from the very start of my career. 30 free certifications. 7 projects. 4 ERP systems. All built during study.</p>
       </div>
       <div class="about-stats">
-        <div class="stat-box">
-          <div class="stat-num">7</div>
-          <div class="stat-label">Portfolio Projects</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-num">4</div>
-          <div class="stat-label">ERP Systems</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-num">28</div>
-          <div class="stat-label">KSTU Modules</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-num">2</div>
-          <div class="stat-label">Attachments</div>
-        </div>
+        <div class="stat-box"><div class="stat-num">7</div><div class="stat-label">Portfolio Projects</div></div>
+        <div class="stat-box"><div class="stat-num">30</div><div class="stat-label">Certifications</div></div>
+        <div class="stat-box"><div class="stat-num">4</div><div class="stat-label">ERP Systems</div></div>
+        <div class="stat-box"><div class="stat-num">28</div><div class="stat-label">KSTU Modules</div></div>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <div class="divider"></div>
-
+ 
 <!-- ══ SKILLS ══ -->
 <section id="skills">
   <div class="section-inner">
     <div class="section-label reveal">Core Skills</div>
     <h2 class="section-title reveal">Technical <span>Expertise</span><br>In Development</h2>
     <div class="skills-grid">
-
-      <div class="skill-card reveal" style="--skill-color: var(--erp)">
+      <div class="skill-card reveal" style="--skill-color:var(--erp)">
         <div class="skill-icon">⚙️</div>
         <div class="skill-name">ERP Systems</div>
         <div class="skill-desc">Full procure-to-pay cycle across enterprise platforms used by Ghana's leading organisations.</div>
-        <div class="skill-tools">
-          <span class="tool-tag">SAP MM</span>
-          <span class="tool-tag">Odoo</span>
-          <span class="tool-tag">Oracle Cloud</span>
-          <span class="tool-tag">MS Dynamics 365</span>
-        </div>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>Progress</span><span>Year 1 of 4</span></div>
-          <div class="skill-bar"><div class="skill-bar-fill" data-width="25" style="background:var(--erp)"></div></div>
-        </div>
+        <div class="skill-tools"><span class="tool-tag">SAP MM</span><span class="tool-tag">Odoo</span><span class="tool-tag">Oracle Cloud</span><span class="tool-tag">MS Dynamics 365</span></div>
+        <div class="skill-bar-wrap"><div class="skill-bar-label"><span>Progress</span><span>Year 1 of 4</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="25"></div></div></div>
       </div>
-
-      <div class="skill-card reveal" style="--skill-color: var(--analytics)">
+      <div class="skill-card reveal" style="--skill-color:var(--analytics)">
         <div class="skill-icon">📊</div>
         <div class="skill-name">Procurement Analytics</div>
         <div class="skill-desc">Converting raw Ghana e-GP procurement data into cost-saving dashboards and spend insights.</div>
-        <div class="skill-tools">
-          <span class="tool-tag">Excel Advanced</span>
-          <span class="tool-tag">Power BI</span>
-          <span class="tool-tag">SCOR KPIs</span>
-          <span class="tool-tag">Spend Analysis</span>
-        </div>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>Progress</span><span>Building</span></div>
-          <div class="skill-bar"><div class="skill-bar-fill" data-width="30" style="background:var(--analytics)"></div></div>
-        </div>
+        <div class="skill-tools"><span class="tool-tag">Excel Advanced</span><span class="tool-tag">Power BI</span><span class="tool-tag">SCOR KPIs</span><span class="tool-tag">Spend Analysis</span></div>
+        <div class="skill-bar-wrap"><div class="skill-bar-label"><span>Progress</span><span>Building</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="35"></div></div></div>
       </div>
-
-      <div class="skill-card reveal" style="--skill-color: var(--contracts)">
+      <div class="skill-card reveal" style="--skill-color:var(--contracts)">
         <div class="skill-icon">📋</div>
         <div class="skill-name">Contract Management</div>
         <div class="skill-desc">Drafting SLAs, NDAs, and framework agreements using UNDP templates and Ghana e-GP standards.</div>
-        <div class="skill-tools">
-          <span class="tool-tag">SLA Drafting</span>
-          <span class="tool-tag">UNDP Templates</span>
-          <span class="tool-tag">KPI Benchmarking</span>
-          <span class="tool-tag">Negotiation</span>
-        </div>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>Progress</span><span>Year 2 Target</span></div>
-          <div class="skill-bar"><div class="skill-bar-fill" data-width="15" style="background:var(--contracts)"></div></div>
-        </div>
+        <div class="skill-tools"><span class="tool-tag">SLA Drafting</span><span class="tool-tag">UNDP Templates</span><span class="tool-tag">KPI Benchmarking</span><span class="tool-tag">Negotiation</span></div>
+        <div class="skill-bar-wrap"><div class="skill-bar-label"><span>Progress</span><span>Year 2 Target</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="15"></div></div></div>
       </div>
-
-      <div class="skill-card reveal" style="--skill-color: var(--supplier)">
+      <div class="skill-card reveal" style="--skill-color:var(--supplier)">
         <div class="skill-icon">🤝</div>
         <div class="skill-name">Supplier Management</div>
         <div class="skill-desc">Onboarding, risk assessment, performance scorecards, and continuous improvement frameworks.</div>
-        <div class="skill-tools">
-          <span class="tool-tag">Scorecards</span>
-          <span class="tool-tag">KPI Reviews</span>
-          <span class="tool-tag">Risk Assessment</span>
-          <span class="tool-tag">SRM</span>
-        </div>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>Progress</span><span>Year 3 Target</span></div>
-          <div class="skill-bar"><div class="skill-bar-fill" data-width="10" style="background:var(--supplier)"></div></div>
-        </div>
+        <div class="skill-tools"><span class="tool-tag">Scorecards</span><span class="tool-tag">KPI Reviews</span><span class="tool-tag">Risk Assessment</span><span class="tool-tag">SRM</span></div>
+        <div class="skill-bar-wrap"><div class="skill-bar-label"><span>Progress</span><span>Year 3 Target</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="10"></div></div></div>
       </div>
-
-      <div class="skill-card reveal" style="--skill-color: var(--inventory)">
+      <div class="skill-card reveal" style="--skill-color:var(--inventory)">
         <div class="skill-icon">📦</div>
         <div class="skill-name">Inventory &amp; Logistics</div>
         <div class="skill-desc">EOQ modelling, ABC classification, safety stock, demand forecasting, and Incoterms 2020.</div>
-        <div class="skill-tools">
-          <span class="tool-tag">EOQ Model</span>
-          <span class="tool-tag">ABC Analysis</span>
-          <span class="tool-tag">Safety Stock</span>
-          <span class="tool-tag">Incoterms 2020</span>
-        </div>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>Progress</span><span>Project 4 ✅</span></div>
-          <div class="skill-bar"><div class="skill-bar-fill" data-width="35" style="background:var(--inventory)"></div></div>
-        </div>
+        <div class="skill-tools"><span class="tool-tag">EOQ Model</span><span class="tool-tag">ABC Analysis</span><span class="tool-tag">Safety Stock</span><span class="tool-tag">Incoterms 2020</span></div>
+        <div class="skill-bar-wrap"><div class="skill-bar-label"><span>Progress</span><span>Project 4 ✅</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="38"></div></div></div>
       </div>
-
-      <div class="skill-card reveal" style="--skill-color: var(--sourcing)">
+      <div class="skill-card reveal" style="--skill-color:var(--sourcing)">
         <div class="skill-icon">🎯</div>
         <div class="skill-name">Strategic Sourcing</div>
         <div class="skill-desc">TCO modelling, category management, make-vs-buy analysis, and competitive tendering strategy.</div>
-        <div class="skill-tools">
-          <span class="tool-tag">TCO Modelling</span>
-          <span class="tool-tag">Category Mgmt</span>
-          <span class="tool-tag">Tendering</span>
-          <span class="tool-tag">CIPS Framework</span>
-        </div>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>Progress</span><span>Year 4 Target</span></div>
-          <div class="skill-bar"><div class="skill-bar-fill" data-width="8" style="background:var(--sourcing)"></div></div>
-        </div>
+        <div class="skill-tools"><span class="tool-tag">TCO Modelling</span><span class="tool-tag">Category Mgmt</span><span class="tool-tag">Tendering</span><span class="tool-tag">CIPS Framework</span></div>
+        <div class="skill-bar-wrap"><div class="skill-bar-label"><span>Progress</span><span>Year 4 Target</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="8"></div></div></div>
       </div>
-
-      <div class="skill-card reveal" style="--skill-color: var(--compliance)">
+      <div class="skill-card reveal" style="--skill-color:var(--compliance)">
         <div class="skill-icon">⚖️</div>
         <div class="skill-name">Compliance &amp; Ethics</div>
         <div class="skill-desc">Ghana PPA Acts 663 &amp; 914, e-GP portal, ESG-aligned sourcing, and UN Global Compact principles.</div>
-        <div class="skill-tools">
-          <span class="tool-tag">Acts 663 &amp; 914</span>
-          <span class="tool-tag">Ghana e-GP</span>
-          <span class="tool-tag">UN Global Compact</span>
-          <span class="tool-tag">ESG Sourcing</span>
-        </div>
-        <div class="skill-bar-wrap">
-          <div class="skill-bar-label"><span>Progress</span><span>Building</span></div>
-          <div class="skill-bar"><div class="skill-bar-fill" data-width="20" style="background:var(--compliance)"></div></div>
-        </div>
+        <div class="skill-tools"><span class="tool-tag">Acts 663 &amp; 914</span><span class="tool-tag">Ghana e-GP</span><span class="tool-tag">UN Global Compact</span><span class="tool-tag">ESG Sourcing</span></div>
+        <div class="skill-bar-wrap"><div class="skill-bar-label"><span>Progress</span><span>Building</span></div><div class="skill-bar"><div class="skill-bar-fill" data-width="22"></div></div></div>
       </div>
-
     </div>
   </div>
 </section>
-
+ 
 <div class="divider"></div>
-
+ 
 <!-- ══ PROJECTS ══ -->
 <section id="projects">
   <div class="section-inner">
     <div class="section-label reveal">Portfolio</div>
     <h2 class="section-title reveal">7 Real <span>Projects</span><br>Not Just Theory</h2>
     <div class="projects-grid">
-
       <div class="project-card reveal">
         <div class="project-num">01</div>
-        <div class="project-content">
+        <div>
           <div class="project-title">ERP: SAP MM Procure-to-Pay Workflow</div>
-          <div class="project-desc">Full P2P cycle execution on SAP S/4HANA: vendor creation → purchase requisition → purchase order → goods receipt → invoice verification. Documented with transaction screenshots.</div>
-          <div class="project-meta">
-            <span class="meta-tag" style="background:rgba(59,130,246,0.1);color:#93c5fd;border:1px solid rgba(59,130,246,0.2)">SAP S/4HANA</span>
-            <span class="meta-tag" style="background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.08)">15-page PDF</span>
-            <span class="meta-tag" style="background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.08)">1-erp-sap-mm/</span>
-          </div>
+          <div class="project-desc">Full P2P cycle on SAP S/4HANA: vendor creation → PR → PO → goods receipt → invoice verification. Documented with transaction screenshots.</div>
+          <div class="project-meta"><span class="meta-tag" style="background:rgba(59,130,246,0.1);color:#93c5fd;border:1px solid rgba(59,130,246,0.2)">SAP S/4HANA</span><span class="meta-tag" style="background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.08)">15-page PDF</span><span class="meta-tag" style="background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.08)">1-erp-sap-mm/</span></div>
         </div>
-        <div class="project-status"><span class="status-badge status-y2">Year 2 · 2027</span></div>
+        <div><span class="status-badge s-y2">Year 2 · 2027</span></div>
       </div>
-
       <div class="project-card reveal">
         <div class="project-num">02</div>
-        <div class="project-content">
+        <div>
           <div class="project-title">Contract Management: Mock SLA &amp; Negotiation</div>
-          <div class="project-desc">5-page Service Level Agreement drafted using UNDP templates and Ghana e-GP standards. Negotiation simulation targeting 15% price reduction with documented outcome summary.</div>
-          <div class="project-meta">
-            <span class="meta-tag" style="background:rgba(139,92,246,0.1);color:#c4b5fd;border:1px solid rgba(139,92,246,0.2)">UNDP Templates</span>
-            <span class="meta-tag" style="background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.08)">Ghana e-GP</span>
-            <span class="meta-tag" style="background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.08)">2-contract-management/</span>
-          </div>
+          <div class="project-desc">5-page Service Level Agreement using UNDP templates and Ghana e-GP standards. Negotiation simulation targeting 15% price reduction.</div>
+          <div class="project-meta"><span class="meta-tag" style="background:rgba(139,92,246,0.1);color:#c4b5fd;border:1px solid rgba(139,92,246,0.2)">UNDP Templates</span><span class="meta-tag" style="background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.08)">Ghana e-GP</span><span class="meta-tag" style="background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.08)">2-contract-management/</span></div>
         </div>
-        <div class="project-status"><span class="status-badge status-y2">Year 2 · 2027</span></div>
+        <div><span class="status-badge s-y2">Year 2 · 2027</span></div>
       </div>
-
       <div class="project-card reveal">
         <div class="project-num">03</div>
-        <div class="project-content">
+        <div>
           <div class="project-title">Supplier Management: Scorecard &amp; KPI Dashboard</div>
-          <div class="project-desc">Weighted supplier scorecard for 10 mock vendors across OTD %, quality rejection rate, price variance, and responsiveness. Visualised in Power BI with insights report.</div>
-          <div class="project-meta">
-            <span class="meta-tag" style="background:rgba(249,115,22,0.1);color:#fdba74;border:1px solid rgba(249,115,22,0.2)">Excel</span>
-            <span class="meta-tag" style="background:rgba(249,115,22,0.1);color:#fdba74;border:1px solid rgba(249,115,22,0.2)">Power BI</span>
-            <span class="meta-tag" style="background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.08)">3-supplier-scorecard/</span>
-          </div>
+          <div class="project-desc">Weighted supplier scorecard for 10 mock vendors across OTD %, quality rejection rate, price variance, and responsiveness. Visualised in Power BI.</div>
+          <div class="project-meta"><span class="meta-tag" style="background:rgba(249,115,22,0.1);color:#fdba74;border:1px solid rgba(249,115,22,0.2)">Excel</span><span class="meta-tag" style="background:rgba(249,115,22,0.1);color:#fdba74;border:1px solid rgba(249,115,22,0.2)">Power BI</span><span class="meta-tag" style="background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.08)">3-supplier-scorecard/</span></div>
         </div>
-        <div class="project-status"><span class="status-badge status-y3">Year 3 · 2028</span></div>
+        <div><span class="status-badge s-y3">Year 3 · 2028</span></div>
       </div>
-
       <div class="project-card reveal">
         <div class="project-num">04</div>
-        <div class="project-content">
+        <div>
           <div class="project-title">Inventory Optimization Model ✅</div>
-          <div class="project-desc">Full Excel model for 20 Ghana-context SKUs: EOQ calculations, ABC classification, safety stock & reorder points, and cost savings dashboard. First completed project — uploaded October 2026.</div>
-          <div class="project-meta">
-            <span class="meta-tag" style="background:rgba(16,185,129,0.1);color:#34d399;border:1px solid rgba(16,185,129,0.2)">Excel Advanced</span>
-            <span class="meta-tag" style="background:rgba(16,185,129,0.1);color:#34d399;border:1px solid rgba(16,185,129,0.2)">EOQ · ABC · Safety Stock</span>
-            <span class="meta-tag" style="background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.08)">4-inventory-logistics/</span>
-          </div>
+          <div class="project-desc">Full Excel model for 20 Ghana-context SKUs: EOQ, ABC classification, safety stock &amp; reorder points, and cost savings dashboard. First completed project — October 2026.</div>
+          <div class="project-meta"><span class="meta-tag" style="background:rgba(16,185,129,0.1);color:#34d399;border:1px solid rgba(16,185,129,0.2)">Excel Advanced</span><span class="meta-tag" style="background:rgba(16,185,129,0.1);color:#34d399;border:1px solid rgba(16,185,129,0.2)">EOQ · ABC · Safety Stock</span><span class="meta-tag" style="background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.08)">4-inventory-logistics/</span></div>
         </div>
-        <div class="project-status"><span class="status-badge status-done">✅ Completed</span></div>
+        <div><span class="status-badge s-done">✅ Completed</span></div>
       </div>
-
       <div class="project-card reveal">
         <div class="project-num">05</div>
-        <div class="project-content">
+        <div>
           <div class="project-title">Procurement Analytics: Ghana Spend Dashboard</div>
-          <div class="project-desc">Real Ghana public procurement data from e-GP portal analysed in Power BI. Identifies GHS 2.3M consolidation opportunity and 18% potential savings across supplier categories.</div>
-          <div class="project-meta">
-            <span class="meta-tag" style="background:rgba(6,182,212,0.1);color:#67e8f9;border:1px solid rgba(6,182,212,0.2)">Power BI</span>
-            <span class="meta-tag" style="background:rgba(6,182,212,0.1);color:#67e8f9;border:1px solid rgba(6,182,212,0.2)">Ghana e-GP Data</span>
-            <span class="meta-tag" style="background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.08)">5-procurement-analytics/</span>
-          </div>
+          <div class="project-desc">Real Ghana public procurement data from e-GP portal analysed in Power BI. Identifies GHS 2.3M consolidation opportunity across supplier categories.</div>
+          <div class="project-meta"><span class="meta-tag" style="background:rgba(6,182,212,0.1);color:#67e8f9;border:1px solid rgba(6,182,212,0.2)">Power BI</span><span class="meta-tag" style="background:rgba(6,182,212,0.1);color:#67e8f9;border:1px solid rgba(6,182,212,0.2)">Ghana e-GP Data</span><span class="meta-tag" style="background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.08)">5-procurement-analytics/</span></div>
         </div>
-        <div class="project-status"><span class="status-badge status-y3">Year 3 · 2028</span></div>
+        <div><span class="status-badge s-y3">Year 3 · 2028</span></div>
       </div>
-
       <div class="project-card reveal">
         <div class="project-num">06</div>
-        <div class="project-content">
+        <div>
           <div class="project-title">Strategic Sourcing: IT Category Management Plan</div>
-          <div class="project-desc">10-page sourcing strategy for IT equipment category in a 500-employee company. Full TCO model, make-vs-buy analysis, supplier shortlist, and presentation deck using CIPS 7-step framework.</div>
-          <div class="project-meta">
-            <span class="meta-tag" style="background:rgba(234,179,8,0.1);color:#fde047;border:1px solid rgba(234,179,8,0.2)">CIPS Framework</span>
-            <span class="meta-tag" style="background:rgba(234,179,8,0.1);color:#fde047;border:1px solid rgba(234,179,8,0.2)">TCO Model</span>
-            <span class="meta-tag" style="background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.08)">6-strategic-sourcing/</span>
-          </div>
+          <div class="project-desc">10-page sourcing strategy for IT equipment using CIPS 7-step framework. Full TCO model, make-vs-buy analysis, and supplier shortlist presentation deck.</div>
+          <div class="project-meta"><span class="meta-tag" style="background:rgba(234,179,8,0.1);color:#fde047;border:1px solid rgba(234,179,8,0.2)">CIPS Framework</span><span class="meta-tag" style="background:rgba(234,179,8,0.1);color:#fde047;border:1px solid rgba(234,179,8,0.2)">TCO Model</span><span class="meta-tag" style="background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.08)">6-strategic-sourcing/</span></div>
         </div>
-        <div class="project-status"><span class="status-badge status-y4">Year 4 · 2029</span></div>
+        <div><span class="status-badge s-y4">Year 4 · 2029</span></div>
       </div>
-
       <div class="project-card reveal">
         <div class="project-num">07</div>
-        <div class="project-content">
+        <div>
           <div class="project-title">Compliance &amp; Ethics: Tender Risk Assessment</div>
-          <div class="project-desc">Live Ghana e-GP tender analysed against Public Procurement Acts 663 &amp; 914 and UN Global Compact principles. Compliance checklist, risk rating matrix, and corrective action recommendations.</div>
-          <div class="project-meta">
-            <span class="meta-tag" style="background:rgba(107,114,128,0.15);color:#d1d5db;border:1px solid rgba(107,114,128,0.2)">GhanaLII</span>
-            <span class="meta-tag" style="background:rgba(107,114,128,0.15);color:#d1d5db;border:1px solid rgba(107,114,128,0.2)">Acts 663 &amp; 914</span>
-            <span class="meta-tag" style="background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.08)">7-compliance-ethics/</span>
-          </div>
+          <div class="project-desc">Live Ghana e-GP tender analysed against Acts 663 &amp; 914 and UN Global Compact. Compliance checklist, risk rating matrix, and corrective action recommendations.</div>
+          <div class="project-meta"><span class="meta-tag" style="background:rgba(107,114,128,0.15);color:#d1d5db;border:1px solid rgba(107,114,128,0.2)">GhanaLII</span><span class="meta-tag" style="background:rgba(107,114,128,0.15);color:#d1d5db;border:1px solid rgba(107,114,128,0.2)">Acts 663 &amp; 914</span><span class="meta-tag" style="background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.08)">7-compliance-ethics/</span></div>
         </div>
-        <div class="project-status"><span class="status-badge status-y3">Year 3 · 2028</span></div>
+        <div><span class="status-badge s-y3">Year 3 · 2028</span></div>
       </div>
-
     </div>
   </div>
 </section>
-
+ 
 <div class="divider"></div>
-
+ 
 <!-- ══ ROADMAP ══ -->
 <section id="roadmap">
   <div class="section-inner">
@@ -1211,369 +478,834 @@ footer {
       <div class="roadmap-item">
         <div class="roadmap-year">YEAR 1 · 2026–2027</div>
         <div class="roadmap-title">Foundation — Excel, Inventory, Ghana Law, Odoo</div>
-        <div class="roadmap-items">
-          <span class="roadmap-chip">✅ Project 4 Complete</span>
-          <span class="roadmap-chip">Excel mastery</span>
-          <span class="roadmap-chip">Odoo installed</span>
-          <span class="roadmap-chip">Acts 663 &amp; 914 read</span>
-          <span class="roadmap-chip">PSCM 163–166</span>
-        </div>
+        <div class="roadmap-chips"><span class="roadmap-chip">✅ Project 4 Complete</span><span class="roadmap-chip">Excel mastery</span><span class="roadmap-chip">Odoo installed</span><span class="roadmap-chip">Acts 663 &amp; 914 read</span><span class="roadmap-chip">PSCM 163–166</span><span class="roadmap-chip">6 Certs Year 1</span></div>
       </div>
       <div class="roadmap-item">
         <div class="roadmap-year">YEAR 2 · 2027–2028</div>
         <div class="roadmap-title">ERP &amp; Contracts — SAP MM, Oracle, Power BI, SLA</div>
-        <div class="roadmap-items">
-          <span class="roadmap-chip">Project 1 — SAP P2P</span>
-          <span class="roadmap-chip">Project 2 — SLA Doc</span>
-          <span class="roadmap-chip">Industrial Attachment I</span>
-          <span class="roadmap-chip">PSCM 261–272</span>
-        </div>
+        <div class="roadmap-chips"><span class="roadmap-chip">Project 1 — SAP P2P</span><span class="roadmap-chip">Project 2 — SLA Doc</span><span class="roadmap-chip">Industrial Attachment I</span><span class="roadmap-chip">PSCM 261–272</span><span class="roadmap-chip">8 Certs Year 2</span></div>
       </div>
       <div class="roadmap-item">
         <div class="roadmap-year">YEAR 3 · 2028–2029</div>
         <div class="roadmap-title">Analytics &amp; Internship — Power BI, Supplier, Compliance</div>
-        <div class="roadmap-items">
-          <span class="roadmap-chip">Projects 3, 5, 7</span>
-          <span class="roadmap-chip">Internship secured</span>
-          <span class="roadmap-chip">Live dashboard published</span>
-          <span class="roadmap-chip">PSCM 361–368</span>
-        </div>
+        <div class="roadmap-chips"><span class="roadmap-chip">Projects 3, 5, 7</span><span class="roadmap-chip">Internship secured</span><span class="roadmap-chip">Live dashboard</span><span class="roadmap-chip">PSCM 361–368</span><span class="roadmap-chip">10 Certs Year 3</span></div>
       </div>
       <div class="roadmap-item">
         <div class="roadmap-year">YEAR 4 · 2029–2030</div>
         <div class="roadmap-title">Specialisation — Strategic Sourcing, MS Dynamics, Thesis</div>
-        <div class="roadmap-items">
-          <span class="roadmap-chip">Project 6 — Sourcing</span>
-          <span class="roadmap-chip">All 7 projects live</span>
-          <span class="roadmap-chip">Industrial Attachment II</span>
-          <span class="roadmap-chip">First job offer</span>
-        </div>
+        <div class="roadmap-chips"><span class="roadmap-chip">Project 6 — Sourcing</span><span class="roadmap-chip">All 30 certs complete</span><span class="roadmap-chip">Industrial Attachment II</span><span class="roadmap-chip">First job offer</span></div>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <div class="divider"></div>
-
+ 
 <!-- ══ CERTIFICATIONS ══ -->
 <section id="certifications">
   <div class="section-inner">
     <div class="section-label reveal">Learning</div>
-    <h2 class="section-title reveal">15 Certifications &amp; <span>Free Programs</span></h2>
-    <div class="cert-list-main">
-
-      <div class="cert-card-main reveal" style="--cert-color:#3b82f6">
-        <div class="cert-icon-main">🖥️</div>
-        <div>
-          <div class="cert-name-main">Inventory Management Certificate</div>
-          <div class="cert-prov-main">HP LIFE — life.hp.com</div>
-          <div class="cert-rel-main">Inventory control, EOQ, safety stock, and stock planning. Directly supports Project 4 and KSTU modules PSCM 163 &amp; Quantitative Studies.</div>
-          <div class="cert-tags-main"><span class="cert-tag-main">EOQ</span><span class="cert-tag-main">Safety Stock</span><span class="cert-tag-main">PSCM 163</span><span class="cert-tag-main">Project 4</span></div>
-          <div class="cert-prog-wrap"><div class="cert-prog-top"><span>Progress</span><span>Year 1 Priority</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
-        </div>
-        <div class="cert-right-main"><div class="cert-status">To Do</div><a href="https://life.hp.com" target="_blank" class="cert-ext-link">life.hp.com →</a></div>
-      </div>
-
-      <div class="cert-card-main reveal" style="--cert-color:#10b981">
-        <div class="cert-icon-main">🌍</div>
-        <div>
-          <div class="cert-name-main">Procurement &amp; Logistics Certificate</div>
-          <div class="cert-prov-main">DisasterReady + Mercy Corps — disasterready.org</div>
-          <div class="cert-rel-main">Procurement, warehousing, fleet management, and asset management in real-world supply chains. Reinforces PSCM 165/166 Sourcing and Stores Admin modules.</div>
-          <div class="cert-tags-main"><span class="cert-tag-main">Procurement</span><span class="cert-tag-main">Warehousing</span><span class="cert-tag-main">PSCM 165/166</span><span class="cert-tag-main">Project 2</span></div>
-          <div class="cert-prog-wrap"><div class="cert-prog-top"><span>Progress</span><span>Year 1–2</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
-        </div>
-        <div class="cert-right-main"><div class="cert-status">To Do</div><a href="https://www.disasterready.org" target="_blank" class="cert-ext-link">disasterready.org →</a></div>
-      </div>
-
-      <div class="cert-card-main reveal" style="--cert-color:#8b5cf6">
-        <div class="cert-icon-main">🎓</div>
-        <div>
-          <div class="cert-name-main">Supply Chain Management Diploma</div>
-          <div class="cert-prov-main">Alison — alison.com</div>
-          <div class="cert-rel-main">Full diploma covering supply chain fundamentals, logistics, and operations management. Ideal Year 1 foundation reinforcing the entire KSTU degree from Semester 1.</div>
-          <div class="cert-tags-main"><span class="cert-tag-main">SCM Fundamentals</span><span class="cert-tag-main">Logistics</span><span class="cert-tag-main">Operations</span><span class="cert-tag-main">Diploma</span></div>
-          <div class="cert-prog-wrap"><div class="cert-prog-top"><span>Progress</span><span>Year 1 — Start Now</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
-        </div>
-        <div class="cert-right-main"><div class="cert-status">To Do</div><a href="https://alison.com" target="_blank" class="cert-ext-link">alison.com →</a></div>
-      </div>
-
-      <div class="cert-card-main reveal" style="--cert-color:#f97316">
-        <div class="cert-icon-main">🏛️</div>
-        <div>
-          <div class="cert-name-main">E-Procurement Learning Program</div>
-          <div class="cert-prov-main">World Bank Group — worldbank.org/procurement</div>
-          <div class="cert-rel-main">Public procurement systems, Ghana e-GP portal, and digital procurement frameworks. Essential for Project 7 and KSTU modules PSCM 363/364 &amp; PSCM 467.</div>
-          <div class="cert-tags-main"><span class="cert-tag-main">Public Procurement</span><span class="cert-tag-main">e-GP Portal</span><span class="cert-tag-main">PSCM 363/364</span><span class="cert-tag-main">Project 7</span></div>
-          <div class="cert-prog-wrap"><div class="cert-prog-top"><span>Progress</span><span>Year 2–3</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
-        </div>
-        <div class="cert-right-main"><div class="cert-status">To Do</div><a href="https://www.worldbank.org/en/projects-operations/procurement" target="_blank" class="cert-ext-link">worldbank.org →</a></div>
-      </div>
-
-      <div class="cert-card-main reveal" style="--cert-color:#06b6d4">
-        <div class="cert-icon-main">📊</div>
-        <div>
-          <div class="cert-name-main">Power BI Learning Path</div>
-          <div class="cert-prov-main">Microsoft Learn — learn.microsoft.com</div>
-          <div class="cert-rel-main">Complete path from zero to live procurement dashboards. Directly produces Project 5 (Ghana Spend Dashboard) and supports PSCM 272 Stores Management in Year 2.</div>
-          <div class="cert-tags-main"><span class="cert-tag-main">Power BI</span><span class="cert-tag-main">Dashboards</span><span class="cert-tag-main">PSCM 272</span><span class="cert-tag-main">Project 5</span></div>
-          <div class="cert-prog-wrap"><div class="cert-prog-top"><span>Progress</span><span>Year 2 Sem 2</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
-        </div>
-        <div class="cert-right-main"><div class="cert-status">To Do</div><a href="https://learn.microsoft.com/en-us/training/powerbi/" target="_blank" class="cert-ext-link">learn.microsoft.com →</a></div>
-      </div>
-
-      <div class="cert-card-main reveal" style="--cert-color:#16a34a">
-        <div class="cert-icon-main">📈</div>
-        <div>
-          <div class="cert-name-main">Excel for Business Certificate</div>
-          <div class="cert-prov-main">Alison — alison.com</div>
-          <div class="cert-rel-main">Excel skills for business data analysis, reporting, and procurement tracking. Supports PSCM 163 &amp; Quantitative Studies and directly builds Project 1 data tracker.</div>
-          <div class="cert-tags-main"><span class="cert-tag-main">Excel</span><span class="cert-tag-main">Data Analysis</span><span class="cert-tag-main">PSCM 163</span><span class="cert-tag-main">Project 1</span></div>
-          <div class="cert-prog-wrap"><div class="cert-prog-top"><span>Progress</span><span>Year 1</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
-        </div>
-        <div class="cert-right-main"><div class="cert-status">To Do</div><a href="https://alison.com" target="_blank" class="cert-ext-link">alison.com →</a></div>
-      </div>
-
-      <div class="cert-card-main reveal" style="--cert-color:#d4a843">
-        <div class="cert-icon-main">💬</div>
-        <div>
-          <div class="cert-name-main">Business Communication Certificate</div>
-          <div class="cert-prov-main">HP LIFE — life-global.org</div>
-          <div class="cert-rel-main">Professional communication skills for procurement: writing RFQs, supplier emails, and reports. Supports PSCM 165 Stores Administration and Project 3 Supplier Email Pack.</div>
-          <div class="cert-tags-main"><span class="cert-tag-main">Communication</span><span class="cert-tag-main">RFQ Writing</span><span class="cert-tag-main">PSCM 165</span><span class="cert-tag-main">Project 3</span></div>
-          <div class="cert-prog-wrap"><div class="cert-prog-top"><span>Progress</span><span>Year 1</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
-        </div>
-        <div class="cert-right-main"><div class="cert-status">To Do</div><a href="https://www.life-global.org" target="_blank" class="cert-ext-link">life-global.org →</a></div>
-      </div>
-
-      <div class="cert-card-main reveal" style="--cert-color:#7c3aed">
-        <div class="cert-icon-main">🗂️</div>
-        <div>
-          <div class="cert-name-main">Project Management Certificate</div>
-          <div class="cert-prov-main">HP LIFE — life-global.org</div>
-          <div class="cert-rel-main">Project planning, execution, and monitoring frameworks applied to procurement. Supports PSCM 272 Procurement Planning and Project 6 Procurement Plan deliverable.</div>
-          <div class="cert-tags-main"><span class="cert-tag-main">Project Planning</span><span class="cert-tag-main">Execution</span><span class="cert-tag-main">PSCM 272</span><span class="cert-tag-main">Project 6</span></div>
-          <div class="cert-prog-wrap"><div class="cert-prog-top"><span>Progress</span><span>Year 2</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
-        </div>
-        <div class="cert-right-main"><div class="cert-status">To Do</div><a href="https://www.life-global.org" target="_blank" class="cert-ext-link">life-global.org →</a></div>
-      </div>
-
-      <div class="cert-card-main reveal" style="--cert-color:#0891b2">
-        <div class="cert-icon-main">📚</div>
-        <div>
-          <div class="cert-name-main">Business Management Diploma</div>
-          <div class="cert-prov-main">OpenLearn — open.edu/openlearn</div>
-          <div class="cert-rel-main">Business strategy, operations, and management fundamentals. Reinforces all Year 1 KSTU modules and provides the business context for all 7 portfolio projects.</div>
-          <div class="cert-tags-main"><span class="cert-tag-main">Business Strategy</span><span class="cert-tag-main">Operations</span><span class="cert-tag-main">All Year 1</span><span class="cert-tag-main">Foundation</span></div>
-          <div class="cert-prog-wrap"><div class="cert-prog-top"><span>Progress</span><span>Year 1–2</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
-        </div>
-        <div class="cert-right-main"><div class="cert-status">To Do</div><a href="https://open.edu/openlearn/" target="_blank" class="cert-ext-link">openlearn.org →</a></div>
-      </div>
-
-      <div class="cert-card-main reveal" style="--cert-color:#1d9e75">
-        <div class="cert-icon-main">🚚</div>
-        <div>
-          <div class="cert-name-main">Logistics &amp; Operations Certificate</div>
-          <div class="cert-prov-main">OpenLearn — open.edu/openlearn</div>
-          <div class="cert-rel-main">Logistics systems, operations management, and supply chain flow. Supports PSCM 166 Stores Admin and Project 8 Operations Review deliverable.</div>
-          <div class="cert-tags-main"><span class="cert-tag-main">Logistics</span><span class="cert-tag-main">Operations</span><span class="cert-tag-main">PSCM 166</span><span class="cert-tag-main">Project 8</span></div>
-          <div class="cert-prog-wrap"><div class="cert-prog-top"><span>Progress</span><span>Year 2</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
-        </div>
-        <div class="cert-right-main"><div class="cert-status">To Do</div><a href="https://open.edu/openlearn/" target="_blank" class="cert-ext-link">openlearn.org →</a></div>
-      </div>
-
-      <div class="cert-card-main reveal" style="--cert-color:#b45309">
-        <div class="cert-icon-main">🏭</div>
-        <div>
-          <div class="cert-name-main">Warehouse Management Diploma</div>
-          <div class="cert-prov-main">Alison — alison.com</div>
-          <div class="cert-rel-main">Warehouse operations, stock control, inventory flow, and logistics systems. Supports PSCM 166 Stores Administration and Project 4 Warehouse Flow deliverable.</div>
-          <div class="cert-tags-main"><span class="cert-tag-main">Warehouse Ops</span><span class="cert-tag-main">Stock Control</span><span class="cert-tag-main">PSCM 166</span><span class="cert-tag-main">Project 4</span></div>
-          <div class="cert-prog-wrap"><div class="cert-prog-top"><span>Progress</span><span>Year 2–3</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
-        </div>
-        <div class="cert-right-main"><div class="cert-status">To Do</div><a href="https://alison.com" target="_blank" class="cert-ext-link">alison.com →</a></div>
-      </div>
-
-      <div class="cert-card-main reveal" style="--cert-color:#e11d48">
-        <div class="cert-icon-main">📦</div>
-        <div>
-          <div class="cert-name-main">Procurement and Logistics Certificate</div>
-          <div class="cert-prov-main">DisasterReady + Mercy Corps — disasterready.org</div>
-          <div class="cert-rel-main">Practical procurement and logistics skills in real-world humanitarian supply chains. Supports PSCM 165/166 Stores Admin and Project 2 Contract Management.</div>
-          <div class="cert-tags-main"><span class="cert-tag-main">Procurement</span><span class="cert-tag-main">Logistics</span><span class="cert-tag-main">PSCM 165/166</span><span class="cert-tag-main">Project 2</span></div>
-          <div class="cert-prog-wrap"><div class="cert-prog-top"><span>Progress</span><span>Year 1–2</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
-        </div>
-        <div class="cert-right-main"><div class="cert-status">To Do</div><a href="https://www.disasterready.org" target="_blank" class="cert-ext-link">disasterready.org →</a></div>
-      </div>
-
-      <div class="cert-card-main reveal" style="--cert-color:#6366f1">
-        <div class="cert-icon-main">📜</div>
-        <div>
-          <div class="cert-name-main">Procurement and Contract Management</div>
-          <div class="cert-prov-main">UniAthena — uniathena.com</div>
-          <div class="cert-rel-main">Executive diploma covering procurement strategy, contract drafting, supplier management, and compliance. Directly supports PSCM 363/364 &amp; PSCM 467 and Project 7 Compliance.</div>
-          <div class="cert-tags-main"><span class="cert-tag-main">Contract Mgmt</span><span class="cert-tag-main">Procurement Strategy</span><span class="cert-tag-main">PSCM 363/364</span><span class="cert-tag-main">Project 7</span></div>
-          <div class="cert-prog-wrap"><div class="cert-prog-top"><span>Progress</span><span>Year 3</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
-        </div>
-        <div class="cert-right-main"><div class="cert-status">To Do</div><a href="https://uniathena.com" target="_blank" class="cert-ext-link">uniathena.com →</a></div>
-      </div>
-
-      <div class="cert-card-main reveal" style="--cert-color:#0ea5e9">
-        <div class="cert-icon-main">🚢</div>
-        <div>
-          <div class="cert-name-main">Introduction to Logistics</div>
-          <div class="cert-prov-main">Alison — alison.com</div>
-          <div class="cert-rel-main">Logistics basics, transportation modes, supply chain flows, and distribution fundamentals. Supports PSCM 163 Logistics Basics and Project 8 Operations Review.</div>
-          <div class="cert-tags-main"><span class="cert-tag-main">Logistics Basics</span><span class="cert-tag-main">Transportation</span><span class="cert-tag-main">PSCM 163</span><span class="cert-tag-main">Project 8</span></div>
-          <div class="cert-prog-wrap"><div class="cert-prog-top"><span>Progress</span><span>Year 1</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
-        </div>
-        <div class="cert-right-main"><div class="cert-status">To Do</div><a href="https://alison.com" target="_blank" class="cert-ext-link">alison.com →</a></div>
-      </div>
-
-      <div class="cert-card-main reveal" style="--cert-color:#f59e0b">
-        <div class="cert-icon-main">⚙️</div>
-        <div>
-          <div class="cert-name-main">Business Process Management</div>
-          <div class="cert-prov-main">Alison — alison.com</div>
-          <div class="cert-rel-main">Process mapping, workflow optimisation, and continuous improvement frameworks for procurement. Supports PSCM 272 Procurement Planning and Project 6 Process Improvement.</div>
-          <div class="cert-tags-main"><span class="cert-tag-main">Process Mapping</span><span class="cert-tag-main">Workflow Optimisation</span><span class="cert-tag-main">PSCM 272</span><span class="cert-tag-main">Project 6</span></div>
-          <div class="cert-prog-wrap"><div class="cert-prog-top"><span>Progress</span><span>Year 2–3</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
-        </div>
-        <div class="cert-right-main"><div class="cert-status">To Do</div><a href="https://alison.com" target="_blank" class="cert-ext-link">alison.com →</a></div>
-      </div>
-
+    <h2 class="section-title reveal">30 Free <span>Certifications</span><br>100% Cost. Zero.</h2>
+    <p class="reveal" style="font-size:14px;color:rgba(255,255,255,0.5);margin-bottom:2rem;max-width:580px;line-height:1.8">Every program is 100% free, self-paced, and directly linked to a KSTU module or portfolio project. Certificate links will be added as each program is completed.</p>
+ 
+    <div class="cert-filters reveal">
+      <button class="cert-filter active" onclick="filterCerts('all',this)">All 30</button>
+      <button class="cert-filter" onclick="filterCerts('procurement',this)">Procurement</button>
+      <button class="cert-filter" onclick="filterCerts('logistics',this)">Logistics</button>
+      <button class="cert-filter" onclick="filterCerts('analytics',this)">Analytics</button>
+      <button class="cert-filter" onclick="filterCerts('contracts',this)">Contracts</button>
+      <button class="cert-filter" onclick="filterCerts('business',this)">Business</button>
+      <button class="cert-filter" onclick="filterCerts('erp',this)">ERP</button>
     </div>
+ 
+    <div class="cert-list" id="certList">
+ 
+      <!-- 1 -->
+      <div class="cert-card reveal" style="--cc:#3b82f6" data-cat="logistics">
+        <div class="cert-icon">🖥️</div>
+        <div>
+          <div class="cert-name">Inventory Management Certificate</div>
+          <div class="cert-prov">HP LIFE · life.hp.com · FREE</div>
+          <div class="cert-rel">EOQ, safety stock, stock planning. Supports Project 4 + PSCM 163.</div>
+          <div class="cert-tags"><span class="cert-tag">EOQ</span><span class="cert-tag">Safety Stock</span><span class="cert-tag">PSCM 163</span><span class="cert-tag">Project 4</span></div>
+          <div class="cert-prog"><div class="cert-prog-top"><span>Progress</span><span>Year 1 Priority</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
+        </div>
+        <div class="cert-right">
+          <span class="cert-status">To Do</span>
+          <a href="https://life.hp.com" target="_blank" class="cert-link-btn">life.hp.com →</a>
+          <span class="cert-upload">📎 Certificate link: [paste when earned]</span>
+        </div>
+      </div>
+ 
+      <!-- 2 -->
+      <div class="cert-card reveal" style="--cc:#10b981" data-cat="procurement">
+        <div class="cert-icon">🌍</div>
+        <div>
+          <div class="cert-name">Procurement &amp; Logistics Certificate</div>
+          <div class="cert-prov">DisasterReady + Mercy Corps · disasterready.org · FREE</div>
+          <div class="cert-rel">Procurement, warehousing, fleet &amp; asset management. Supports PSCM 165/166.</div>
+          <div class="cert-tags"><span class="cert-tag">Procurement</span><span class="cert-tag">Warehousing</span><span class="cert-tag">PSCM 165/166</span><span class="cert-tag">Project 2</span></div>
+          <div class="cert-prog"><div class="cert-prog-top"><span>Progress</span><span>Year 1–2</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
+        </div>
+        <div class="cert-right">
+          <span class="cert-status">To Do</span>
+          <a href="https://www.disasterready.org" target="_blank" class="cert-link-btn">disasterready.org →</a>
+          <span class="cert-upload">📎 Certificate link: [paste when earned]</span>
+        </div>
+      </div>
+ 
+      <!-- 3 -->
+      <div class="cert-card reveal" style="--cc:#8b5cf6" data-cat="logistics">
+        <div class="cert-icon">🎓</div>
+        <div>
+          <div class="cert-name">Supply Chain Management Diploma</div>
+          <div class="cert-prov">Alison · alison.com · FREE</div>
+          <div class="cert-rel">SCM fundamentals, logistics, and operations. Year 1 foundation for all modules.</div>
+          <div class="cert-tags"><span class="cert-tag">SCM</span><span class="cert-tag">Logistics</span><span class="cert-tag">Operations</span><span class="cert-tag">All Year 1</span></div>
+          <div class="cert-prog"><div class="cert-prog-top"><span>Progress</span><span>Year 1 — Start Now</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
+        </div>
+        <div class="cert-right">
+          <span class="cert-status">To Do</span>
+          <a href="https://alison.com" target="_blank" class="cert-link-btn">alison.com →</a>
+          <span class="cert-upload">📎 Certificate link: [paste when earned]</span>
+        </div>
+      </div>
+ 
+      <!-- 4 -->
+      <div class="cert-card reveal" style="--cc:#f97316" data-cat="procurement">
+        <div class="cert-icon">🏛️</div>
+        <div>
+          <div class="cert-name">E-Procurement Learning Program</div>
+          <div class="cert-prov">World Bank Group · worldbank.org · FREE</div>
+          <div class="cert-rel">Public procurement, Ghana e-GP, digital systems. Essential for Project 7 + PSCM 363/364.</div>
+          <div class="cert-tags"><span class="cert-tag">e-GP Portal</span><span class="cert-tag">Public Procurement</span><span class="cert-tag">PSCM 363/364</span><span class="cert-tag">Project 7</span></div>
+          <div class="cert-prog"><div class="cert-prog-top"><span>Progress</span><span>Year 2–3</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
+        </div>
+        <div class="cert-right">
+          <span class="cert-status">To Do</span>
+          <a href="https://www.worldbank.org/en/projects-operations/procurement" target="_blank" class="cert-link-btn">worldbank.org →</a>
+          <span class="cert-upload">📎 Certificate link: [paste when earned]</span>
+        </div>
+      </div>
+ 
+      <!-- 5 -->
+      <div class="cert-card reveal" style="--cc:#06b6d4" data-cat="analytics">
+        <div class="cert-icon">📊</div>
+        <div>
+          <div class="cert-name">Power BI Learning Path</div>
+          <div class="cert-prov">Microsoft Learn · learn.microsoft.com · FREE</div>
+          <div class="cert-rel">Zero to live procurement dashboards. Produces Project 5 + supports PSCM 272.</div>
+          <div class="cert-tags"><span class="cert-tag">Power BI</span><span class="cert-tag">Dashboards</span><span class="cert-tag">PSCM 272</span><span class="cert-tag">Project 5</span></div>
+          <div class="cert-prog"><div class="cert-prog-top"><span>Progress</span><span>Year 2 Sem 2</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
+        </div>
+        <div class="cert-right">
+          <span class="cert-status">To Do</span>
+          <a href="https://learn.microsoft.com/en-us/training/powerbi/" target="_blank" class="cert-link-btn">learn.microsoft.com →</a>
+          <span class="cert-upload">📎 Certificate link: [paste when earned]</span>
+        </div>
+      </div>
+ 
+      <!-- 6 -->
+      <div class="cert-card reveal" style="--cc:#16a34a" data-cat="analytics">
+        <div class="cert-icon">📈</div>
+        <div>
+          <div class="cert-name">Excel for Business Certificate</div>
+          <div class="cert-prov">Alison · alison.com · FREE</div>
+          <div class="cert-rel">Excel for business data analysis, reporting, procurement tracking. Supports PSCM 163 + Project 1.</div>
+          <div class="cert-tags"><span class="cert-tag">Excel</span><span class="cert-tag">Data Analysis</span><span class="cert-tag">PSCM 163</span><span class="cert-tag">Project 1</span></div>
+          <div class="cert-prog"><div class="cert-prog-top"><span>Progress</span><span>Year 1</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
+        </div>
+        <div class="cert-right">
+          <span class="cert-status">To Do</span>
+          <a href="https://alison.com" target="_blank" class="cert-link-btn">alison.com →</a>
+          <span class="cert-upload">📎 Certificate link: [paste when earned]</span>
+        </div>
+      </div>
+ 
+      <!-- 7 -->
+      <div class="cert-card reveal" style="--cc:#d4a843" data-cat="business">
+        <div class="cert-icon">💬</div>
+        <div>
+          <div class="cert-name">Business Communication Certificate</div>
+          <div class="cert-prov">HP LIFE · life-global.org · FREE</div>
+          <div class="cert-rel">Professional writing: RFQs, supplier emails, procurement reports. Supports PSCM 165 + Project 3.</div>
+          <div class="cert-tags"><span class="cert-tag">Communication</span><span class="cert-tag">RFQ Writing</span><span class="cert-tag">PSCM 165</span><span class="cert-tag">Project 3</span></div>
+          <div class="cert-prog"><div class="cert-prog-top"><span>Progress</span><span>Year 1</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
+        </div>
+        <div class="cert-right">
+          <span class="cert-status">To Do</span>
+          <a href="https://www.life-global.org" target="_blank" class="cert-link-btn">life-global.org →</a>
+          <span class="cert-upload">📎 Certificate link: [paste when earned]</span>
+        </div>
+      </div>
+ 
+      <!-- 8 -->
+      <div class="cert-card reveal" style="--cc:#7c3aed" data-cat="business">
+        <div class="cert-icon">🗂️</div>
+        <div>
+          <div class="cert-name">Project Management Certificate</div>
+          <div class="cert-prov">HP LIFE · life-global.org · FREE</div>
+          <div class="cert-rel">Project planning, execution, monitoring for procurement. Supports PSCM 272 + Project 6.</div>
+          <div class="cert-tags"><span class="cert-tag">Project Planning</span><span class="cert-tag">Execution</span><span class="cert-tag">PSCM 272</span><span class="cert-tag">Project 6</span></div>
+          <div class="cert-prog"><div class="cert-prog-top"><span>Progress</span><span>Year 2</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
+        </div>
+        <div class="cert-right">
+          <span class="cert-status">To Do</span>
+          <a href="https://www.life-global.org" target="_blank" class="cert-link-btn">life-global.org →</a>
+          <span class="cert-upload">📎 Certificate link: [paste when earned]</span>
+        </div>
+      </div>
+ 
+      <!-- 9 -->
+      <div class="cert-card reveal" style="--cc:#0891b2" data-cat="business">
+        <div class="cert-icon">📚</div>
+        <div>
+          <div class="cert-name">Business Management Diploma</div>
+          <div class="cert-prov">OpenLearn · open.edu/openlearn · FREE</div>
+          <div class="cert-rel">Business strategy, operations, and management fundamentals. Reinforces all Year 1 KSTU modules.</div>
+          <div class="cert-tags"><span class="cert-tag">Business Strategy</span><span class="cert-tag">Operations</span><span class="cert-tag">All Year 1</span><span class="cert-tag">Foundation</span></div>
+          <div class="cert-prog"><div class="cert-prog-top"><span>Progress</span><span>Year 1–2</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
+        </div>
+        <div class="cert-right">
+          <span class="cert-status">To Do</span>
+          <a href="https://open.edu/openlearn/" target="_blank" class="cert-link-btn">openlearn.org →</a>
+          <span class="cert-upload">📎 Certificate link: [paste when earned]</span>
+        </div>
+      </div>
+ 
+      <!-- 10 -->
+      <div class="cert-card reveal" style="--cc:#1d9e75" data-cat="logistics">
+        <div class="cert-icon">🚚</div>
+        <div>
+          <div class="cert-name">Logistics &amp; Operations Certificate</div>
+          <div class="cert-prov">OpenLearn · open.edu/openlearn · FREE</div>
+          <div class="cert-rel">Logistics systems, operations management, supply chain flow. Supports PSCM 166 + Project 8.</div>
+          <div class="cert-tags"><span class="cert-tag">Logistics</span><span class="cert-tag">Operations</span><span class="cert-tag">PSCM 166</span><span class="cert-tag">Project 8</span></div>
+          <div class="cert-prog"><div class="cert-prog-top"><span>Progress</span><span>Year 2</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
+        </div>
+        <div class="cert-right">
+          <span class="cert-status">To Do</span>
+          <a href="https://open.edu/openlearn/" target="_blank" class="cert-link-btn">openlearn.org →</a>
+          <span class="cert-upload">📎 Certificate link: [paste when earned]</span>
+        </div>
+      </div>
+ 
+      <!-- 11 -->
+      <div class="cert-card reveal" style="--cc:#b45309" data-cat="logistics">
+        <div class="cert-icon">🏭</div>
+        <div>
+          <div class="cert-name">Warehouse Management Diploma</div>
+          <div class="cert-prov">Alison · alison.com · FREE</div>
+          <div class="cert-rel">Warehouse operations, stock control, inventory flow. Supports PSCM 166 + Project 4.</div>
+          <div class="cert-tags"><span class="cert-tag">Warehouse Ops</span><span class="cert-tag">Stock Control</span><span class="cert-tag">PSCM 166</span><span class="cert-tag">Project 4</span></div>
+          <div class="cert-prog"><div class="cert-prog-top"><span>Progress</span><span>Year 2–3</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
+        </div>
+        <div class="cert-right">
+          <span class="cert-status">To Do</span>
+          <a href="https://alison.com" target="_blank" class="cert-link-btn">alison.com →</a>
+          <span class="cert-upload">📎 Certificate link: [paste when earned]</span>
+        </div>
+      </div>
+ 
+      <!-- 12 -->
+      <div class="cert-card reveal" style="--cc:#e11d48" data-cat="procurement">
+        <div class="cert-icon">📦</div>
+        <div>
+          <div class="cert-name">Procurement and Logistics Certificate</div>
+          <div class="cert-prov">DisasterReady + Mercy Corps · disasterready.org · FREE</div>
+          <div class="cert-rel">Practical procurement &amp; logistics in real-world supply chains. Supports PSCM 165/166 + Project 2.</div>
+          <div class="cert-tags"><span class="cert-tag">Procurement</span><span class="cert-tag">Logistics</span><span class="cert-tag">PSCM 165/166</span><span class="cert-tag">Project 2</span></div>
+          <div class="cert-prog"><div class="cert-prog-top"><span>Progress</span><span>Year 1–2</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
+        </div>
+        <div class="cert-right">
+          <span class="cert-status">To Do</span>
+          <a href="https://www.disasterready.org" target="_blank" class="cert-link-btn">disasterready.org →</a>
+          <span class="cert-upload">📎 Certificate link: [paste when earned]</span>
+        </div>
+      </div>
+ 
+      <!-- 13 -->
+      <div class="cert-card reveal" style="--cc:#6366f1" data-cat="contracts">
+        <div class="cert-icon">📜</div>
+        <div>
+          <div class="cert-name">Procurement and Contract Management</div>
+          <div class="cert-prov">UniAthena · uniathena.com · FREE</div>
+          <div class="cert-rel">Procurement strategy, contract drafting, supplier management, compliance. Supports PSCM 363/364 + Project 7.</div>
+          <div class="cert-tags"><span class="cert-tag">Contract Mgmt</span><span class="cert-tag">Compliance</span><span class="cert-tag">PSCM 363/364</span><span class="cert-tag">Project 7</span></div>
+          <div class="cert-prog"><div class="cert-prog-top"><span>Progress</span><span>Year 3</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
+        </div>
+        <div class="cert-right">
+          <span class="cert-status">To Do</span>
+          <a href="https://uniathena.com" target="_blank" class="cert-link-btn">uniathena.com →</a>
+          <span class="cert-upload">📎 Certificate link: [paste when earned]</span>
+        </div>
+      </div>
+ 
+      <!-- 14 -->
+      <div class="cert-card reveal" style="--cc:#0ea5e9" data-cat="logistics">
+        <div class="cert-icon">🚢</div>
+        <div>
+          <div class="cert-name">Introduction to Logistics</div>
+          <div class="cert-prov">Alison · alison.com · FREE</div>
+          <div class="cert-rel">Logistics basics, transportation modes, distribution fundamentals. Supports PSCM 163 + Project 8.</div>
+          <div class="cert-tags"><span class="cert-tag">Logistics Basics</span><span class="cert-tag">Transportation</span><span class="cert-tag">PSCM 163</span><span class="cert-tag">Project 8</span></div>
+          <div class="cert-prog"><div class="cert-prog-top"><span>Progress</span><span>Year 1</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
+        </div>
+        <div class="cert-right">
+          <span class="cert-status">To Do</span>
+          <a href="https://alison.com" target="_blank" class="cert-link-btn">alison.com →</a>
+          <span class="cert-upload">📎 Certificate link: [paste when earned]</span>
+        </div>
+      </div>
+ 
+      <!-- 15 -->
+      <div class="cert-card reveal" style="--cc:#f59e0b" data-cat="business">
+        <div class="cert-icon">⚙️</div>
+        <div>
+          <div class="cert-name">Business Process Management</div>
+          <div class="cert-prov">Alison · alison.com · FREE</div>
+          <div class="cert-rel">Process mapping, workflow optimisation, continuous improvement. Supports PSCM 272 + Project 6.</div>
+          <div class="cert-tags"><span class="cert-tag">Process Mapping</span><span class="cert-tag">Workflow</span><span class="cert-tag">PSCM 272</span><span class="cert-tag">Project 6</span></div>
+          <div class="cert-prog"><div class="cert-prog-top"><span>Progress</span><span>Year 2–3</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
+        </div>
+        <div class="cert-right">
+          <span class="cert-status">To Do</span>
+          <a href="https://alison.com" target="_blank" class="cert-link-btn">alison.com →</a>
+          <span class="cert-upload">📎 Certificate link: [paste when earned]</span>
+        </div>
+      </div>
+ 
+      <!-- ══ NEW 15 ══ -->
+ 
+      <!-- 16 -->
+      <div class="cert-card reveal" style="--cc:#3b82f6" data-cat="erp">
+        <div class="cert-icon">🖥️</div>
+        <div>
+          <div class="cert-name">SAP ERP Essential Training</div>
+          <div class="cert-prov">SAP Learning Hub Discovery · learning.sap.com · FREE</div>
+          <div class="cert-rel">Hands-on SAP S/4HANA free trial. Full P2P cycle practice. Directly produces Project 1 content + supports PSCM 265.</div>
+          <div class="cert-tags"><span class="cert-tag">SAP MM</span><span class="cert-tag">P2P Cycle</span><span class="cert-tag">PSCM 265</span><span class="cert-tag">Project 1</span></div>
+          <div class="cert-prog"><div class="cert-prog-top"><span>Progress</span><span>Year 2 Sem 1</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
+        </div>
+        <div class="cert-right">
+          <span class="cert-status">To Do</span>
+          <a href="https://learning.sap.com" target="_blank" class="cert-link-btn">learning.sap.com →</a>
+          <span class="cert-upload">📎 Certificate link: [paste when earned]</span>
+        </div>
+      </div>
+ 
+      <!-- 17 -->
+      <div class="cert-card reveal" style="--cc:#10b981" data-cat="analytics">
+        <div class="cert-icon">📉</div>
+        <div>
+          <div class="cert-name">Data Analysis with Python</div>
+          <div class="cert-prov">Cognitive Class (IBM) · cognitiveclass.ai · FREE</div>
+          <div class="cert-rel">Data manipulation, analysis, and visualisation for procurement spend analysis. Supports Project 5 and future advanced analytics work.</div>
+          <div class="cert-tags"><span class="cert-tag">Python</span><span class="cert-tag">Data Analysis</span><span class="cert-tag">IBM Badge</span><span class="cert-tag">Project 5</span></div>
+          <div class="cert-prog"><div class="cert-prog-top"><span>Progress</span><span>Year 3</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
+        </div>
+        <div class="cert-right">
+          <span class="cert-status">To Do</span>
+          <a href="https://cognitiveclass.ai" target="_blank" class="cert-link-btn">cognitiveclass.ai →</a>
+          <span class="cert-upload">📎 Certificate link: [paste when earned]</span>
+        </div>
+      </div>
+ 
+      <!-- 18 -->
+      <div class="cert-card reveal" style="--cc:#8b5cf6" data-cat="contracts">
+        <div class="cert-icon">⚖️</div>
+        <div>
+          <div class="cert-name">Introduction to Contract Law</div>
+          <div class="cert-prov">Coursera (Yale Law School) · coursera.org · FREE Audit</div>
+          <div class="cert-rel">Contract formation, breach, remedies, and enforcement. Directly reinforces PSCM 261/262 Legal Aspects of Procurement I &amp; II.</div>
+          <div class="cert-tags"><span class="cert-tag">Contract Law</span><span class="cert-tag">Legal Aspects</span><span class="cert-tag">PSCM 261/262</span><span class="cert-tag">Project 2</span></div>
+          <div class="cert-prog"><div class="cert-prog-top"><span>Progress</span><span>Year 2</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
+        </div>
+        <div class="cert-right">
+          <span class="cert-status">To Do</span>
+          <a href="https://www.coursera.org/learn/contract-law" target="_blank" class="cert-link-btn">coursera.org →</a>
+          <span class="cert-upload">📎 Certificate link: [paste when earned]</span>
+        </div>
+      </div>
+ 
+      <!-- 19 -->
+      <div class="cert-card reveal" style="--cc:#f97316" data-cat="logistics">
+        <div class="cert-icon">🌐</div>
+        <div>
+          <div class="cert-name">Global Logistics &amp; Supply Chain Management</div>
+          <div class="cert-prov">edX (MITx) · edx.org · FREE Audit</div>
+          <div class="cert-rel">Global supply chain design, logistics networks, risk mitigation. Supports PSCM 264 SCM + PSCM 365 Strategic SCM and Project 5.</div>
+          <div class="cert-tags"><span class="cert-tag">Global SCM</span><span class="cert-tag">MIT Content</span><span class="cert-tag">PSCM 264/365</span><span class="cert-tag">Project 5</span></div>
+          <div class="cert-prog"><div class="cert-prog-top"><span>Progress</span><span>Year 2–3</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
+        </div>
+        <div class="cert-right">
+          <span class="cert-status">To Do</span>
+          <a href="https://www.edx.org" target="_blank" class="cert-link-btn">edx.org →</a>
+          <span class="cert-upload">📎 Certificate link: [paste when earned]</span>
+        </div>
+      </div>
+ 
+      <!-- 20 -->
+      <div class="cert-card reveal" style="--cc:#06b6d4" data-cat="analytics">
+        <div class="cert-icon">📋</div>
+        <div>
+          <div class="cert-name">Supply Chain Analytics</div>
+          <div class="cert-prov">Coursera (Rutgers) · coursera.org · FREE Audit</div>
+          <div class="cert-rel">Demand forecasting, inventory analytics, SCOR metrics, and KPI reporting. Directly supports PSCM 365 Strategic SCM and Project 5 dashboard.</div>
+          <div class="cert-tags"><span class="cert-tag">Demand Forecasting</span><span class="cert-tag">SCOR</span><span class="cert-tag">PSCM 365</span><span class="cert-tag">Project 5</span></div>
+          <div class="cert-prog"><div class="cert-prog-top"><span>Progress</span><span>Year 3</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
+        </div>
+        <div class="cert-right">
+          <span class="cert-status">To Do</span>
+          <a href="https://www.coursera.org" target="_blank" class="cert-link-btn">coursera.org →</a>
+          <span class="cert-upload">📎 Certificate link: [paste when earned]</span>
+        </div>
+      </div>
+ 
+      <!-- 21 -->
+      <div class="cert-card reveal" style="--cc:#16a34a" data-cat="procurement">
+        <div class="cert-icon">🔍</div>
+        <div>
+          <div class="cert-name">Strategic Sourcing &amp; Category Management</div>
+          <div class="cert-prov">CIPS Free Resources · cips.org · FREE</div>
+          <div class="cert-rel">7-step category management, spend analysis, TCO modelling. Directly supports PSCM 265/270 Category Management I &amp; II and Project 6.</div>
+          <div class="cert-tags"><span class="cert-tag">Category Mgmt</span><span class="cert-tag">TCO</span><span class="cert-tag">PSCM 265/270</span><span class="cert-tag">Project 6</span></div>
+          <div class="cert-prog"><div class="cert-prog-top"><span>Progress</span><span>Year 2–4</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
+        </div>
+        <div class="cert-right">
+          <span class="cert-status">To Do</span>
+          <a href="https://www.cips.org/knowledge" target="_blank" class="cert-link-btn">cips.org →</a>
+          <span class="cert-upload">📎 Certificate link: [paste when earned]</span>
+        </div>
+      </div>
+ 
+      <!-- 22 -->
+      <div class="cert-card reveal" style="--cc:#d4a843" data-cat="business">
+        <div class="cert-icon">💼</div>
+        <div>
+          <div class="cert-name">Financial Literacy for Business</div>
+          <div class="cert-prov">HP LIFE · life.hp.com · FREE</div>
+          <div class="cert-rel">Financial statements, budgeting, cost analysis for procurement decisions. Supports PSCM 374 Business Finance and TCO modelling in Project 6.</div>
+          <div class="cert-tags"><span class="cert-tag">Financial Literacy</span><span class="cert-tag">Budgeting</span><span class="cert-tag">PSCM 374</span><span class="cert-tag">Project 6</span></div>
+          <div class="cert-prog"><div class="cert-prog-top"><span>Progress</span><span>Year 2</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
+        </div>
+        <div class="cert-right">
+          <span class="cert-status">To Do</span>
+          <a href="https://life.hp.com" target="_blank" class="cert-link-btn">life.hp.com →</a>
+          <span class="cert-upload">📎 Certificate link: [paste when earned]</span>
+        </div>
+      </div>
+ 
+      <!-- 23 -->
+      <div class="cert-card reveal" style="--cc:#7c3aed" data-cat="procurement">
+        <div class="cert-icon">🌿</div>
+        <div>
+          <div class="cert-name">Sustainable Supply Chain Management</div>
+          <div class="cert-prov">edX (TU Delft) · edx.org · FREE Audit</div>
+          <div class="cert-rel">ESG-aligned sourcing, circular economy, sustainability reporting. Directly supports PSCM 366 Sustainability in SCM and Project 7 compliance assessment.</div>
+          <div class="cert-tags"><span class="cert-tag">ESG Sourcing</span><span class="cert-tag">Circular Economy</span><span class="cert-tag">PSCM 366</span><span class="cert-tag">Project 7</span></div>
+          <div class="cert-prog"><div class="cert-prog-top"><span>Progress</span><span>Year 3</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
+        </div>
+        <div class="cert-right">
+          <span class="cert-status">To Do</span>
+          <a href="https://www.edx.org" target="_blank" class="cert-link-btn">edx.org →</a>
+          <span class="cert-upload">📎 Certificate link: [paste when earned]</span>
+        </div>
+      </div>
+ 
+      <!-- 24 -->
+      <div class="cert-card reveal" style="--cc:#0891b2" data-cat="erp">
+        <div class="cert-icon">☁️</div>
+        <div>
+          <div class="cert-name">Oracle Procurement Cloud Fundamentals</div>
+          <div class="cert-prov">Oracle University · education.oracle.com · FREE</div>
+          <div class="cert-rel">Oracle Cloud procurement workflows, PO management, supplier portal. Supports PSCM 467 Business Systems &amp; E-Procurement and Year 2 ERP development.</div>
+          <div class="cert-tags"><span class="cert-tag">Oracle Cloud</span><span class="cert-tag">E-Procurement</span><span class="cert-tag">PSCM 467</span><span class="cert-tag">ERP Year 2</span></div>
+          <div class="cert-prog"><div class="cert-prog-top"><span>Progress</span><span>Year 2 Sem 2</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
+        </div>
+        <div class="cert-right">
+          <span class="cert-status">To Do</span>
+          <a href="https://education.oracle.com" target="_blank" class="cert-link-btn">oracle.com →</a>
+          <span class="cert-upload">📎 Certificate link: [paste when earned]</span>
+        </div>
+      </div>
+ 
+      <!-- 25 -->
+      <div class="cert-card reveal" style="--cc:#1d9e75" data-cat="logistics">
+        <div class="cert-icon">📐</div>
+        <div>
+          <div class="cert-name">Lean Six Sigma White Belt</div>
+          <div class="cert-prov">6sigmastudy · 6sigmastudy.com · FREE</div>
+          <div class="cert-rel">Process improvement, waste elimination, DMAIC framework for procurement operations. Supports PSCM 365 Strategic SCM and continuous improvement projects.</div>
+          <div class="cert-tags"><span class="cert-tag">Lean</span><span class="cert-tag">Six Sigma</span><span class="cert-tag">PSCM 365</span><span class="cert-tag">DMAIC</span></div>
+          <div class="cert-prog"><div class="cert-prog-top"><span>Progress</span><span>Year 3</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
+        </div>
+        <div class="cert-right">
+          <span class="cert-status">To Do</span>
+          <a href="https://www.6sigmastudy.com" target="_blank" class="cert-link-btn">6sigmastudy.com →</a>
+          <span class="cert-upload">📎 Certificate link: [paste when earned]</span>
+        </div>
+      </div>
+ 
+      <!-- 26 -->
+      <div class="cert-card reveal" style="--cc:#e11d48" data-cat="business">
+        <div class="cert-icon">🏆</div>
+        <div>
+          <div class="cert-name">Entrepreneurship &amp; Business Development</div>
+          <div class="cert-prov">HP LIFE · life.hp.com · FREE</div>
+          <div class="cert-rel">Business planning, entrepreneurship, market analysis. Supports PSCM 453 Research Methods and final year project innovation aspects.</div>
+          <div class="cert-tags"><span class="cert-tag">Entrepreneurship</span><span class="cert-tag">Business Planning</span><span class="cert-tag">PSCM 453</span><span class="cert-tag">Year 4</span></div>
+          <div class="cert-prog"><div class="cert-prog-top"><span>Progress</span><span>Year 3–4</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
+        </div>
+        <div class="cert-right">
+          <span class="cert-status">To Do</span>
+          <a href="https://life.hp.com" target="_blank" class="cert-link-btn">life.hp.com →</a>
+          <span class="cert-upload">📎 Certificate link: [paste when earned]</span>
+        </div>
+      </div>
+ 
+      <!-- 27 -->
+      <div class="cert-card reveal" style="--cc:#6366f1" data-cat="procurement">
+        <div class="cert-icon">🔒</div>
+        <div>
+          <div class="cert-name">Risk Management in Procurement</div>
+          <div class="cert-prov">Alison · alison.com · FREE</div>
+          <div class="cert-rel">Supply chain risk identification, assessment, mitigation strategies. Supports PSCM 468 Managing Risk in SCM and Project 7 risk matrix deliverable.</div>
+          <div class="cert-tags"><span class="cert-tag">Risk Management</span><span class="cert-tag">Mitigation</span><span class="cert-tag">PSCM 468</span><span class="cert-tag">Project 7</span></div>
+          <div class="cert-prog"><div class="cert-prog-top"><span>Progress</span><span>Year 3–4</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
+        </div>
+        <div class="cert-right">
+          <span class="cert-status">To Do</span>
+          <a href="https://alison.com" target="_blank" class="cert-link-btn">alison.com →</a>
+          <span class="cert-upload">📎 Certificate link: [paste when earned]</span>
+        </div>
+      </div>
+ 
+      <!-- 28 -->
+      <div class="cert-card reveal" style="--cc:#f59e0b" data-cat="contracts">
+        <div class="cert-icon">🤝</div>
+        <div>
+          <div class="cert-name">Negotiation Skills for Procurement</div>
+          <div class="cert-prov">Coursera (Michigan) · coursera.org · FREE Audit</div>
+          <div class="cert-rel">Negotiation frameworks, BATNA, supplier negotiation tactics. Directly supports PSCM 361/362 Negotiation I &amp; II and Project 2 SLA negotiation.</div>
+          <div class="cert-tags"><span class="cert-tag">Negotiation</span><span class="cert-tag">BATNA</span><span class="cert-tag">PSCM 361/362</span><span class="cert-tag">Project 2</span></div>
+          <div class="cert-prog"><div class="cert-prog-top"><span>Progress</span><span>Year 3 Sem 1</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
+        </div>
+        <div class="cert-right">
+          <span class="cert-status">To Do</span>
+          <a href="https://www.coursera.org" target="_blank" class="cert-link-btn">coursera.org →</a>
+          <span class="cert-upload">📎 Certificate link: [paste when earned]</span>
+        </div>
+      </div>
+ 
+      <!-- 29 -->
+      <div class="cert-card reveal" style="--cc:#0ea5e9" data-cat="erp">
+        <div class="cert-icon">⚡</div>
+        <div>
+          <div class="cert-name">Microsoft Dynamics 365 Fundamentals</div>
+          <div class="cert-prov">Microsoft Learn · learn.microsoft.com · FREE</div>
+          <div class="cert-rel">MS Dynamics 365 procurement workflows, ERP fundamentals. Supports PSCM 467 Business Systems &amp; E-Procurement. Year 4 ERP system #4.</div>
+          <div class="cert-tags"><span class="cert-tag">MS Dynamics 365</span><span class="cert-tag">ERP</span><span class="cert-tag">PSCM 467</span><span class="cert-tag">Year 4</span></div>
+          <div class="cert-prog"><div class="cert-prog-top"><span>Progress</span><span>Year 4 Sem 1</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
+        </div>
+        <div class="cert-right">
+          <span class="cert-status">To Do</span>
+          <a href="https://learn.microsoft.com" target="_blank" class="cert-link-btn">learn.microsoft.com →</a>
+          <span class="cert-upload">📎 Certificate link: [paste when earned]</span>
+        </div>
+      </div>
+ 
+      <!-- 30 -->
+      <div class="cert-card reveal" style="--cc:#16a34a" data-cat="business">
+        <div class="cert-icon">🌱</div>
+        <div>
+          <div class="cert-name">ESG &amp; Sustainable Business Practices</div>
+          <div class="cert-prov">BSR + UN Global Compact · unglobalcompact.org · FREE</div>
+          <div class="cert-rel">ESG principles, UN SDGs, sustainable procurement frameworks. Supports PSCM 366 Sustainability in SCM and all compliance-related projects.</div>
+          <div class="cert-tags"><span class="cert-tag">ESG</span><span class="cert-tag">UN SDGs</span><span class="cert-tag">PSCM 366</span><span class="cert-tag">All Projects</span></div>
+          <div class="cert-prog"><div class="cert-prog-top"><span>Progress</span><span>Year 3–4</span></div><div class="cert-prog-bar"><div class="cert-prog-fill" data-cw="0"></div></div></div>
+        </div>
+        <div class="cert-right">
+          <span class="cert-status">To Do</span>
+          <a href="https://www.unglobalcompact.org" target="_blank" class="cert-link-btn">unglobalcompact.org →</a>
+          <span class="cert-upload">📎 Certificate link: [paste when earned]</span>
+        </div>
+      </div>
+ 
+    </div>
+  </div>
 </section>
-
+ 
 <div class="divider"></div>
-<div class="divider"></div>
-
+ 
 <!-- ══ CERT TIMELINE ══ -->
 <section id="certtimeline">
   <div class="section-inner">
     <div class="section-label reveal">Schedule</div>
-    <h2 class="section-title reveal">When to Complete <span>Each Certificate</span></h2>
-
-    <div class="ct-timeline reveal">
-
+    <h2 class="section-title reveal">30-Certificate <span>Completion</span><br>Timeline</h2>
+    <div class="ct-wrap reveal">
+ 
       <div class="ct-item">
         <div class="ct-dot"></div>
         <div class="ct-body">
           <div class="ct-when">YEAR 1 · SEM 1 · Oct 2026 – Feb 2027</div>
-          <div class="ct-title">Foundation — Start These 4 First</div>
+          <div class="ct-title">Foundation — 6 Certificates</div>
           <div class="ct-chips">
-            <span class="ct-chip" style="--cc:#8b5cf6">1. Alison — SCM Diploma</span>
-            <span class="ct-chip" style="--cc:#3b82f6">2. HP LIFE — Inventory Management</span>
-            <span class="ct-chip" style="--cc:#16a34a">3. Alison — Excel for Business</span>
-            <span class="ct-chip" style="--cc:#d4a843">4. HP LIFE — Business Communication</span>
-            <span class="ct-chip" style="--cc:#6b7280">~2 hrs/week · Weekends</span>
-            <span class="ct-chip" style="--cc:#6b7280">PSCM 163/165 · Computer Application</span>
+            <span class="ct-chip" style="--cc:#8b5cf6">3. Alison — SCM Diploma</span>
+            <span class="ct-chip" style="--cc:#3b82f6">1. HP LIFE — Inventory Mgmt</span>
+            <span class="ct-chip" style="--cc:#16a34a">6. Alison — Excel for Business</span>
+            <span class="ct-chip" style="--cc:#d4a843">7. HP LIFE — Business Communication</span>
+            <span class="ct-chip" style="--cc:#0ea5e9">14. Alison — Intro to Logistics</span>
+            <span class="ct-chip" style="--cc:#d4a843">22. HP LIFE — Financial Literacy</span>
+            <span class="ct-chip gold">~2 hrs/week · Weekends</span>
+            <span class="ct-chip">PSCM 163/165 · Computer Application</span>
           </div>
         </div>
       </div>
-
+ 
       <div class="ct-item">
         <div class="ct-dot"></div>
         <div class="ct-body">
           <div class="ct-when">YEAR 1 · SEM 2 · Mar 2027 – Jul 2027</div>
-          <div class="ct-title">Logistics Basics — Build on the Foundation</div>
+          <div class="ct-title">Logistics &amp; Business Fundamentals — 3 Certificates</div>
           <div class="ct-chips">
-            <span class="ct-chip" style="--cc:#0ea5e9">5. Alison — Introduction to Logistics</span>
-            <span class="ct-chip" style="--cc:#0891b2">6. OpenLearn — Business Management Diploma</span>
-            <span class="ct-chip" style="--cc:#6b7280">~2 hrs/week · Weekends</span>
-            <span class="ct-chip" style="--cc:#6b7280">PSCM 164/166 · Quantitative Studies</span>
+            <span class="ct-chip" style="--cc:#0891b2">9. OpenLearn — Business Management Diploma</span>
+            <span class="ct-chip" style="--cc:#f59e0b">15. Alison — Business Process Management</span>
+            <span class="ct-chip" style="--cc:#e11d48">26. HP LIFE — Entrepreneurship</span>
+            <span class="ct-chip gold">~2 hrs/week · Weekends</span>
+            <span class="ct-chip">PSCM 164/166 · Quantitative Studies</span>
           </div>
         </div>
       </div>
-
+ 
       <div class="ct-item">
         <div class="ct-dot"></div>
         <div class="ct-body">
           <div class="ct-when">YEAR 2 · SEM 1 · Oct 2027 – Feb 2028</div>
-          <div class="ct-title">Procurement & Operations Deep Dive</div>
+          <div class="ct-title">ERP, Procurement &amp; Contract Law — 5 Certificates</div>
           <div class="ct-chips">
-            <span class="ct-chip" style="--cc:#10b981">7. DisasterReady — Procurement & Logistics</span>
-            <span class="ct-chip" style="--cc:#e11d48">8. DisasterReady — Procurement & Logistics Cert</span>
-            <span class="ct-chip" style="--cc:#7c3aed">9. HP LIFE — Project Management</span>
-            <span class="ct-chip" style="--cc:#6b7280">~3 hrs/week · Pairs with Attachment I</span>
-            <span class="ct-chip" style="--cc:#6b7280">PSCM 261/265 · Legal Aspects</span>
+            <span class="ct-chip" style="--cc:#3b82f6">16. SAP Learning Hub — SAP Essential Training</span>
+            <span class="ct-chip" style="--cc:#8b5cf6">18. Coursera — Intro to Contract Law</span>
+            <span class="ct-chip" style="--cc:#10b981">2. DisasterReady — Procurement &amp; Logistics</span>
+            <span class="ct-chip" style="--cc:#e11d48">12. DisasterReady — Procurement &amp; Logistics Cert</span>
+            <span class="ct-chip" style="--cc:#7c3aed">8. HP LIFE — Project Management</span>
+            <span class="ct-chip gold">~3 hrs/week · Pairs with Attachment I</span>
+            <span class="ct-chip">PSCM 261/265 · Legal Aspects I</span>
           </div>
         </div>
       </div>
-
+ 
       <div class="ct-item">
         <div class="ct-dot"></div>
         <div class="ct-body">
           <div class="ct-when">YEAR 2 · SEM 2 · Mar 2028 – Jul 2028</div>
-          <div class="ct-title">Analytics & Warehouse Skills</div>
+          <div class="ct-title">Analytics, Warehouse &amp; Oracle — 4 Certificates</div>
           <div class="ct-chips">
-            <span class="ct-chip" style="--cc:#06b6d4">10. Microsoft Learn — Power BI Learning Path</span>
+            <span class="ct-chip" style="--cc:#06b6d4">5. Microsoft Learn — Power BI Path</span>
             <span class="ct-chip" style="--cc:#b45309">11. Alison — Warehouse Management Diploma</span>
-            <span class="ct-chip" style="--cc:#6b7280">~3 hrs/week</span>
-            <span class="ct-chip" style="--cc:#6b7280">PSCM 272 · Category Management II</span>
+            <span class="ct-chip" style="--cc:#0891b2">24. Oracle University — Oracle Cloud Fundamentals</span>
+            <span class="ct-chip" style="--cc:#f97316">19. edX MITx — Global Logistics &amp; SCM</span>
+            <span class="ct-chip gold">~3 hrs/week</span>
+            <span class="ct-chip">PSCM 272 · Category Management II</span>
           </div>
         </div>
       </div>
-
+ 
       <div class="ct-item">
         <div class="ct-dot"></div>
         <div class="ct-body">
           <div class="ct-when">YEAR 3 · SEM 1 · Oct 2028 – Feb 2029</div>
-          <div class="ct-title">Operations, Process & Compliance</div>
+          <div class="ct-title">Advanced Sourcing, Analytics &amp; Lean — 5 Certificates</div>
           <div class="ct-chips">
-            <span class="ct-chip" style="--cc:#1d9e75">12. OpenLearn — Logistics & Operations Certificate</span>
-            <span class="ct-chip" style="--cc:#f59e0b">13. Alison — Business Process Management</span>
-            <span class="ct-chip" style="--cc:#6b7280">~3 hrs/week</span>
-            <span class="ct-chip" style="--cc:#6b7280">PSCM 363/365 · Strategic SCM</span>
+            <span class="ct-chip" style="--cc:#16a34a">21. CIPS — Strategic Sourcing &amp; Category Mgmt</span>
+            <span class="ct-chip" style="--cc:#06b6d4">20. Coursera Rutgers — Supply Chain Analytics</span>
+            <span class="ct-chip" style="--cc:#10b981">17. IBM Cognitive Class — Data Analysis Python</span>
+            <span class="ct-chip" style="--cc:#1d9e75">25. 6Sigma Study — Lean Six Sigma White Belt</span>
+            <span class="ct-chip" style="--cc:#1d9e75">10. OpenLearn — Logistics &amp; Operations</span>
+            <span class="ct-chip gold">~3–4 hrs/week</span>
+            <span class="ct-chip">PSCM 363/365 · Strategic SCM</span>
           </div>
         </div>
       </div>
-
+ 
       <div class="ct-item">
         <div class="ct-dot"></div>
         <div class="ct-body">
           <div class="ct-when">YEAR 3 · SEM 2 · Mar 2029 – Jul 2029</div>
-          <div class="ct-title">Advanced Procurement & Public Systems</div>
+          <div class="ct-title">Compliance, Contracts &amp; Sustainability — 5 Certificates</div>
           <div class="ct-chips">
-            <span class="ct-chip" style="--cc:#f97316">14. World Bank — E-Procurement Program</span>
-            <span class="ct-chip" style="--cc:#6366f1">15. UniAthena — Procurement & Contract Management</span>
-            <span class="ct-chip" style="--cc:#6b7280">~3 hrs/week</span>
-            <span class="ct-chip" style="--cc:#6b7280">PSCM 364/467 · Public Procurement II</span>
+            <span class="ct-chip" style="--cc:#f97316">4. World Bank — E-Procurement Program</span>
+            <span class="ct-chip" style="--cc:#6366f1">13. UniAthena — Procurement &amp; Contract Mgmt</span>
+            <span class="ct-chip" style="--cc:#7c3aed">23. edX TU Delft — Sustainable SCM</span>
+            <span class="ct-chip" style="--cc:#6366f1">27. Alison — Risk Management in Procurement</span>
+            <span class="ct-chip" style="--cc:#f59e0b">28. Coursera — Negotiation Skills</span>
+            <span class="ct-chip gold">~3 hrs/week</span>
+            <span class="ct-chip">PSCM 364/366/467 · Public Procurement II</span>
           </div>
         </div>
       </div>
-
-      <div class="ct-item">
-        <div class="ct-dot" style="background:var(--gold);box-shadow:0 0 0 4px rgba(212,168,67,0.25)"></div>
+ 
+      <div class="ct-item done-item">
+        <div class="ct-dot" style="background:var(--analytics);box-shadow:0 0 0 4px rgba(16,185,129,0.25)"></div>
         <div class="ct-body">
           <div class="ct-when">YEAR 4 · 2029–2030</div>
-          <div class="ct-title">All 15 Complete — CV, README &amp; LinkedIn Updated</div>
+          <div class="ct-title">Final Tier — ERP, ESG &amp; Portfolio Complete — 2 Certificates</div>
           <div class="ct-chips">
-            <span class="ct-chip" style="--cc:#16a34a">✅ All 15 certificates done</span>
-            <span class="ct-chip" style="--cc:#16a34a">LinkedIn badges added</span>
-            <span class="ct-chip" style="--cc:#16a34a">GitHub README updated</span>
-            <span class="ct-chip" style="--cc:#16a34a">Resume certifications section full</span>
-            <span class="ct-chip" style="--cc:#d4a843">🎓 Job-ready 2030</span>
+            <span class="ct-chip" style="--cc:#0ea5e9">29. Microsoft Learn — Dynamics 365 Fundamentals</span>
+            <span class="ct-chip" style="--cc:#16a34a">30. UN Global Compact — ESG &amp; Sustainable Business</span>
+            <span class="ct-chip gold">~2 hrs/week · Thesis takes priority</span>
           </div>
         </div>
       </div>
-
+ 
+      <div class="ct-item done-item">
+        <div class="ct-dot" style="background:var(--gold);box-shadow:0 0 0 5px rgba(212,168,67,0.3)"></div>
+        <div class="ct-body">
+          <div class="ct-when">GRADUATION · Jul 2030</div>
+          <div class="ct-title">All 30 Complete — Job-Ready</div>
+          <div class="ct-chips">
+            <span class="ct-chip green">✅ All 30 certificates earned</span>
+            <span class="ct-chip green">✅ All 7 portfolio projects live</span>
+            <span class="ct-chip green">✅ LinkedIn badges added</span>
+            <span class="ct-chip green">✅ GitHub README updated</span>
+            <span class="ct-chip green">✅ Resume certifications section complete</span>
+            <span class="ct-chip gold">🎓 First job offer target: May 2030</span>
+          </div>
+        </div>
+      </div>
+ 
     </div>
   </div>
 </section>
-
+ 
+<div class="divider"></div>
+ 
+<!-- ══ MEMBERSHIPS ══ -->
+<section id="memberships">
+  <div class="section-inner">
+    <div class="section-label reveal">Professional Bodies</div>
+    <h2 class="section-title reveal">Membership <span>Plans</span><br>&amp; Professional Bodies</h2>
+    <div class="mem-grid">
+ 
+      <div class="mem-card reveal">
+        <div class="mem-badge">CIPS</div>
+        <div class="mem-name">Chartered Institute of Procurement &amp; Supply</div>
+        <div class="mem-full">CIPS — UK-based global procurement body</div>
+        <div class="mem-desc">The world's largest professional procurement body. Student membership provides access to knowledge resources, procurement frameworks, and global networking.</div>
+        <div class="mem-when">🎯 Join: Year 2 · Oct 2027</div>
+        <ul class="mem-benefits">
+          <li>CIPS Level 4 Diploma in Procurement &amp; Supply</li>
+          <li>Access to CIPS Knowledge Hub — free articles &amp; guides</li>
+          <li>CIPS student member pricing on all qualifications</li>
+          <li>Global procurement community &amp; forums</li>
+          <li>Ethical procurement framework resources</li>
+        </ul>
+      </div>
+ 
+      <div class="mem-card reveal">
+        <div class="mem-badge">ASCM</div>
+        <div class="mem-name">Association for Supply Chain Management</div>
+        <div class="mem-full">ASCM — USA-based global SCM body (formerly APICS)</div>
+        <div class="mem-desc">Home of the CSCP and SCOR framework. Student membership provides access to supply chain learning resources, SCOR guides, and industry connections.</div>
+        <div class="mem-when">🎯 Join: Year 3 · Oct 2028</div>
+        <ul class="mem-benefits">
+          <li>SCOR framework free guide download</li>
+          <li>CSCP — Certified Supply Chain Professional pathway</li>
+          <li>ASCM student discount on all certifications</li>
+          <li>Access to supply chain research library</li>
+          <li>Lean, Six Sigma &amp; SCOR best practices</li>
+        </ul>
+      </div>
+ 
+      <div class="mem-card reveal">
+        <div class="mem-badge">GIPS</div>
+        <div class="mem-name">Ghana Institute of Procurement &amp; Supply</div>
+        <div class="mem-full">GIPS / SGIPS — Ghana's national procurement body</div>
+        <div class="mem-desc">Ghana's own procurement professional body. Student membership (SGIPS) connects you to Ghana's procurement regulatory updates, industry forums, and local hiring networks.</div>
+        <div class="mem-when">🎯 Join: Year 1 · Now</div>
+        <ul class="mem-benefits">
+          <li>SGIPS student member — affordable fee</li>
+          <li>Ghana procurement regulatory updates</li>
+          <li>Industry forums &amp; policy workshops in Kumasi</li>
+          <li>Mentorship from senior procurement professionals</li>
+          <li>Direct connection to Ghana's top employers</li>
+        </ul>
+      </div>
+ 
+    </div>
+  </div>
+</section>
+ 
+<div class="divider"></div>
+ 
+<!-- ══ LANGUAGE CERTS ══ -->
+<section id="languages">
+  <div class="section-inner">
+    <div class="section-label reveal">Optional</div>
+    <h2 class="section-title reveal">Language <span>Certifications</span><br>Free &amp; Accredited</h2>
+    <p class="reveal" style="font-size:14px;color:rgba(255,255,255,0.5);margin-bottom:2.5rem;max-width:580px;line-height:1.8">All 100% free, self-paced, and offer accredited diplomas or certificates on completion. Each language opens new procurement markets and international career opportunities.</p>
+    <div class="lang-grid">
+ 
+      <div class="lang-card reveal" style="--lc:#3b82f6">
+        <div class="lang-flag">🇫🇷</div>
+        <div class="lang-name">French</div>
+        <div class="lang-provider">Alison · Duolingo · TV5MONDE · FREE</div>
+        <div class="lang-levels">
+          <div class="lang-level"><span class="lang-level-name">A1 Beginner</span><div class="lang-bar"><div class="lang-bar-fill" style="width:100%"></div></div></div>
+          <div class="lang-level"><span class="lang-level-name">A2 Elementary</span><div class="lang-bar"><div class="lang-bar-fill" style="width:100%"></div></div></div>
+          <div class="lang-level"><span class="lang-level-name">B1 Intermediate</span><div class="lang-bar"><div class="lang-bar-fill" style="width:60%"></div></div></div>
+          <div class="lang-level"><span class="lang-level-name">B2 Upper Int.</span><div class="lang-bar"><div class="lang-bar-fill" style="width:30%"></div></div></div>
+          <div class="lang-level"><span class="lang-level-name">C1 Advanced</span><div class="lang-bar"><div class="lang-bar-fill" style="width:10%"></div></div></div>
+        </div>
+        <div class="lang-cert">Diplôme — Alison French Diploma (free, accredited)</div>
+        <div class="lang-cert" style="margin-top:4px">Why: ECOWAS region · West Africa francophone procurement</div>
+        <a href="https://alison.com/courses/language" target="_blank" class="lang-link">Start on Alison →</a>
+      </div>
+ 
+      <div class="lang-card reveal" style="--lc:#f97316">
+        <div class="lang-flag">🇪🇸</div>
+        <div class="lang-name">Spanish</div>
+        <div class="lang-provider">Alison · Instituto Cervantes · Duolingo · FREE</div>
+        <div class="lang-levels">
+          <div class="lang-level"><span class="lang-level-name">A1 Beginner</span><div class="lang-bar"><div class="lang-bar-fill" style="width:100%"></div></div></div>
+          <div class="lang-level"><span class="lang-level-name">A2 Elementary</span><div class="lang-bar"><div class="lang-bar-fill" style="width:100%"></div></div></div>
+          <div class="lang-level"><span class="lang-level-name">B1 Intermediate</span><div class="lang-bar"><div class="lang-bar-fill" style="width:60%"></div></div></div>
+          <div class="lang-level"><span class="lang-level-name">B2 Upper Int.</span><div class="lang-bar"><div class="lang-bar-fill" style="width:30%"></div></div></div>
+          <div class="lang-level"><span class="lang-level-name">C1 Advanced</span><div class="lang-bar"><div class="lang-bar-fill" style="width:10%"></div></div></div>
+        </div>
+        <div class="lang-cert">Diploma — Alison Spanish Diploma (free, accredited)</div>
+        <div class="lang-cert" style="margin-top:4px">Why: Latin American supply chains · International procurement</div>
+        <a href="https://alison.com/courses/language" target="_blank" class="lang-link">Start on Alison →</a>
+      </div>
+ 
+      <div class="lang-card reveal" style="--lc:#10b981">
+        <div class="lang-flag">🇩🇪</div>
+        <div class="lang-name">German</div>
+        <div class="lang-provider">Deutsche Welle · Alison · Goethe Free Resources · FREE</div>
+        <div class="lang-levels">
+          <div class="lang-level"><span class="lang-level-name">A1 Beginner</span><div class="lang-bar"><div class="lang-bar-fill" style="width:100%"></div></div></div>
+          <div class="lang-level"><span class="lang-level-name">A2 Elementary</span><div class="lang-bar"><div class="lang-bar-fill" style="width:100%"></div></div></div>
+          <div class="lang-level"><span class="lang-level-name">B1 Intermediate</span><div class="lang-bar"><div class="lang-bar-fill" style="width:60%"></div></div></div>
+          <div class="lang-level"><span class="lang-level-name">B2 Upper Int.</span><div class="lang-bar"><div class="lang-bar-fill" style="width:30%"></div></div></div>
+          <div class="lang-level"><span class="lang-level-name">C1 Advanced</span><div class="lang-bar"><div class="lang-bar-fill" style="width:10%"></div></div></div>
+        </div>
+        <div class="lang-cert">Certificate — Deutsche Welle free course completion cert</div>
+        <div class="lang-cert" style="margin-top:4px">Why: German engineering supply chains · SAP is German-origin</div>
+        <a href="https://www.dw.com/en/learn-german/s-2469" target="_blank" class="lang-link">Start on DW →</a>
+      </div>
+ 
+    </div>
+  </div>
+</section>
+ 
+<div class="divider"></div>
+ 
 <!-- ══ STUDY GUIDE ══ -->
 <section id="studyguide">
   <div class="section-inner">
     <div class="section-label reveal">Learning Roadmap</div>
     <h2 class="section-title reveal">KSTU <span>Study Guide</span></h2>
-
-    <!-- intro -->
-    <p class="reveal" style="font-size:14px;color:rgba(255,255,255,0.55);line-height:1.8;margin-bottom:2rem;max-width:620px">
-      A fully interactive 4-year study schedule aligned to the official KSTU academic calendar — starting <strong style="color:var(--white)">23 October 2026</strong>. Every self-study task is mapped to a real KSTU module code, Ghana public holiday, and exam period.
-    </p>
-
-    <!-- weekly commitment cards -->
+    <p class="reveal" style="font-size:14px;color:rgba(255,255,255,0.55);line-height:1.8;margin-bottom:2rem;max-width:620px">A fully interactive 4-year study schedule aligned to the official KSTU academic calendar — starting <strong style="color:var(--white)">23 October 2026</strong>. Every self-study task is mapped to a real KSTU module code, public holiday, and exam period.</p>
     <div class="sg-commit reveal">
       <div class="sg-commit-label">Weekly Self-Study Commitment</div>
       <div class="sg-commit-cards">
@@ -1582,182 +1314,139 @@ footer {
         <div class="sg-stat"><div class="sg-num">3–4</div><div class="sg-lbl">hrs · Year 3</div></div>
         <div class="sg-stat"><div class="sg-num">3–4</div><div class="sg-lbl">hrs · Year 4</div></div>
       </div>
-      <div class="sg-commit-note">📅 Saturday morning (1.5–2 hrs) + one quiet weekday evening (1–2 hrs). Pause 2 weeks before each KSTU exam period.</div>
+      <div class="sg-commit-note">📅 Saturday morning (1.5–2 hrs) + one quiet weekday evening (1–2 hrs). Pause 2 weeks before each KSTU exam period. Resume immediately after.</div>
     </div>
-
-    <!-- year preview cards -->
     <div class="sg-years reveal">
-
       <div class="sg-year-card">
-        <div class="sg-year-head">
-          <div class="sg-year-tag">Year 1</div>
-          <div class="sg-year-dates">Oct 2026 – Jul 2027</div>
-        </div>
+        <div class="sg-year-head"><div class="sg-year-tag">Year 1</div><div class="sg-year-dates">Oct 2026 – Jul 2027</div></div>
         <div class="sg-year-title">Foundation</div>
-        <div class="sg-year-chips">
-          <span class="sg-chip" style="--sc:#16a34a">✅ Project 4</span>
-          <span class="sg-chip" style="--sc:#3b82f6">Excel Mastery</span>
-          <span class="sg-chip" style="--sc:#3b82f6">Odoo ERP</span>
-          <span class="sg-chip" style="--sc:#6b7280">Acts 663 & 914</span>
-          <span class="sg-chip" style="--sc:#6b7280">PSCM 163–166</span>
-        </div>
+        <div class="sg-chips"><span class="sg-chip">✅ Project 4</span><span class="sg-chip">Excel Mastery</span><span class="sg-chip">Odoo ERP</span><span class="sg-chip">Acts 663 &amp; 914</span><span class="sg-chip">9 Certs</span></div>
       </div>
-
       <div class="sg-year-card">
-        <div class="sg-year-head">
-          <div class="sg-year-tag" style="background:rgba(139,92,246,0.15);color:#c4b5fd;border-color:rgba(139,92,246,0.3)">Year 2</div>
-          <div class="sg-year-dates">Oct 2027 – Jul 2028</div>
-        </div>
-        <div class="sg-year-title">ERP & Contracts</div>
-        <div class="sg-year-chips">
-          <span class="sg-chip" style="--sc:#3b82f6">SAP MM</span>
-          <span class="sg-chip" style="--sc:#3b82f6">Oracle Cloud</span>
-          <span class="sg-chip" style="--sc:#8b5cf6">Mock SLA</span>
-          <span class="sg-chip" style="--sc:#10b981">Power BI</span>
-          <span class="sg-chip" style="--sc:#6b7280">Attachment I</span>
-        </div>
+        <div class="sg-year-head"><div class="sg-year-tag" style="background:rgba(139,92,246,0.12);color:#c4b5fd;border-color:rgba(139,92,246,0.3)">Year 2</div><div class="sg-year-dates">Oct 2027 – Jul 2028</div></div>
+        <div class="sg-year-title">ERP &amp; Contracts</div>
+        <div class="sg-chips"><span class="sg-chip">SAP MM</span><span class="sg-chip">Oracle Cloud</span><span class="sg-chip">Mock SLA</span><span class="sg-chip">Power BI</span><span class="sg-chip">9 Certs</span></div>
       </div>
-
       <div class="sg-year-card">
-        <div class="sg-year-head">
-          <div class="sg-year-tag" style="background:rgba(249,115,22,0.15);color:#fdba74;border-color:rgba(249,115,22,0.3)">Year 3</div>
-          <div class="sg-year-dates">Oct 2028 – Jul 2029</div>
-        </div>
-        <div class="sg-year-title">Analytics & Internship</div>
-        <div class="sg-year-chips">
-          <span class="sg-chip" style="--sc:#f97316">Supplier Scorecard</span>
-          <span class="sg-chip" style="--sc:#10b981">Live Dashboard</span>
-          <span class="sg-chip" style="--sc:#06b6d4">Incoterms 2020</span>
-          <span class="sg-chip" style="--sc:#6b7280">Internship</span>
-        </div>
+        <div class="sg-year-head"><div class="sg-year-tag" style="background:rgba(249,115,22,0.12);color:#fdba74;border-color:rgba(249,115,22,0.3)">Year 3</div><div class="sg-year-dates">Oct 2028 – Jul 2029</div></div>
+        <div class="sg-year-title">Analytics &amp; Internship</div>
+        <div class="sg-chips"><span class="sg-chip">Supplier Scorecard</span><span class="sg-chip">Live Dashboard</span><span class="sg-chip">Incoterms</span><span class="sg-chip">10 Certs</span></div>
       </div>
-
       <div class="sg-year-card">
-        <div class="sg-year-head">
-          <div class="sg-year-tag" style="background:rgba(212,168,67,0.15);color:#f0c96a;border-color:rgba(212,168,67,0.3)">Year 4</div>
-          <div class="sg-year-dates">Oct 2029 – Jul 2030</div>
-        </div>
-        <div class="sg-year-title">Specialise & Graduate</div>
-        <div class="sg-year-chips">
-          <span class="sg-chip" style="--sc:#eab308">Sourcing Strategy</span>
-          <span class="sg-chip" style="--sc:#3b82f6">MS Dynamics</span>
-          <span class="sg-chip" style="--sc:#d4a843">SCOR KPIs</span>
-          <span class="sg-chip" style="--sc:#16a34a">First Job</span>
-        </div>
+        <div class="sg-year-head"><div class="sg-year-tag" style="background:rgba(212,168,67,0.12);color:#f0c96a;border-color:rgba(212,168,67,0.3)">Year 4</div><div class="sg-year-dates">Oct 2029 – Jul 2030</div></div>
+        <div class="sg-year-title">Specialise &amp; Graduate</div>
+        <div class="sg-chips"><span class="sg-chip">Sourcing Strategy</span><span class="sg-chip">MS Dynamics</span><span class="sg-chip">All 30 Certs</span><span class="sg-chip">First Job</span></div>
       </div>
-
     </div>
-
-    <!-- stats row -->
     <div class="sg-stats-row reveal">
       <div class="sg-mini-stat"><span class="sg-mini-num">8</span><span class="sg-mini-lbl">Semesters</span></div>
       <div class="sg-mini-stat"><span class="sg-mini-num">28</span><span class="sg-mini-lbl">KSTU Modules</span></div>
-      <div class="sg-mini-stat"><span class="sg-mini-num">7</span><span class="sg-mini-lbl">Projects</span></div>
+      <div class="sg-mini-stat"><span class="sg-mini-num">30</span><span class="sg-mini-lbl">Certifications</span></div>
       <div class="sg-mini-stat"><span class="sg-mini-num">4</span><span class="sg-mini-lbl">ERP Systems</span></div>
       <div class="sg-mini-stat"><span class="sg-mini-num">2</span><span class="sg-mini-lbl">Attachments</span></div>
     </div>
-
-    <!-- open full guide button -->
-    <div class="reveal" style="margin-top:1.5rem">
-      <a href="study-guide.html" class="sg-open-btn" target="_blank">
-        📖 Open Full Interactive Study Guide →
-      </a>
-    </div>
-
+    <a href="study-guide.html" class="sg-open-btn reveal" target="_blank">📖 Open Full Interactive Study Guide →</a>
   </div>
 </section>
-
+ 
+<div class="divider"></div>
+ 
 <!-- ══ CONTACT ══ -->
 <section id="contact">
   <div class="section-inner">
-    <div class="section-label reveal">Contact</div>
+    <div class="section-label reveal">Connect</div>
     <h2 class="section-title reveal">Let's <span>Connect</span></h2>
     <div class="contact-grid reveal">
+ 
       <a href="mailto:frankoduro1912@gmail.com" class="contact-card">
-        <div class="contact-icon">✉️</div>
+        <svg class="contact-logo" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="4" fill="#EA4335"/><path d="M4 7l8 5 8-5M4 7v10h16V7M4 7h16" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <div class="contact-label">Email</div>
         <div class="contact-value">frankoduro1912@gmail.com</div>
       </a>
-      <a href="https://linkedin.com/in/ofrank-design" class="contact-card" target="_blank">
-        <div class="contact-icon">💼</div>
+ 
+      <a href="https://linkedin.com/in/ofrank-design" target="_blank" class="contact-card">
+        <svg class="contact-logo" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path d="M7 10v7M7 7v.5M12 17v-4a2 2 0 014 0v4M12 10v7" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
         <div class="contact-label">LinkedIn</div>
         <div class="contact-value">ofrank-design</div>
       </a>
-      <a href="https://github.com/ofrank-design" class="contact-card" target="_blank">
-        <div class="contact-icon">🐙</div>
+ 
+      <a href="https://github.com/ofrank-design" target="_blank" class="contact-card">
+        <svg class="contact-logo" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="4" fill="#181717"/><path d="M12 3C7.03 3 3 7.03 3 12c0 3.97 2.58 7.35 6.16 8.54.45.08.62-.19.62-.43v-1.5c-2.5.54-3.03-1.21-3.03-1.21-.41-1.04-1-1.31-1-1.31-.82-.56.06-.55.06-.55.9.06 1.38.93 1.38.93.8 1.37 2.1.97 2.61.74.08-.58.31-.97.57-1.19-1.99-.23-4.09-1-4.09-4.44 0-.98.35-1.78.93-2.41-.09-.23-.4-1.14.09-2.37 0 0 .76-.24 2.5.93A8.7 8.7 0 0112 7.8c.77 0 1.55.1 2.28.3 1.73-1.17 2.5-.93 2.5-.93.49 1.23.18 2.14.09 2.37.58.63.93 1.43.93 2.41 0 3.45-2.1 4.21-4.1 4.43.32.28.61.83.61 1.67v2.47c0 .24.16.52.62.43A9.01 9.01 0 0021 12c0-4.97-4.03-9-9-9z" fill="#fff"/></svg>
         <div class="contact-label">GitHub</div>
         <div class="contact-value">ofrank-design</div>
       </a>
-      <a href="https://ofrank-design.github.io" class="contact-card" target="_blank">
-        <div class="contact-icon">🌐</div>
+ 
+      <a href="https://ofrank-design.github.io" target="_blank" class="contact-card">
+        <svg class="contact-logo" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="4" fill="#0d2149"/><circle cx="12" cy="12" r="7" stroke="#d4a843" stroke-width="1.5"/><path d="M12 5c-2 3-2 11 0 14M12 5c2 3 2 11 0 14M5 12h14" stroke="#d4a843" stroke-width="1.2"/></svg>
         <div class="contact-label">Portfolio</div>
         <div class="contact-value">ofrank-design.github.io</div>
       </a>
+ 
+      <a href="https://instagram.com/_anonymoustroy" target="_blank" class="contact-card">
+        <svg class="contact-logo" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="ig" x1="0" y1="24" x2="24" y2="0"><stop offset="0%" stop-color="#F58529"/><stop offset="50%" stop-color="#DD2A7B"/><stop offset="100%" stop-color="#515BD4"/></linearGradient></defs><rect width="24" height="24" rx="6" fill="url(#ig)"/><rect x="7" y="7" width="10" height="10" rx="3" stroke="#fff" stroke-width="1.5"/><circle cx="12" cy="12" r="2.5" stroke="#fff" stroke-width="1.3"/><circle cx="16" cy="8" r=".8" fill="#fff"/></svg>
+        <div class="contact-label">Instagram</div>
+        <div class="contact-value">_anonymoustroy</div>
+      </a>
+ 
+      <a href="https://x.com/_anonymoustroy" target="_blank" class="contact-card">
+        <svg class="contact-logo" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="4" fill="#000"/><path d="M4 4l6.5 8.5L4 20h2l5-6.5L16 20h4l-6.8-8.8L19.5 4h-2l-4.7 6L8 4H4z" fill="#fff"/></svg>
+        <div class="contact-label">X (Twitter)</div>
+        <div class="contact-value">_anonymoustroy</div>
+      </a>
+ 
+      <a href="tel:+233536426995" class="contact-card">
+        <svg class="contact-logo" viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="4" fill="#16a34a"/><path d="M8 5h-.5A1.5 1.5 0 006 6.5v.5a11 11 0 0011 11h.5a1.5 1.5 0 001.5-1.5V16l-3-1-1 1.5c-2-.5-4-2.5-4.5-4.5L12 11l-1-3H8z" stroke="#fff" stroke-width="1.4" stroke-linejoin="round"/></svg>
+        <div class="contact-label">Phone</div>
+        <div class="contact-value">+233 536 426 995</div>
+      </a>
+ 
     </div>
   </div>
 </section>
-
+ 
 <footer>
-  <span class="footer-text">Built with dedication by <span class="footer-gold">Frank Oduro</span> · KSTU · Enrolled Oct 2026</span>
-  <span class="footer-text">Last updated: <span class="footer-gold">October 2026</span></span>
+  <div class="footer-inner">
+    <span class="footer-text">Built with dedication by <span class="footer-gold">Frank Oduro</span> · KSTU · Enrolled Oct 2026</span>
+    <span class="footer-text">Last updated: <span class="footer-gold">2026</span> · <a href="https://ofrank-design.github.io" style="color:var(--gold);text-decoration:none">ofrank-design.github.io</a></span>
+  </div>
 </footer>
-
+ 
 <script>
-// Custom cursor
-const cursor = document.getElementById('cursor');
-const ring = document.getElementById('cursorRing');
-let mx = 0, my = 0;
-document.addEventListener('mousemove', e => {
-  mx = e.clientX; my = e.clientY;
-  cursor.style.left = mx + 'px';
-  cursor.style.top = my + 'px';
-  ring.style.left = mx + 'px';
-  ring.style.top = my + 'px';
+// Cursor
+const cur=document.getElementById('cur'),curR=document.getElementById('curR');
+document.addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';curR.style.left=e.clientX+'px';curR.style.top=e.clientY+'px'});
+document.querySelectorAll('a,button,.skill-card,.project-card,.stat-box,.cert-card,.mem-card,.lang-card').forEach(el=>{
+  el.addEventListener('mouseenter',()=>cur.style.transform='translate(-50%,-50%) scale(2.5)');
+  el.addEventListener('mouseleave',()=>cur.style.transform='translate(-50%,-50%) scale(1)');
 });
-document.querySelectorAll('a, button, .skill-card, .project-card, .stat-box').forEach(el => {
-  el.addEventListener('mouseenter', () => cursor.style.transform = 'translate(-50%,-50%) scale(2.5)');
-  el.addEventListener('mouseleave', () => cursor.style.transform = 'translate(-50%,-50%) scale(1)');
-});
-
+ 
 // Scroll reveal
-const observer = new IntersectionObserver(entries => {
-  entries.forEach((entry, i) => {
-    if (entry.isIntersecting) {
-      setTimeout(() => entry.target.classList.add('visible'), i * 80);
-    }
-  });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
+const obs=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*70)});},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+ 
 // Skill bars
-const barObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
-        bar.style.width = bar.dataset.width + '%';
-      });
-    }
+const barObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.querySelectorAll('.skill-bar-fill').forEach(b=>{b.style.width=b.dataset.width+'%'})});},{threshold:.3});
+document.querySelectorAll('.skill-card').forEach(c=>barObs.observe(c));
+ 
+// Cert prog bars
+const certObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.querySelectorAll('.cert-prog-fill').forEach(b=>{b.style.width=(b.dataset.cw||0)+'%'})});},{threshold:.3});
+document.querySelectorAll('.cert-card').forEach(c=>certObs.observe(c));
+ 
+// Nav scroll
+window.addEventListener('scroll',()=>document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>60));
+ 
+// Cert filter
+function filterCerts(cat,btn){
+  document.querySelectorAll('.cert-filter').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.cert-card').forEach(card=>{
+    if(cat==='all'||card.dataset.cat===cat){card.style.display='grid'}
+    else{card.style.display='none'}
   });
-}, { threshold: 0.3 });
-document.querySelectorAll('.skill-card').forEach(card => barObserver.observe(card));
-
-// Cert progress bars
-const certBarObs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if(e.isIntersecting) {
-      e.target.querySelectorAll('.cert-prog-fill').forEach(b => { b.style.width = (b.dataset.cw||0)+'%'; });
-    }
-  });
-}, { threshold:.3 });
-document.querySelectorAll('.cert-card-main').forEach(c => certBarObs.observe(c));
-
+}
+ 
 // Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    e.preventDefault();
-    document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
-  });
-});
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth'})})});
 </script>
 </body>
 </html>
