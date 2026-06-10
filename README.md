@@ -152,23 +152,8 @@ CIPS 7-step framework · Make-vs-buy · Competitive tendering
 
 ---
 
-## 📈 GitHub Stats
-
-<div align="center">
-
-![Frank's GitHub Stats](https://github-readme-stats.vercel.app/api?username=ofrank-design&show_icons=true&theme=dark&title_color=d4a843&icon_color=d4a843&text_color=ffffff&bg_color=0d2149&border_color=d4a843&hide_border=false)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ofrank-design&layout=compact&theme=dark&title_color=d4a843&text_color=ffffff&bg_color=0d2149&border_color=d4a843)
-
-
-# 📈 Contribution Graph
-
-<p align="center">
-
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=Ofrank-design&theme=tokyo-night&hide_border=true"/>
-
 </div>
----
+
 <h2 align="center"> ADDITIONAL CERTIFICATIONS </h2>
 <table>
 <thead>
@@ -290,6 +275,24 @@ CIPS 7-step framework · Make-vs-buy · Competitive tendering
 </table>
 <📄 **View full certifications page<td><a href="https://ofrank-design.github.io"/ <h2 align="center">→ 📄 **View full certifications
 
+
+  
+## 📈 GitHub Stats
+
+<div align="center">
+
+![Frank's GitHub Stats](https://github-readme-stats.vercel.app/api?username=ofrank-design&show_icons=true&theme=dark&title_color=d4a843&icon_color=d4a843&text_color=ffffff&bg_color=0d2149&border_color=d4a843&hide_border=false)
+
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ofrank-design&layout=compact&theme=dark&title_color=d4a843&text_color=ffffff&bg_color=0d2149&border_color=d4a843)
+
+
+# 📈 Contribution Graph
+
+<p align="center">
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=Ofrank-design&theme=tokyo-night&hide_border=true"/>
+
+
                                   
 <h2 align="center">🤝 Cᴏɴɴᴇᴄᴛ Wɪᴛʜ Mᴇ 🤝 </h2>
 <div align="center">
@@ -332,6 +335,6 @@ CIPS 7-step framework · Make-vs-buy · Competitive tendering
   <strong>— Walt Disney</strong>
 </p>
 
-LAST UPDATED: JUNE 2026
+LAST UPDATED: JUNE 10th 2026
 
 </div>
