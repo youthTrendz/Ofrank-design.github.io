@@ -5,10 +5,9 @@
 <div>
   <img align="right" width="40%" src="https://owlbertsio-resized.s3.amazonaws.com/Popper.psd.full.png">
 </div>
-
-<!-- BADGES -->
+!-- BADGES -->
 <!--Profile Count Badge-->
-<p align="left"> <img src="![](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2FOfrank-design&label=Profile%20Views&countColor=%234ade80)
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=frank-oduro&label=Profile%20views&color=770677&style=for-the-badge&logo=star" alt="Kiran1689" style="padding-right:20px;" /
   
 ![Student](https://img.shields.io/badge/KSTU-BSc%20Procurement%20%26%20-0d2149?style=flat-square&logo=graduation-cap&logoColor=d4a843)
 ![Year](https://img.shields.io/badge/Enrolled-October%202026-d4a843?style=flat-square)
