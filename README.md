@@ -283,7 +283,7 @@ CIPS 7-step framework · Make-vs-buy · Competitive tendering
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=Ofrank-design&theme=chartreuse-dark&hide_border=true" width="48%"/>
 </p>
 
-<p align="center>![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ofrank-design&layout=compact&theme=dark&title_color=d4a843&text_color=ffffff&bg_color=0d2149&border_color=d4a843)
+[Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ofrank-design&layout=compact&theme=dark&title_color=d4a843&text_color=ffffff&bg_color=0d2149&border_color=d4a843)
 
 ---
 
@@ -291,9 +291,8 @@ CIPS 7-step framework · Make-vs-buy · Competitive tendering
 
 <p align="center">
   <img src="https://github-profile-trophy.vercel.app/?username=Ofrank-design&theme=matrix&no-frame=true&row=1&column=6"/>
-</p>
-
-[![trophy](https://github-profile-trophy.vercel.app/?username=YOUR_GITHUB_ofrank-design&theme=juicyfresh&column=7)](https://github.com/ryo-ma/github-profile-trophy)
+  
+[![trophy](https://github-profile-trophy.vercel.app/?ofrank-design=YOUR_GITHUB_ofrank-design&theme=juicyfresh&column=7)](https://github.com/ryo-ma/github-profile-trophy)
 
 # 📈 Contribution Graph
 
