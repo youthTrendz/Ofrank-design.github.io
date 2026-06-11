@@ -5,7 +5,7 @@
 <div>
   <img align="right" width="40%" src="https://owlbertsio-resized.s3.amazonaws.com/Popper.psd.full.png">
 </div>
-!-- BADGES -->
+<!-- BADGES -->
 <!--Profile Count Badge-->
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=frank-oduro&label=Profile%20views&color=770677&style=for-the-badge&logo=star" alt="Kiran1689" style="padding-right:20px;" /
   
