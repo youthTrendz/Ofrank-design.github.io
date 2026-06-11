@@ -8,7 +8,7 @@
 
 <!-- BADGES -->
 <!--Profile Count Badge-->
-<p align="left"> <img src="![Profile Views](https://komarev.com/ghpvc/?username=Ofrank-design&label=Profile%20Views&color=4ade80&style=flat)
+<p align="left"> <img src="![](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2FOfrank-design&label=Profile%20Views&countColor=%234ade80)
   
 ![Student](https://img.shields.io/badge/KSTU-BSc%20Procurement%20%26%20-0d2149?style=flat-square&logo=graduation-cap&logoColor=d4a843)
 ![Year](https://img.shields.io/badge/Enrolled-October%202026-d4a843?style=flat-square)
